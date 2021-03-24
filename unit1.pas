@@ -162,13 +162,10 @@ end;
 procedure TForm1.FormMouseWheelUp(Sender: TObject; Shift: TShiftState;
   MousePos: TPoint; var Handled: Boolean);
 begin
-  If (Editor.Font.Size > 9999) then
-  begin
   if (ssCtrl in Shift) then
   begin
     Editor.Font.Size:=Editor.Font.Size+2;
     fontSync();
-  end;
   end;
 end;
 
