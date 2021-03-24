@@ -1,0 +1,105 @@
+object Form2: TForm2
+  Left = 41
+  Height = 137
+  Top = 395
+  Width = 242
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Settings'
+  ClientHeight = 137
+  ClientWidth = 242
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  LCLVersion = '2.0.10.0'
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 88
+    Top = 8
+    Width = 225
+    Anchors = [akLeft, akRight]
+    Caption = 'Appearance'
+    ClientHeight = 68
+    ClientWidth = 221
+    TabOrder = 0
+    object bgColorBtn: TButton
+      Left = 8
+      Height = 25
+      Top = 0
+      Width = 208
+      Anchors = [akLeft, akRight]
+      Caption = 'Background color'
+      OnClick = bgColorBtnClick
+      TabOrder = 0
+    end
+    object fontBtn: TButton
+      Left = 8
+      Height = 25
+      Top = 32
+      Width = 208
+      Anchors = [akLeft, akRight]
+      Caption = 'Font'
+      OnClick = fontBtnClick
+      TabOrder = 1
+    end
+  end
+  object Button1: TButton
+    Left = 158
+    Height = 25
+    Top = 105
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = '&OK'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object wwCheck: TCheckBox
+    Left = 16
+    Height = 19
+    Top = 108
+    Width = 78
+    Caption = 'Word wrap'
+    OnChange = wwCheckChange
+    TabOrder = 2
+  end
+  object ColorDialog: TColorDialog
+    OnClose = ColorDialogClose
+    Title = 'Background color'
+    Color = clWhite
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    Left = 200
+    Top = 8
+  end
+  object FontDialog: TFontDialog
+    OnClose = FontDialogClose
+    Title = 'Font'
+    Font.CharSet = 4
+    Font.Height = -13
+    MinFontSize = 0
+    MaxFontSize = 0
+    PreviewText = 'Fletore'
+    Left = 144
+    Top = 8
+  end
+end
