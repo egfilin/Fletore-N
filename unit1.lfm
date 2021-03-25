@@ -1,22 +1,23 @@
 object Form1: TForm1
-  Left = 91
-  Height = 351
-  Top = 41
-  Width = 571
+  Left = 68
+  Height = 360
+  Top = 278
+  Width = 580
   Caption = 'New file - Fletore'
-  ClientHeight = 331
-  ClientWidth = 571
+  ClientHeight = 340
+  ClientWidth = 580
   Menu = MainMenu
+  OnClose = FormClose
+  OnCreate = FormCreate
   OnMouseWheelDown = FormMouseWheelDown
   OnMouseWheelUp = FormMouseWheelUp
   OnShow = FormShow
-  Position = poDefaultPosOnly
   LCLVersion = '2.0.10.0'
   object Editor: TMemo
     Left = 0
-    Height = 308
+    Height = 317
     Top = 0
-    Width = 571
+    Width = 580
     Align = alClient
     Font.CharSet = 4
     Font.Height = -13
@@ -30,11 +31,15 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Height = 23
-    Top = 308
-    Width = 571
+    Top = 317
+    Width = 580
     Panels = <    
       item
         Text = 'Length: 0'
+        Width = 63
+      end    
+      item
+        Text = 'Lines: 0'
         Width = 50
       end>
     SimplePanel = False
@@ -77,9 +82,65 @@ object Form1: TForm1
       end
     end
     object SettingsSubmenu: TMenuItem
-      Caption = 'Settings'
+      Caption = 'Tools'
+      object MenuItem2: TMenuItem
+        Caption = 'Find'
+        ShortCut = 16454
+        OnClick = MenuItem2Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem1: TMenuItem
+        Caption = 'Load preset for...'
+        object HTMLD: TMenuItem
+          Caption = 'HTML document'
+          OnClick = HTMLDClick
+        end
+        object MenuItem6: TMenuItem
+          Caption = '-'
+        end
+        object Scripts: TMenuItem
+          Caption = 'Scripts...'
+          object AuSc: TMenuItem
+            Caption = 'Autorun.inf file'
+            OnClick = AuScClick
+          end
+          object BatSc: TMenuItem
+            Caption = 'Batch script'
+            OnClick = BatScClick
+          end
+          object ShSc: TMenuItem
+            Caption = 'Sh script'
+            OnClick = ShScClick
+          end
+        end
+        object MenuItem3: TMenuItem
+          Caption = 'Programming languages...'
+          object Csc: TMenuItem
+            Caption = 'C source code'
+            OnClick = CscClick
+          end
+          object CshSc: TMenuItem
+            Caption = 'C# source code'
+            OnClick = CshScClick
+          end
+          object CPPSc: TMenuItem
+            Caption = 'C++ source code'
+            OnClick = CPPScClick
+          end
+          object MenuItem5: TMenuItem
+            Caption = 'Delphi source code'
+            OnClick = MenuItem5Click
+          end
+          object PascalSC: TMenuItem
+            Caption = 'Pascal source code'
+            OnClick = PascalSCClick
+          end
+        end
+      end
       object SettingsMenuItem: TMenuItem
-        Caption = 'Settings'
+        Caption = 'Settings...'
         ShortCut = 16464
         OnClick = SettingsMenuItemClick
       end
@@ -104,6 +165,12 @@ object Form1: TForm1
     Title = 'Save file'
     Filter = 'All files|*.*'
     Left = 480
+    Top = 8
+  end
+  object FindDialog1: TFindDialog
+    Title = 'Find'
+    OnFind = FindDialog1Find
+    Left = 272
     Top = 8
   end
 end

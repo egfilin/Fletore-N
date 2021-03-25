@@ -19,6 +19,8 @@ type
     Label2: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormKeyPress(Sender: TObject; var Key: char);
     procedure Image1Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
   private
@@ -50,6 +52,18 @@ procedure TForm3.Button2Click(Sender: TObject);
 begin
   Close();
 end;
+
+procedure TForm3.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+  );
+begin
+  If (key=27) then close();
+end;
+
+procedure TForm3.FormKeyPress(Sender: TObject; var Key: char);
+begin
+
+end;
+
 
 procedure TForm3.Label2Click(Sender: TObject);
 begin

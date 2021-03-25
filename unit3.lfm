@@ -8,6 +8,8 @@ object Form3: TForm3
   Caption = 'About Fletore'
   ClientHeight = 329
   ClientWidth = 383
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
   Position = poMainFormCenter
   LCLVersion = '2.0.10.0'
   object Image1: TImage
@@ -1083,7 +1085,7 @@ object Form3: TForm3
     Width = 368
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Fletore v0.1'#13#10#13#10'Fletore is a simple text editor written in Free Pascal (Lazarus).'#13#10#13#10'This program is licensed under tge GNU GPL v2.'
+    Caption = 'Fletore v0.2'#13#10#13#10'Fletore is a simple text editor written in Free Pascal (Lazarus).'#13#10#13#10'This program is licensed under tge GNU GPL v2.'
     ParentColor = False
   end
   object Button1: TButton

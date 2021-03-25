@@ -44,6 +44,7 @@ uses Unit1;
 
 procedure TForm2.Button1Click(Sender: TObject);
 begin
+
   Close();
 end;
 
