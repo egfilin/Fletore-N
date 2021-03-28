@@ -20,8 +20,8 @@ Fletore does not need to be installed. This program is distributed in a single e
 
 1. Click on "Releases" on the right.
 2. Select the version you want to install.
-3. Click on "Fletore_*version*_linux64"
+3. Click on "Fletore_*version*_linux***your_arch***"
 4. Save the file anywhere
 5. Open a terminal in the location where you saved the executable file.
-6. Type - "chmod 777 Fletore_*version*_linux64" without quotes and close the terminal.
+6. Type - "chmod 777 Fletore_*version*_linux***your_arch***" without quotes and close the terminal.
 7. Run the executable file. 
