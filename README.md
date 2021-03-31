@@ -12,8 +12,16 @@ Fletore does not need to be installed. This program is distributed in a single e
 2. Select the version you want to install.
 3. Click on "Fletore_*version*_win32.exe"
 4. Save the file anywhere
+5. Run the executable file.
 
 **Instructions for Linux:**
-1. Install [Wine](https://www.winehq.org/)
-2. Do the same as in the instructions for Windows.
-3. Open the executable file through the terminal, adding "wine" to the beginning. Example - "linux @ computer:~$ wine ./Fletore_*version*_win32.exe" 
+
+***Attention. There is a bug in the Linux version - word wrap does not work.***
+
+1. Click on "Releases" on the right.
+2. Select the version you want to install.
+3. Click on "Fletore_*version*_linux***your_arch***"
+4. Save the file anywhere
+5. Open a terminal in the location where you saved the executable file.
+6. Type - "chmod 777 Fletore_*version*_linux***your_arch***" without quotes and close the terminal.
+7. Run the executable file. 
