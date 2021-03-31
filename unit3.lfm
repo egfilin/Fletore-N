@@ -1,7 +1,7 @@
 object Form3: TForm3
-  Left = 38
+  Left = 52
   Height = 329
-  Top = 75
+  Top = 92
   Width = 383
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
@@ -11,7 +11,7 @@ object Form3: TForm3
   KeyPreview = True
   OnKeyDown = FormKeyDown
   Position = poMainFormCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.6.0'
   object Image1: TImage
     Left = 0
     Height = 168
@@ -1080,12 +1080,12 @@ object Form3: TForm3
   end
   object Label1: TLabel
     Left = 8
-    Height = 81
+    Height = 120
     Top = 167
     Width = 368
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Fletore v0.2'#13#10#13#10'Fletore is a simple text editor written in Free Pascal (Lazarus).'#13#10#13#10'This program is licensed under tge GNU GPL v2.'
+    Caption = 'Fletore v0.3'#13#10#13#10'Fletore is a simple text editor written in Free Pascal (Lazarus).'#13#10#13#10'Tango icon theme used.'#13#10'This program is licensed under tge GNU GPL v2.'
     ParentColor = False
   end
   object Button1: TButton
@@ -1108,10 +1108,10 @@ object Form3: TForm3
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 96
+    Left = 97
     Height = 15
     Top = 272
-    Width = 191
+    Width = 190
     Caption = 'https://github.com/KATAR7/Fletore'
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clBlue
