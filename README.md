@@ -25,3 +25,5 @@ Fletore does not need to be installed. This program is distributed in a single e
 5. Open a terminal in the location where you saved the executable file.
 6. Type - "chmod 777 Fletore_*version*_linux***your_arch***" without quotes and close the terminal.
 7. Run the executable file. 
+
+![v0.3 screenshot](screenshot.png)
