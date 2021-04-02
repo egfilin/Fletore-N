@@ -6,9 +6,9 @@ interface
 
 uses
   Classes, SysUtils, LCLProc, Forms, strutils, LazUTF8, SynEdit,
-  SynHighlighterMulti, SynHighlighterPerl, SynHighlighterAny, Controls,
-  Graphics, Dialogs, StdCtrls, Menus, ComCtrls, Buttons, Clipbrd, ValEdit,
-  ExtCtrls, Unit3, Types, UITypes;
+  SynHighlighterMulti, SynHighlighterPerl, SynHighlighterAny, SynHighlighterPas,
+  SynCompletion, Controls, Graphics, Dialogs, StdCtrls, Menus, ComCtrls,
+  Buttons, Clipbrd, ValEdit, ExtCtrls, Unit3, Types, UITypes, IpHtml;
 
 type
 
@@ -29,17 +29,23 @@ type
     FileSubmenu: TMenuItem;
     AboutSubmenu: TMenuItem;
     AboutMenuItem: TMenuItem;
-    Editor: TMemo;
     MenuItem1: TMenuItem;
-    MenuItem2: TMenuItem;
-    MenuItem4: TMenuItem;
+    MenuItem10: TMenuItem;
+    CutMenu: TMenuItem;
+    CopyMenu: TMenuItem;
+    PasteMenu: TMenuItem;
+    RedoMenu: TMenuItem;
+    MenuItem15: TMenuItem;
+    MenuItem16: TMenuItem;
+    bgColor: TMenuItem;
+    FindMenu: TMenuItem;
+    chFont: TMenuItem;
     MenuItem5: TMenuItem;
     ExitConfirm: TTaskDialog;
+    Editor: TSynEdit;
+    UndoMenu: TMenuItem;
     tbCheck: TMenuItem;
     ToolBar1: TToolBar;
-    wwCheck: TMenuItem;
-    MenuItem8: TMenuItem;
-    MenuItem9: TMenuItem;
     PascalSC: TMenuItem;
     CPPSc: TMenuItem;
     Csc: TMenuItem;
@@ -63,7 +69,6 @@ type
     SettingsSubmenu: TMenuItem;
     StatusBar1: TStatusBar;
     procedure AboutMenuItemClick(Sender: TObject);
-    procedure AsScClick(Sender: TObject);
     procedure AuScClick(Sender: TObject);
     procedure BatScClick(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -96,19 +101,22 @@ type
       MousePos: TPoint; var Handled: boolean);
     procedure FormShow(Sender: TObject);
     procedure EditorChange(Sender: TObject);
-    procedure JaScClick(Sender: TObject);
-    procedure JsScClick(Sender: TObject);
+    procedure CutMenuClick(Sender: TObject);
+    procedure CopyMenuClick(Sender: TObject);
+    procedure PasteMenuClick(Sender: TObject);
+    procedure RedoMenuClick(Sender: TObject);
+    procedure bgColorClick(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure HTMLDClick(Sender: TObject);
     procedure CSSSSClick(Sender: TObject);
-    procedure MenuItem2Click(Sender: TObject);
-    procedure MenuItem4Click(Sender: TObject);
+    procedure FindMenuClick(Sender: TObject);
+    procedure chFontClick(Sender: TObject);
     procedure MenuItem5Click(Sender: TObject);
     procedure ExitConfirmButtonClicked(Sender: TObject;
       AModalResult: TModalResult; var ACanClose: boolean);
+    procedure UndoMenuClick(Sender: TObject);
+    procedure MenuItem8Click(Sender: TObject);
     procedure tbCheckClick(Sender: TObject);
-    procedure wwCheckClick(Sender: TObject);
-    procedure MenuItem9Click(Sender: TObject);
     procedure NewMenuItemClick(Sender: TObject);
     procedure OpenDialogClose(Sender: TObject);
     procedure OpenMenuItemClick(Sender: TObject);
@@ -166,7 +174,6 @@ procedure TForm1.Sync();
 begin
   FontDialog.Font := Editor.font;
   ColorDialog.Color := Editor.Color;
-  wwCheck.Checked := editor.WordWrap;
   tbCheck.Checked := ToolBar1.Visible;
 end;
 
@@ -184,7 +191,6 @@ begin
   WriteLn(config, BoolToStr(Editor.Font.StrikeThrough));
   WriteLn(config, BoolToStr(Editor.Font.Underline));
   WriteLn(config, ColorToString(Editor.Color));
-  WriteLn(config, BoolToStr(Editor.WordWrap));
   WriteLn(config, IntToStr(Form1.Left));
   WriteLn(config, IntToStr(Form1.Top));
   WriteLn(config, IntToStr(Form1.Width));
@@ -208,15 +214,14 @@ begin
   WriteLn(config, '');
   WriteLn(config,
     '10th string = Background color (Help - https://wiki.freepascal.org/Colors)');
-  WriteLn(config, '11th string = Is word wrap enabled?');
   WriteLn(config, '');
-  WriteLn(config, '12th string = Master form X position');
-  WriteLn(config, '13th string = Master form Y position');
+  WriteLn(config, '11th string = Master form X position');
+  WriteLn(config, '12th string = Master form Y position');
   WriteLn(config, '');
-  WriteLn(config, '14th string = Master form width');
-  WriteLn(config, '15th string = Master form height');
+  WriteLn(config, '13th string = Master form width');
+  WriteLn(config, '14th string = Master form height');
   WriteLn(config, '');
-  WriteLn(config, '16th string = Show toolbar?');
+  WriteLn(config, '15th string = Show toolbar?');
   CloseFile(config);
 end;
 
@@ -244,18 +249,31 @@ begin
   end;
 end;
 
-procedure TForm1.JaScClick(Sender: TObject);
+procedure TForm1.CutMenuClick(Sender: TObject);
 begin
+  Editor.CutToClipboard;
 end;
 
-procedure TForm1.JsScClick(Sender: TObject);
+procedure TForm1.CopyMenuClick(Sender: TObject);
 begin
-  Editor.Lines.Clear;
-  Editor.Lines[0] := 'function Hello() {';
-  Editor.Lines[1] := '    Alert(''Hello world!'');';
-  Editor.Lines[2] := '}';
-  EditorChange(Sender);
+  Editor.CopyToClipboard;
 end;
+
+procedure TForm1.PasteMenuClick(Sender: TObject);
+begin
+  Editor.PasteFromClipboard;
+end;
+
+procedure TForm1.RedoMenuClick(Sender: TObject);
+begin
+  Editor.Redo;
+end;
+
+procedure TForm1.bgColorClick(Sender: TObject);
+begin
+     ColorDialog.Execute;
+end;
+
 
 
 procedure TForm1.MenuItem1Click(Sender: TObject);
@@ -268,18 +286,18 @@ end;
 procedure TForm1.HTMLDClick(Sender: TObject);
 begin
   Editor.Lines.Clear;
-  Editor.Lines[0] := '<!DOCTYPE html>';
-  Editor.Lines[1] := '<HTML>';
-  Editor.Lines[2] := '    <HEAD>';
-  Editor.Lines[3] := '        <SCRIPT src="script.js"></SCRIPT>';
-  Editor.Lines[4] := '        <LINK rel="stylesheet" type="text/css" href="style.css">';
-  Editor.Lines[5] := '        <META charset="UTF-8">';
-  Editor.Lines[6] := '        <TITLE>TITLE</TITLE>';
-  Editor.Lines[7] := '    </HEAD>';
-  Editor.Lines[8] := '    <BODY>';
-  Editor.Lines[9] := '        <h1>Hello World!</h1>';
-  Editor.Lines[10] := '    </BODY>';
-  Editor.Lines[11] := '</HTML>';
+  Editor.Lines.Add('<!DOCTYPE html>');
+  Editor.Lines.Add('<HTML>');
+  Editor.Lines.Add('    <HEAD>');
+  Editor.Lines.Add('        <SCRIPT src="script.js"></SCRIPT>');
+  Editor.Lines.Add('        <LINK rel="stylesheet" type="text/css" href="style.css">');
+  Editor.Lines.Add('        <META charset="UTF-8">');
+  Editor.Lines.Add('        <TITLE>TITLE</TITLE>');
+  Editor.Lines.Add('    </HEAD>');
+  Editor.Lines.Add('    <BODY>');
+  Editor.Lines.Add('        <h1>Hello World!</h1>');
+  Editor.Lines.Add('    </BODY>');
+  Editor.Lines.Add('</HTML>');
   EditorChange(Sender);
 end;
 
@@ -293,14 +311,14 @@ begin
   EditorChange(Sender);
 end;
 
-procedure TForm1.MenuItem2Click(Sender: TObject);
+procedure TForm1.FindMenuClick(Sender: TObject);
 begin
   FindDialog1.Execute;
 end;
 
-procedure TForm1.MenuItem4Click(Sender: TObject);
+procedure TForm1.chFontClick(Sender: TObject);
 begin
-  ColorDialog.Execute;
+  FontDialog.Execute;
 end;
 
 procedure TForm1.MenuItem5Click(Sender: TObject);
@@ -323,6 +341,17 @@ begin
     Close();
 end;
 
+procedure TForm1.UndoMenuClick(Sender: TObject);
+begin
+  Editor.Undo;
+end;
+
+procedure TForm1.MenuItem8Click(Sender: TObject);
+begin
+
+end;
+
+
 procedure TForm1.tbCheckClick(Sender: TObject);
 begin
   if (tbCheck.Checked = False) then
@@ -330,20 +359,6 @@ begin
   else
     tbCheck.Checked := False;
   ToolBar1.Visible := tbCheck.Checked;
-end;
-
-procedure TForm1.wwCheckClick(Sender: TObject);
-begin
-  if (wwCheck.Checked = False) then
-    wwCheck.Checked := True
-  else
-    wwCheck.Checked := False;
-  Form1.Editor.WordWrap := wwCheck.Checked;
-end;
-
-procedure TForm1.MenuItem9Click(Sender: TObject);
-begin
-  FontDialog.Execute;
 end;
 
 procedure TForm1.NewMenuItemClick(Sender: TObject);
@@ -477,7 +492,7 @@ end;
 procedure TForm1.EditorMouseWheelUp(Sender: TObject; Shift: TShiftState;
   MousePos: TPoint; var Handled: Boolean);
 begin
-  if (ssCtrl in Shift) then
+   if (ssCtrl in Shift) then
   begin
     Editor.Font.Size := Editor.Font.Size + 2;
     Sync();
@@ -490,22 +505,19 @@ begin
 end;
 
 procedure TForm1.FindDialog1Find(Sender: TObject);
-var
-  k: integer;
+var k: integer;
 begin
-  with Sender as TFindDialog do
-  begin
+  with Sender as TFindDialog do begin
     k := Pos(FindText, Editor.Lines.Text);
-    if k > 0 then
-    begin
-      Editor.Selstart := k - 1;
-      Editor.SelLength := length(FindText);
-      Form1.SetFocus;
-    end
-    else
+    if k > 0 then begin
+      Editor.SelStart := k;
+      Editor.SelEnd := Editor.SelStart + Length(FindText);
+      Editor.SetFocus;
+    end else
       Beep();
   end;
 end;
+
 
 procedure TForm1.FontDialogClose(Sender: TObject);
 begin
@@ -585,25 +597,6 @@ begin
   Form3.ShowModal;
 end;
 
-procedure TForm1.AsScClick(Sender: TObject);
-begin
-  Editor.Lines.Clear;
-  Editor.Lines[0] := '.MODEL SMALL';
-  Editor.Lines[1] := '.STACK 100h';
-  Editor.Lines[2] := '.DATA';
-  Editor.Lines[3] := '    HelloMessage DB ''Hello World'',13,10,''$''';
-  Editor.Lines[4] := '.CODE';
-  Editor.Lines[5] := 'START:';
-  Editor.Lines[6] := '    mov ax,@data';
-  Editor.Lines[7] := '    mov ds,ax';
-  Editor.Lines[8] := '    mov ah,9';
-  Editor.Lines[9] := '    mov dx,OFFSET HelloMessage';
-  Editor.Lines[10] := '    int 21h';
-  Editor.Lines[11] := '    mov ah,4ch';
-  Editor.Lines[12] := '    int 21h';
-  Editor.Lines[13] := 'END START';
-  EditorChange(Sender);
-end;
 
 procedure TForm1.AuScClick(Sender: TObject);
 begin
@@ -647,17 +640,17 @@ end;
 
 procedure TForm1.BitBtn5Click(Sender: TObject);
 begin
-  MenuItem2Click(Sender);
+  FindMenuClick(Sender);
 end;
 
 procedure TForm1.BitBtn6Click(Sender: TObject);
 begin
-  MenuItem4Click(Sender);
+  bgColorClick(Sender);
 end;
 
 procedure TForm1.BitBtn7Click(Sender: TObject);
 begin
-  MenuItem9Click(Sender);
+  chFontClick(Sender);
 end;
 
 procedure TForm1.BitBtn8Click(Sender: TObject);
@@ -684,21 +677,20 @@ begin
     Editor.Font.StrikeThrough := StrToBool(configFile.Strings[7]);
     Editor.Font.Underline := StrToBool(configFile.Strings[8]);
     Editor.Color := StringToColor(configFile.Strings[9]);
-    Editor.WordWrap := StrToBool(configFile.Strings[10]);
 
-    Form1.Left := StrToInt(configFile.Strings[11]);
-    Form1.Top := StrToInt(configFile.Strings[12]);
-    Form1.Width := StrToInt(configFile.Strings[13]);
-    Form1.Height := StrToInt(configFile.Strings[14]);
+    Form1.Left := StrToInt(configFile.Strings[10]);
+    Form1.Top := StrToInt(configFile.Strings[11]);
+    Form1.Width := StrToInt(configFile.Strings[12]);
+    Form1.Height := StrToInt(configFile.Strings[13]);
 
-    ToolBar1.Visible := StrToBool(configFile.Strings[15]);
+    ToolBar1.Visible := StrToBool(configFile.Strings[14]);
   end;
 
 
      if paramcount = 1 then
   begin
     editableFile := ParamStr(1);
-    Editor.Lines.loadfromfile(ParamStr(1));
+    Editor.Lines.LoadFromFile(ParamStr(1));
     Form1.Caption := editableFile + ' - ' + appName;
     isFileEditing := False;
     StatusBar1.Panels.Items[0].Text := 'Length: ' + IntToStr(Length(Editor.Text));
