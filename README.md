@@ -1,9 +1,6 @@
 # Fletore
 Fletore is a simple text editor written in Free Pascal (Lazarus).
 <br>
-## Attention! <br>
-**This product is not stable. The author of this program does not recommend using this product on your primary computer. The author of this program recommends using this product in a virtual machine, because if an error occurs in the program, it can delete important files.**
-<br>
 ### Installation instructions. 
 Fletore does not need to be installed. This program is distributed in a single executable file, but creates a configuration file.
 <br><br>
