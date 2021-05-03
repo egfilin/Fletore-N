@@ -1,5 +1,5 @@
 # Fletore
-![Fletore small icon](fletore_small.png) Fletore is a simple text editor written in [Lazarus](https://lazarus-ide.org).
+Fletore is a simple text editor written in [Lazarus](https://lazarus-ide.org).
 <br><br>
 Fletore does not need to be installed. This program is distributed in a single executable file, but creates a configuration file.
 <br>
