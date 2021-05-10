@@ -1,7 +1,7 @@
 # Fletore
-Fletore is a simple text editor written in [Lazarus](https://lazarus-ide.org).
-<br><br>
-Fletore does not need to be installed. This program is distributed in a single executable file, but creates a configuration file.
+**Fletore** is a simple text editor written in [Lazarus](https://lazarus-ide.org).
+<br>
+**Fletore** does not need to be installed. This program is distributed in a single executable file, but creates a configuration file.
 <br>
 <br>
 [Tango icon theme](http://tango.freedesktop.org) used
