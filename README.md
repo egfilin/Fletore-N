@@ -8,7 +8,8 @@
 <br>
 #
 ### How can I build Fletore from source?
-To build, you need the [Lazarus development environment](https://lazarus-ide.org). 
+To build, you need the [Lazarus development environment](https://lazarus-ide.org).<br>
+You can also compile Flore using [cross compilation](https://wiki.freepascal.org/Cross_compiling).
 <br>
 #
 ### Screenshot
