@@ -1,5 +1,5 @@
 # Fletore
-**Fletore** is a simple text editor for Windows and *NIX systems written in [Lazarus](https://lazarus-ide.org).
+**Fletore** is a simple open-source text editor for Windows and *NIX systems written in [Lazarus](https://lazarus-ide.org).
 <br>
 **Fletore** does not need to be installed. This program is distributed in a single executable file, but creates a configuration file.
 <br>
