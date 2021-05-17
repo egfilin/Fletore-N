@@ -1,0 +1,54 @@
+object Form2: TForm2
+  Left = 73
+  Height = 81
+  Top = 409
+  Width = 297
+  BorderIcons = [biSystemMenu]
+  ClientHeight = 81
+  ClientWidth = 297
+  Constraints.MinHeight = 73
+  Constraints.MinWidth = 249
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  LCLVersion = '2.0.6.0'
+  object form1caption: TEdit
+    Left = 8
+    Height = 33
+    Top = 8
+    Width = 283
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 0
+    Text = 'none'
+  end
+  object Apply: TButton
+    Left = 214
+    Height = 26
+    Top = 48
+    Width = 77
+    Anchors = [akRight, akBottom]
+    Caption = '&Apply'
+    OnClick = ApplyClick
+    TabOrder = 1
+  end
+  object keepCh: TCheckBox
+    Left = 16
+    Height = 26
+    Top = 48
+    Width = 104
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = False
+    Caption = 'Keep'
+    TabOrder = 2
+  end
+  object Reset: TButton
+    Left = 128
+    Height = 26
+    Top = 48
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = '&Reset'
+    OnClick = ResetClick
+    TabOrder = 3
+  end
+end
