@@ -1,5 +1,5 @@
 # Fletore-N
-### KATAR7 stopped developing Fletore. This fork tries to achieve eeverything he couldn't.
+### KATAR7 stopped developing Fletore. This fork tries to achieve everything he couldn't.
 Fletore is an open-source text editor for Windows (NT, obviously) and \*NIX systems written in Free Pascal with [Lazarus IDE](https://lazarus-ide.org).
 <br>
 Fletore does not need to be installed, as it is distributed in a single file, but it creates a configuration file.<br><br>
