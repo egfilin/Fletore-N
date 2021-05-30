@@ -246,7 +246,7 @@ type
 
 var
   Form1: TForm1;
-  appName, editableFile, configFileLocation, curSyn, tmpSyn: string;
+  editableFile, configFileLocation, curSyn, tmpSyn: string;
   config: Text;
   configFile: TStringList;
   isFileEditing: boolean;
@@ -271,7 +271,7 @@ begin
 
     end
     else
-      Form1.Caption := editableFile + ' - ' + appName;
+      Form1.Caption := 'Editing ' + editableFile;
 
     isFileEditing := False;
   end;
@@ -385,38 +385,7 @@ begin
   WriteLn(config, '-------');
   WriteLn(config, '');
   WriteLn(config, 'Fletore configuration file.');
-  WriteLn(config, '');
-  WriteLn(config, 'If you are not an experienced user, PLEASE DON''T EDIT THIS FILE. ');
-  WriteLn(config, '');
-  WriteLn(config,
-    '1st string = Font color (Help - https://wiki.freepascal.org/Colors)');
-  WriteLn(config, '2nd string = Font height');
-  WriteLn(config, '3nd string = Font name (Monospace fonts recommended only)');
-  WriteLn(config, '4nd string = Font orientation');
-  WriteLn(config, '5nd string = Font size');
-  WriteLn(config, '6nd string = Is font bold?');
-  WriteLn(config, '7nd string = Is font italic?');
-  WriteLn(config, '8nd string = Is font strikeout?');
-  WriteLn(config, '9nd string = Is font underline?');
-  WriteLn(config, '10th string = Background color (Help - https://wiki.freepascal.org/Colors)');
-  WriteLn(config, '11th string = Master form X position');
-  WriteLn(config, '12th string = Master form Y position');
-  WriteLn(config, '13th string = Master form width');
-  WriteLn(config, '14th string = Master form height');
-  WriteLn(config, '15th string = Show toolbar?');
-  WriteLn(config, '16th string = Display line numbers');
-  WriteLn(config, '17th string = Window state');
-  writeln(config, '18th string = Form1 caption (none = do not use custom window title)');
-  WriteLn(config, '19th string = Editor scroll bars');
-  Writeln(config, '20th string = Status bar visibility');
-  Writeln(config, '21st string = Menu visibility');
-  Writeln(config, '22nd string = Gutter color');
-  writeln(config, '23th string = Editor''s border');
-  writeln(config, '24th string = Is Gutter enlarged?');
-  Writeln(config, '25th string = Gutter border');
-  Writeln(config, '26th string = Toolbar align');
-  Writeln(config, '27th string = Statusbar align');
-  writeln(config, '28th string = Toolbar color');
+  WriteLn(config, 'Everything found in here can be changed within the editor. Im not a cop to stop you, but why would you ever need to change THAT?');
   CloseFile(config);
 end;
 
@@ -612,7 +581,7 @@ begin
     end
     else
     begin
-      Form1.Caption := '*New file - ' + appName;
+      Form1.Caption := '*New file';
     end;
     isFileEditing := True;
   end
@@ -624,7 +593,7 @@ begin
     end
     else
     begin
-      Form1.Caption := '*' + editableFile + ' - ' + appName;
+      Form1.Caption := editableFile + '*';
     end;
     isFileEditing := True;
   end;
@@ -814,7 +783,7 @@ begin
 
     end
     else
-      Form1.Caption := editableFile + ' - ' + appName;
+      Form1.Caption := editableFile;
 
   end;
 end;
@@ -1040,11 +1009,11 @@ begin
         begin
           if (editableFile <> '') then
           begin
-            Form1.Caption := editableFile + ' - ' + appName;
+            Form1.Caption := editableFile;
           end
           else
           begin
-            Form1.Caption := 'New file - ' + appName;
+            Form1.Caption := 'New file';
           end;
         end;
         resetEtx();
@@ -1067,11 +1036,11 @@ begin
     begin
       if (editableFile <> '') then
       begin
-        Form1.Caption := editableFile + ' - ' + appName;
+        Form1.Caption := editableFile;
       end
       else
       begin
-        Form1.Caption := 'New file - ' + appName;
+        Form1.Caption := 'New file';
       end;
     end;
     resetEtx();
@@ -1102,7 +1071,7 @@ begin
 
       end
       else
-        Form1.Caption := editableFile + ' - ' + appName;
+        Form1.Caption := 'Editing ' + editableFile;
       resetEtx();
 
     end
@@ -1155,7 +1124,7 @@ begin
 
     end
     else
-      Form1.Caption := editableFile + ' - ' + appName;
+      Form1.Caption := 'Editing ' + editableFile;
 
   end;
 end;
@@ -1361,7 +1330,7 @@ begin
       else
       begin
         Editor.Lines.SaveToFile(editableFile);
-        Form1.Caption := editableFile + ' - ' + appName;
+        Form1.Caption := 'Editing ' + editableFile;
       end;
     end;
   end;
@@ -1369,7 +1338,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  appName := 'Fletore';
+
 
   editableFile := '';
   curSyn := 'none';
@@ -1398,7 +1367,7 @@ begin
 
   end
   else
-    Form1.Caption := editableFile + ' - ' + appName;
+    Form1.Caption := 'Editing ' + editableFile;
   StatusBar1.Panels.Items[0].Text := 'Length: ' + IntToStr(Length(Editor.Text));
   StatusBar1.Panels.Items[0].Width := Length(StatusBar1.Panels.Items[0].Text) * 8;
 
@@ -1543,7 +1512,7 @@ begin
   begin
     editableFile := ParamStr(1);
     Editor.Lines.LoadFromFile(ParamStr(1));
-    Form1.Caption := editableFile + ' - ' + appName;
+    Form1.Caption := 'Editing ' + editableFile;
     isFileEditing := False;
     StatusBar1.Panels.Items[0].Text := 'Length: ' + IntToStr(Length(Editor.Text));
     StatusBar1.Panels.Items[0].Width := Length(StatusBar1.Panels.Items[0].Text) * 10;

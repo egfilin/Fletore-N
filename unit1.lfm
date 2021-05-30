@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 70
+  Left = 1061
   Height = 430
-  Top = 71
+  Top = 283
   Width = 628
   AllowDropFiles = True
   Caption = 'New file - Fletore'
-  ClientHeight = 410
+  ClientHeight = 405
   ClientWidth = 628
   Constraints.MinWidth = 437
   DragMode = dmAutomatic
@@ -2518,7 +2518,7 @@ object Form1: TForm1
   OnKeyPress = FormKeyPress
   OnKeyUp = FormKeyUp
   OnShow = FormShow
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.6.0'
   inline Editor: TSynEdit
     Left = 0
     Height = 360
@@ -3018,7 +3018,7 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
+    Height = 18
     Top = 387
     Width = 628
     Panels = <    
@@ -3242,8 +3242,8 @@ object Form1: TForm1
     Style = tbsDivider
   end
   object MainMenu: TMainMenu
-    Left = 336
-    Top = 75
+    left = 336
+    top = 75
     object FileSubmenu: TMenuItem
       Caption = 'File'
       object NewMenuItem: TMenuItem
@@ -4081,21 +4081,20 @@ object Form1: TForm1
   object OpenDialog: TOpenDialog
     OnClose = OpenDialogClose
     Title = 'Open'
-    Left = 408
-    Top = 75
+    left = 408
+    top = 75
   end
   object SaveDialog: TSaveDialog
     OnClose = SaveDialogClose
     Title = 'Save file'
     Filter = 'All files|*.*'
-    Left = 480
-    Top = 75
+    left = 480
+    top = 75
   end
   object FindDialog1: TFindDialog
-    Title = 'Find'
     OnFind = FindDialog1Find
-    Left = 272
-    Top = 75
+    left = 272
+    top = 75
   end
   object ColorDialog: TColorDialog
     OnClose = ColorDialogClose
@@ -4123,8 +4122,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 208
-    Top = 75
+    left = 208
+    top = 75
   end
   object FontDialog: TFontDialog
     OnClose = FontDialogClose
@@ -4132,8 +4131,8 @@ object Form1: TForm1
     MinFontSize = 0
     MaxFontSize = 0
     Options = [fdWysiwyg]
-    Left = 136
-    Top = 75
+    left = 136
+    top = 75
   end
   object ExitConfirm: TTaskDialog
     Buttons = <>
@@ -4146,16 +4145,15 @@ object Form1: TForm1
     RadioButtons = <>
     Text = 'Do you want to save your changes to the file? '
     OnButtonClicked = ExitConfirmButtonClicked
-    Left = 80
-    Top = 75
+    left = 80
+    top = 75
   end
   object ReplaceDialog1: TReplaceDialog
-    Title = 'Replace'
     Options = [frDown, frReplace, frReplaceAll, frHidePromptOnReplace]
     OnFind = ReplaceDialog1Find
     OnReplace = ReplaceDialog1Replace
-    Left = 272
-    Top = 131
+    left = 272
+    top = 131
   end
   object clrPalette: TColorDialog
     Title = 'Color palette'
@@ -4182,12 +4180,12 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 208
-    Top = 131
+    left = 208
+    top = 131
   end
   object PopupMenu1: TPopupMenu
-    Left = 456
-    Top = 131
+    left = 456
+    top = 131
     object MenuItem29: TMenuItem
       Caption = 'Undo'
       Bitmap.Data = {
@@ -4539,8 +4537,8 @@ object Form1: TForm1
   object HTMSyn: TSynHTMLSyn
     DefaultFilter = 'Документ HTML (*.htm,*.html)|*.htm;*.html'
     Enabled = False
-    Left = 288
-    Top = 296
+    left = 288
+    top = 296
   end
   object FPCSyn: TSynFreePascalSyn
     Enabled = False
@@ -4556,8 +4554,8 @@ object Form1: TForm1
     ProcedureHeaderName.Style = [fsBold]
     CompilerMode = pcmObjFPC
     NestedComments = True
-    Left = 216
-    Top = 240
+    left = 216
+    top = 240
   end
   object BATSyn: TSynBatSyn
     DefaultFilter = 'Пакетные файлы MS-DOS (*.bat;*.cmd)|*.bat;*.cmd'
@@ -4566,14 +4564,14 @@ object Form1: TForm1
     CommentAttri.Style = [fsBold, fsItalic]
     NumberAttri.Foreground = 16730698
     VariableAttri.Style = [fsUnderline]
-    Left = 320
-    Top = 224
+    left = 320
+    top = 224
   end
   object UNIXSyn: TSynUNIXShellScriptSyn
     DefaultFilter = 'Сценарии UNIX Shell (*.sh)|*.sh'
     Enabled = False
-    Left = 416
-    Top = 224
+    left = 416
+    top = 224
   end
   object JSSyn: TSynJScriptSyn
     Enabled = False
@@ -4586,22 +4584,22 @@ object Form1: TForm1
     NumberAttri.Foreground = clRed
     StringAttri.Foreground = clBlue
     SymbolAttri.Foreground = clRed
-    Left = 184
-    Top = 296
+    left = 184
+    top = 296
   end
   object SaveAsDialog: TSaveDialog
     OnClose = SaveAsDialogClose
     Title = 'Save file'
     Filter = 'All files|*.*'
-    Left = 544
-    Top = 75
+    left = 544
+    top = 75
   end
   object XMLSyn: TSynXMLSyn
     DefaultFilter = 'Документ XML (*.xml,*.xsd,*.xsl,*.xslt,*.dtd)|*.xml;*.xsd;*.xsl;*.xslt;*.dtd'
     Enabled = False
     WantBracesParsed = False
-    Left = 400
-    Top = 296
+    left = 400
+    top = 296
   end
   object NoSyn: TSynAnySyn
     Enabled = False
@@ -4624,12 +4622,12 @@ object Form1: TForm1
     Entity = False
     DollarVariables = False
     ActiveDot = False
-    Left = 512
-    Top = 272
+    left = 512
+    top = 272
   end
   object ToolbarIcons: TImageList
-    Left = 544
-    Top = 131
+    left = 544
+    top = 131
     Bitmap = {
       4C69150000001000000010000000000000000000000000000000000000000000
       00000000000000000000FF000001FF0000010000000000000000000000000000
@@ -5314,8 +5312,8 @@ object Form1: TForm1
     NumberAttri.Foreground = 4227327
     SymbolAttri.Foreground = clBlue
     ErrorAttri.Style = [fsBold]
-    Left = 136
-    Top = 240
+    left = 136
+    top = 240
   end
   object gutterColor: TColorDialog
     OnClose = gutterColorClose
@@ -5343,8 +5341,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 208
-    Top = 184
+    left = 208
+    top = 184
   end
   object fontColor: TColorDialog
     OnClose = fontColorClose
@@ -5372,8 +5370,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 144
-    Top = 184
+    left = 144
+    top = 184
   end
   object toolbarColor: TColorDialog
     OnClose = toolbarColorClose
@@ -5401,7 +5399,7 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 80
-    Top = 131
+    left = 80
+    top = 131
   end
 end

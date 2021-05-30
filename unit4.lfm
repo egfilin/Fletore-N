@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 70
+  Left = 244
   Height = 297
-  Top = 71
+  Top = 359
   Width = 297
   BorderIcons = [biSystemMenu]
   Caption = 'Fletore settings'
@@ -2513,7 +2513,7 @@ object Form4: TForm4
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.6.0'
   object BitBtn2: TBitBtn
     Left = 8
     Height = 30
@@ -2587,13 +2587,13 @@ object Form4: TForm4
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Page 1'
-      ClientHeight = 212
-      ClientWidth = 275
+      ClientHeight = 209
+      ClientWidth = 273
       object BitBtn11: TBitBtn
         Left = 8
         Height = 30
         Top = 8
-        Width = 256
+        Width = 254
         Anchors = [akTop, akLeft, akRight]
         Caption = 'Background color'
         Glyph.Data = {
@@ -2640,7 +2640,7 @@ object Form4: TForm4
         Left = 8
         Height = 30
         Top = 48
-        Width = 256
+        Width = 254
         Anchors = [akTop, akLeft, akRight]
         Caption = 'Gutter color'
         Glyph.Data = {
@@ -2687,7 +2687,7 @@ object Form4: TForm4
         Left = 8
         Height = 30
         Top = 88
-        Width = 256
+        Width = 254
         Anchors = [akTop, akLeft, akRight]
         Caption = 'Toolbar color'
         Glyph.Data = {
@@ -2735,7 +2735,7 @@ object Form4: TForm4
         Left = 8
         Height = 32
         Top = 128
-        Width = 256
+        Width = 254
         Anchors = [akTop, akLeft, akRight]
         Caption = 'Font'
         Glyph.Data = {
@@ -2782,7 +2782,7 @@ object Form4: TForm4
         Left = 8
         Height = 30
         Top = 168
-        Width = 256
+        Width = 254
         Anchors = [akTop, akLeft, akRight]
         Caption = 'Font color'
         Glyph.Data = {
@@ -2828,15 +2828,15 @@ object Form4: TForm4
     end
     object TabSheet2: TTabSheet
       Caption = 'Page 2'
-      ClientHeight = 212
-      ClientWidth = 275
+      ClientHeight = 209
+      ClientWidth = 273
       object ComboBox1: TComboBox
         Left = 8
         Height = 23
         Top = 24
         Width = 253
         Anchors = [akTop, akLeft, akRight]
-        ItemHeight = 15
+        ItemHeight = 0
         ItemIndex = 3
         Items.Strings = (
           'Auto both'
@@ -2868,7 +2868,7 @@ object Form4: TForm4
         Top = 88
         Width = 253
         Anchors = [akTop, akLeft, akRight]
-        ItemHeight = 15
+        ItemHeight = 0
         ItemIndex = 0
         Items.Strings = (
           'Top'
@@ -2895,7 +2895,7 @@ object Form4: TForm4
         Top = 152
         Width = 253
         Anchors = [akTop, akLeft, akRight]
-        ItemHeight = 15
+        ItemHeight = 0
         ItemIndex = 1
         Items.Strings = (
           'Top'
@@ -2919,8 +2919,8 @@ object Form4: TForm4
     end
     object TabSheet3: TTabSheet
       Caption = 'Page 3'
-      ClientHeight = 212
-      ClientWidth = 275
+      ClientHeight = 209
+      ClientWidth = 273
       object tbcheck: TCheckBox
         Left = 8
         Height = 23
@@ -3032,7 +3032,7 @@ object Form4: TForm4
     MainIcon = tdiQuestion
     RadioButtons = <>
     Text = 'Do you really want to reset the settings?'
-    Left = 168
-    Top = 256
+    left = 168
+    top = 256
   end
 end

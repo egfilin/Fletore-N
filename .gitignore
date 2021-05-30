@@ -1,0 +1,7 @@
+#Backup folder
+backup/
+#Build files
+Fletore
+fletore.cfg
+#Folder with compiled libs
+lib/
