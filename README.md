@@ -1,20 +1,17 @@
-# Fletore
-### The development of Fletore has been officially stopped! If you liked it, you can fork it.
-Fletore is a simple open-source text editor for Windows and \*NIX systems written in [Lazarus](https://lazarus-ide.org).
+# Fletore-N
+### The old author stopped developing Fletore. This fork tries to achieve eeverything he couldn't.
+Fletore is an open-source text editor for Windows (NT, obviously) and \*NIX systems written in Free Pascal with [Lazarus IDE](https://lazarus-ide.org).
 <br>
-Fletore does not need to be installed. This program is distributed in a single executable file, but creates a configuration file.<br><br>
-[Tango icon theme](http://tango.freedesktop.org) used.
+Fletore does not need to be installed, as it is distributed in a single file, but it creates a configuration file.<br><br>
+Fletore uses the [Tango icon theme](http://tango.freedesktop.org).
 <br>
-#
-### Important information!
+## Important!
 Fletore builds for Linux-aarch64, NetBSD, OpenBSD and Solaris were not tested because the Fletore's author does not have machines with these operating systems and cannot virtualize them.
 <br>
-#
-### How can I build Fletore from source?
-To build Fletore you need the [Lazarus Development Environment](https://lazarus-ide.org).<br>
+## Build from source
+To build Fletore you need the [Lazarus IDE](https://lazarus-ide.org).<br>
 To cross-compile Fletore you need Lazarus and [fpcupdeluxe](https://github.com/LongDirtyAnimAlf/fpcupdeluxe).
 <br>
-#
-### Screenshot
-![Fletore screenshot](screenshots/windows.png)<br>
+## Screenshots
+![Fletore on Windows!](screenshots/windows.png)<br>
 [View more screenshots...](/screenshots)
