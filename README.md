@@ -1,5 +1,5 @@
 # Fletore
-### The development of Fletore has been officially stopped! If you liked it, you can fork it.
+### The development of Fletore has been stopped! If you liked it, you can fork it.
 Fletore is a simple open-source text editor for Windows and \*NIX systems written in [Lazarus](https://lazarus-ide.org).
 <br>
 Fletore does not need to be installed. This program is distributed in a single executable file, but creates a configuration file.<br><br>
