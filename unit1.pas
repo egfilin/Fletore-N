@@ -385,7 +385,7 @@ begin
   WriteLn(config, '-------');
   WriteLn(config, '');
   WriteLn(config, 'Fletore configuration file.');
-  WriteLn(config, 'Everything found in here can be changed within the editor. Im not a cop to stop you, but why would you ever need to change THAT?');
+  WriteLn(config, 'Everything found in here can be changed within the editor. I''m not a cop to stop you, but why would you ever need to change THAT?');
   CloseFile(config);
 end;
 
@@ -547,14 +547,14 @@ end;
 procedure TForm1.resetSyn();
 begin
   case curSyn of
-    'none': StatusBar1.Panels.Items[3].Text := 'Syntax: Normal text';
-    'bat': StatusBar1.Panels.Items[3].Text := 'Syntax: Bat';
-    'fpc': StatusBar1.Panels.Items[3].Text := 'Syntax: Free Pascal';
-    'html': StatusBar1.Panels.Items[3].Text := 'Syntax: HTML';
-    'js': StatusBar1.Panels.Items[3].Text := 'Syntax: JavaScript';
-    'sh': StatusBar1.Panels.Items[3].Text := 'Syntax: UNIX Sh';
-    'xml': StatusBar1.Panels.Items[3].Text := 'Syntax: XML';
-    'py': StatusBar1.Panels.Items[3].Text := 'Syntax: Python';
+    'none': StatusBar1.Panels.Items[3].Text := 'Plain text';
+    'bat': StatusBar1.Panels.Items[3].Text := 'BAT script';
+    'fpc': StatusBar1.Panels.Items[3].Text := 'Free Pascal source file';
+    'html': StatusBar1.Panels.Items[3].Text := 'HTML file';
+    'js': StatusBar1.Panels.Items[3].Text := 'JS source file';
+    'sh': StatusBar1.Panels.Items[3].Text := 'Shell script';
+    'xml': StatusBar1.Panels.Items[3].Text := 'XML file';
+    'py': StatusBar1.Panels.Items[3].Text := 'Python Script';
   end;
 end;
 
@@ -581,7 +581,7 @@ begin
     end
     else
     begin
-      Form1.Caption := '*New file';
+      Form1.Caption := 'New file*';
     end;
     isFileEditing := True;
   end
@@ -593,7 +593,7 @@ begin
     end
     else
     begin
-      Form1.Caption := editableFile + '*';
+      Form1.Caption := 'Editing' + editableFile + '*';
     end;
     isFileEditing := True;
   end;

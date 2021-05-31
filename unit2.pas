@@ -62,26 +62,26 @@ begin
   begin
     if (isFileEditing = False) then
     begin
-      Form1.Caption := 'New file - ' + appName;
-      form1caption.Caption := 'New file - ' + appName;
+      Form1.Caption := 'New file';
+      form1caption.Caption := 'New file';
     end
     else
     begin
-      Form1.Caption := '*New file - ' + appName;
-      form1caption.Caption := '*New file - ' + appName;
+      Form1.Caption := 'New file*';
+      form1caption.Caption := 'New file*';
     end;
   end
   else
   begin
     if (isFileEditing = False) then
     begin
-      Form1.Caption := editableFile + ' - ' + appName;
-      form1caption.Caption := editableFile + ' - ' + appName;
+      Form1.Caption := 'Editing' + editableFile;
+      form1caption.Caption := 'Editing' + editableFile;
     end
     else
     begin
-      Form1.Caption := '*' + editableFile + ' - ' + appName;
-      form1caption.Caption := '*' + editableFile + ' - ' + appName;
+      Form1.Caption := 'Editing' + editableFile + '*';
+      form1caption.Caption := 'Editing ' + editableFile + '*';
     end;
   end;
 end;

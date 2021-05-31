@@ -4,7 +4,7 @@ object Form1: TForm1
   Top = 283
   Width = 628
   AllowDropFiles = True
-  Caption = 'New file - Fletore'
+  Caption = 'New file'
   ClientHeight = 405
   ClientWidth = 628
   Constraints.MinWidth = 437

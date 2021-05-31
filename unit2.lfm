@@ -1,5 +1,5 @@
 object Form2: TForm2
-  Left = 70
+  Left = 72
   Height = 81
   Top = 71
   Width = 297
@@ -2510,10 +2510,10 @@ object Form2: TForm2
   KeyPreview = True
   OnKeyDown = FormKeyDown
   Position = poMainFormCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.6.0'
   object form1caption: TEdit
     Left = 8
-    Height = 23
+    Height = 33
     Top = 8
     Width = 283
     Anchors = [akTop, akLeft, akRight]

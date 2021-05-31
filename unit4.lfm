@@ -4,7 +4,7 @@ object Form4: TForm4
   Top = 359
   Width = 297
   BorderIcons = [biSystemMenu]
-  Caption = 'Fletore settings'
+  Caption = 'Settings'
   ClientHeight = 297
   ClientWidth = 297
   Constraints.MaxHeight = 297
@@ -2832,7 +2832,7 @@ object Form4: TForm4
       ClientWidth = 273
       object ComboBox1: TComboBox
         Left = 8
-        Height = 23
+        Height = 29
         Top = 24
         Width = 253
         Anchors = [akTop, akLeft, akRight]
@@ -2857,14 +2857,14 @@ object Form4: TForm4
         Left = 8
         Height = 15
         Top = 8
-        Width = 87
+        Width = 115
         Caption = 'Editor scroll bars'
         ParentColor = False
         ParentFont = False
       end
       object ComboBox3: TComboBox
         Left = 8
-        Height = 23
+        Height = 29
         Top = 88
         Width = 253
         Anchors = [akTop, akLeft, akRight]
@@ -2884,14 +2884,14 @@ object Form4: TForm4
         Left = 8
         Height = 15
         Top = 72
-        Width = 87
+        Width = 110
         Caption = 'Toolbar location'
         ParentColor = False
         ParentFont = False
       end
       object ComboBox2: TComboBox
         Left = 8
-        Height = 23
+        Height = 29
         Top = 152
         Width = 253
         Anchors = [akTop, akLeft, akRight]
@@ -2911,7 +2911,7 @@ object Form4: TForm4
         Left = 8
         Height = 15
         Top = 136
-        Width = 95
+        Width = 124
         Caption = 'Statusbar location'
         ParentColor = False
         ParentFont = False

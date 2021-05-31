@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Buttons, ComCtrls;
+  Buttons, ComCtrls, lclintf;
 
 type
 
@@ -18,11 +18,27 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Memo1: TMemo;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
     procedure Button2Click(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure Label1Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
     procedure Label3Click(Sender: TObject);
+    procedure Label4Click(Sender: TObject);
+    procedure Label5Click(Sender: TObject);
+    procedure Label6Click(Sender: TObject);
+    procedure Label8Click(Sender: TObject);
+    procedure Memo1Change(Sender: TObject);
+    procedure PageControl1Change(Sender: TObject);
   private
 
   public
@@ -61,6 +77,34 @@ begin
 end;
 
 procedure TForm3.Label3Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm3.Label4Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm3.Label5Click(Sender: TObject);
+begin
+  OpenURL('https://github.com/KATAR7');
+end;
+procedure TForm3.Label6Click(Sender: TObject);
+begin
+  OpenURL('https://github.com/egfilin');
+end;
+procedure TForm3.Label8Click(Sender: TObject);
+begin
+  OpenURL('https://tango.freedesktop.org');
+end;
+
+procedure TForm3.Memo1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm3.PageControl1Change(Sender: TObject);
 begin
 
 end;
