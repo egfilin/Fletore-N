@@ -11,7 +11,7 @@ uses
   synhighlighterunixshellscript, SynHighlighterJScript,
   Controls, Graphics, Dialogs, StdCtrls,
   Menus, ComCtrls, Buttons, Clipbrd, ExtCtrls, EditBtn, ActnList,
-  Unit2, Unit3, Unit4, Unit5, Types;
+  Unit2, Unit3, Unit4, Unit5, Unit6, Types;
 
 type
 
@@ -21,6 +21,8 @@ type
     ColorDialog: TColorDialog;
     clrPalette: TColorDialog;
     MenuItem19: TMenuItem;
+    MenuItem43: TMenuItem;
+    MenuItem44: TMenuItem;
     toolbarColor: TColorDialog;
     fontColor: TColorDialog;
     gutterColor: TColorDialog;
@@ -46,7 +48,6 @@ type
     MainMenu: TMainMenu;
     FileSubmenu: TMenuItem;
     AboutSubmenu: TMenuItem;
-    AboutMenuItem: TMenuItem;
     MenuItem1: TMenuItem;
     MenuItem10: TMenuItem;
     CutMenu: TMenuItem;
@@ -80,7 +81,6 @@ type
     MenuItem15: TMenuItem;
     FindMenu: TMenuItem;
     MenuItem5: TMenuItem;
-    ExitConfirm: TTaskDialog;
     Editor: TSynEdit;
     ReplaceDialog1: TReplaceDialog;
     BATSyn: TSynBatSyn;
@@ -100,7 +100,6 @@ type
     ToolButton19: TToolButton;
     ToolButton20: TToolButton;
     ToolButton21: TToolButton;
-    ToolButton6: TToolButton;
     ToolButton7: TToolButton;
     ToolButton8: TToolButton;
     ToolButton9: TToolButton;
@@ -133,7 +132,7 @@ type
     ExitMenuItem: TMenuItem;
     SettingsSubmenu: TMenuItem;
     StatusBar1: TStatusBar;
-    procedure AboutMenuItemClick(Sender: TObject);
+    procedure AboutSubmenuClick(Sender: TObject);
     procedure AuScClick(Sender: TObject);
     procedure BatScClick(Sender: TObject);
     procedure BitBtn10Click(Sender: TObject);
@@ -148,7 +147,6 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
-    procedure BitBtn8Click(Sender: TObject);
     procedure BitBtn9Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure ClrBtnClick(Sender: TObject);
@@ -202,6 +200,8 @@ type
     procedure MenuItem39Click(Sender: TObject);
     procedure MenuItem40Click(Sender: TObject);
     procedure MenuItem41Click(Sender: TObject);
+    procedure MenuItem43Click(Sender: TObject);
+    procedure MenuItem44Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
     procedure MenuItem9Click(Sender: TObject);
@@ -216,8 +216,6 @@ type
     procedure FindMenuClick(Sender: TObject);
     procedure chFontClick(Sender: TObject);
     procedure MenuItem5Click(Sender: TObject);
-    procedure ExitConfirmButtonClicked(Sender: TObject;
-      AModalResult: TModalResult; var ACanClose: boolean);
     procedure ReplaceDialog1Find(Sender: TObject);
     procedure ReplaceDialog1Replace(Sender: TObject);
     procedure toolbarColorClose(Sender: TObject);
@@ -755,6 +753,16 @@ begin
   MenuItem37Click(Sender);
 end;
 
+procedure TForm1.MenuItem43Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.MenuItem44Click(Sender: TObject);
+begin
+
+end;
+
 procedure TForm1.MenuItem4Click(Sender: TObject);
 begin
   CutMenuClick(Sender);
@@ -867,12 +875,6 @@ begin
   EditorChange(Sender);
 end;
 
-procedure TForm1.ExitConfirmButtonClicked(Sender: TObject;
-  AModalResult: TModalResult; var ACanClose: boolean);
-begin
-  if ExitConfirm.ModalResult = mrNo then
-    Close();
-end;
 
 procedure TForm1.ReplaceDialog1Find(Sender: TObject);
 var
@@ -983,16 +985,8 @@ var
 begin
   if isFileEditing = True then
   begin
-    ExitConfirm.Execute();
-    if ExitConfirm.ModalResult = mrNo then
-    begin
-      canNew := True;
-    end;
-    if ExitConfirm.ModalResult = mrCancel then
-    begin
-      canNew := False;
-    end;
-    if ExitConfirm.ModalResult = mrYes then
+    Form6.ShowModal;
+    if (exitType = 0) and (exitWithBtn = True) then
     begin
       if (editableFile = '') then
       begin
@@ -1001,24 +995,24 @@ begin
       else
       begin
         Editor.Lines.SaveToFile(editableFile);
-        if (form2.keepCh.Checked = True) then
-        begin
-
-        end
-        else
-        begin
-          if (editableFile <> '') then
-          begin
-            Form1.Caption := editableFile;
-          end
-          else
-          begin
-            Form1.Caption := 'New file';
-          end;
-        end;
-        resetEtx();
+        Form1.Caption := 'Editing ' + editableFile;
       end;
       canNew := True;
+    end
+    else if (exitType = 0) and (exitWithBtn = False) then
+    begin
+      canNew := False;
+      Form6.Close();
+    end
+    else if exitType = 1 then
+    begin
+      Form6.Close();
+      canNew := True;
+    end
+    else if exitType = 2 then
+    begin
+      canNew := False;
+      Form6.Close();
     end;
   end
   else
@@ -1049,6 +1043,7 @@ begin
     StatusBar1.Panels.Items[1].Text := 'Lines: ' + IntToStr(editor.Lines.Count);
     StatusBar1.Panels.Items[1].Width := Length(StatusBar1.Panels.Items[1].Text) * 8;
   end;
+  exitType := 3;
 end;
 
 procedure TForm1.OpenDialogClose(Sender: TObject);
@@ -1312,16 +1307,8 @@ procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
   if (isFileEditing = True) then
   begin
-    ExitConfirm.Execute();
-    if ExitConfirm.ModalResult = mrNo then
-    begin
-
-    end;
-    if ExitConfirm.ModalResult = mrCancel then
-    begin
-      CanClose := False;
-    end;
-    if ExitConfirm.ModalResult = mrYes then
+    Form6.ShowModal;
+    if (exitType = 0) and (exitWithBtn = True) then
     begin
       if (editableFile = '') then
       begin
@@ -1332,6 +1319,20 @@ begin
         Editor.Lines.SaveToFile(editableFile);
         Form1.Caption := 'Editing ' + editableFile;
       end;
+    end
+    else if (exitType = 0) and (exitWithBtn = False) then
+    begin
+      CanClose := False;
+      Form6.Close();
+    end
+    else if exitType = 1 then
+    begin
+      Form6.Close();
+    end
+    else if exitType = 2 then
+    begin
+      CanClose := False;
+      Form6.Close();
     end;
   end;
 end;
@@ -1404,9 +1405,11 @@ begin
 
 end;
 
-procedure TForm1.AboutMenuItemClick(Sender: TObject);
+
+
+procedure TForm1.AboutSubmenuClick(Sender: TObject);
 begin
-  Form3.ShowModal;
+   Form3.ShowModal;
 end;
 
 
@@ -1493,11 +1496,6 @@ end;
 procedure TForm1.BitBtn7Click(Sender: TObject);
 begin
   chFontClick(Sender);
-end;
-
-procedure TForm1.BitBtn8Click(Sender: TObject);
-begin
-  AboutMenuItemClick(Sender);
 end;
 
 procedure TForm1.BitBtn9Click(Sender: TObject);

@@ -2,6 +2,7 @@
 backup/
 #Build files
 Fletore
+Fletore.exe
 fletore.cfg
 #Folder with compiled libs
 lib/

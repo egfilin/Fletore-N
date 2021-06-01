@@ -16,6 +16,9 @@ type
     BitBtn1: TBitBtn;
     Image1: TImage;
     Label1: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -23,6 +26,7 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
+    Label9: TLabel;
     Memo1: TMemo;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;

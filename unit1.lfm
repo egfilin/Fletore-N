@@ -1,9 +1,10 @@
 object Form1: TForm1
-  Left = 1061
+  Left = 578
   Height = 430
-  Top = 283
+  Top = 346
   Width = 628
   AllowDropFiles = True
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
   Caption = 'New file'
   ClientHeight = 405
   ClientWidth = 628
@@ -2518,7 +2519,7 @@ object Form1: TForm1
   OnKeyPress = FormKeyPress
   OnKeyUp = FormKeyUp
   OnShow = FormShow
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.12.0'
   inline Editor: TSynEdit
     Left = 0
     Height = 360
@@ -3035,7 +3036,7 @@ object Form1: TForm1
         Width = 60
       end    
       item
-        Text = 'Syntax: Normal text'
+        Text = 'Plain text'
         Width = 50
       end>
     SimplePanel = False
@@ -3088,16 +3089,6 @@ object Form1: TForm1
       ParentShowHint = False
       ShowCaption = False
       Style = tbsDivider
-    end
-    object ToolButton6: TToolButton
-      Left = 399
-      Hint = 'About (F1)'
-      Top = 0
-      Caption = 'ToolButton6'
-      ImageIndex = 0
-      OnClick = BitBtn8Click
-      ParentShowHint = False
-      ShowHint = True
     end
     object ToolButton7: TToolButton
       Left = 313
@@ -3242,8 +3233,8 @@ object Form1: TForm1
     Style = tbsDivider
   end
   object MainMenu: TMainMenu
-    left = 336
-    top = 75
+    Left = 336
+    Top = 75
     object FileSubmenu: TMenuItem
       Caption = 'File'
       object NewMenuItem: TMenuItem
@@ -3420,6 +3411,13 @@ object Form1: TForm1
         }
         ShortCut = 32883
         OnClick = ExitMenuItemClick
+      end
+    end
+    object MenuItem43: TMenuItem
+      Caption = 'Edit'
+      OnClick = MenuItem43Click
+      object MenuItem44: TMenuItem
+        Caption = 'Selection and buffer'
       end
     end
     object SettingsSubmenu: TMenuItem
@@ -4035,66 +4033,26 @@ object Form1: TForm1
     end
     object AboutSubmenu: TMenuItem
       Caption = 'About'
-      object AboutMenuItem: TMenuItem
-        Caption = 'About Fletore'
-        Bitmap.Data = {
-          36040000424D3604000000000000360000002800000010000000100000000100
-          2000000000000004000064000000640000000000000000000000000000000000
-          00000000000000000000000000060000001300000021000000290000002B0000
-          0024000000180000000900000000000000000000000000000000000000000000
-          00000000000800000023341E0F53764927B58A5B37DD94643DEF956441EF895D
-          39DE744929B82A190E590000002B000000110000000000000000000000000000
-          000000000003865B3C7BD6C2B5F6E9DBD1FFD1B59FFFC8A589FFCAA78CFFD5B9
-          A3FFEBDED5FFD7C2B5F58459397D000000090000000000000000000000000000
-          00009B67426CE5D8CFFCC9A990FFB58763FFBC906CFFC19673FFC39976FFC297
-          73FFBD916EFFD1B39CFFE7DBD1FB9D6A4369000000000000000000000000954F
-          231DD9C4B5F4C5A48AFFB2825DFFBB8E6AFFC39976FFE4D4C7FFE5D6CAFFCDA7
-          86FFC49976FFBC8F6BFFCEB098FFD9C2B5F28D54251B0000000000000000A87C
-          5BA2E4D5C9FFAB7953FFB48661FFBE926FFFC9A07EFFEDE9E6FFEEEDEBFFD4B1
-          93FFC9A07EFFBF9470FFB68763FFE9DCD1FF91562F900000000000000000C9AF
-          9DE1C4A38AFFAB7954FFB58762FFBF9470FFC9A280FFEFE3D9FFF2E8DEFFD7B4
-          95FFCBA280FFC09572FFB68864FFCDAF98FF955E35C30000000000000000D8C3
-          B4F3B48A6CFFAA7852FFB48560FFBE926EFFC79F7CFFF0EAE4FFF5F4F4FFE0C8
-          B3FFC89F7DFFBF9370FFB58762FFBE987BFF975D38DD0000000000000000D8C4
-          B4F3B38869FFA8754FFFB1815CFFBA8D68FFC29774FFD8BBA3FFF4F0EDFFF4F2
-          F0FFD4B7A0FFBB8E6AFFB2825DFFBD9578FF925D36DD0000000000000000C7AD
-          9AE2C09D84FFA47049FFAC7B55FFB58661FFD3B7A1FFC19673FFDEC8B6FFF7F7
-          F7FFE3D4C8FFB58662FFAD7C57FFC8A992FF935831C40000000000000000A57A
-          5BA5E0D0C4FF9F6942FFA7734DFFAF7E59FFF0EBE7FFF1EAE6FFF7F3EFFFF8F8
-          F8FFDAC4B3FFAE7D58FFA7764FFFE5D7CCFF8D52289200000000000000008B4D
-          1E21D6C1B5F5BA957AFFA06B44FFA6744DFFCDB19BFFDAC7B7FFDECCBDFFD1B8
-          A4FFAD7D58FFA7744DFFC2A087FFD6C1B1F3884C221E00000000000000000000
-          000098623E72E2D4CBFCBA9479FF9E6841FFA26E47FFA5714BFFA6734CFFA572
-          4BFFA36F49FFC09C82FFE3D5CBFC98613E6E0000000000000000000000000000
-          00000000000096633E73D8C2B6F5E0D0C4FFBF9C82FFB18667FFB28868FFC1A0
-          87FFE2D3C8FFD7C1B1F497623E6F000000000000000000000000000000000000
-          000000000000000000008A482423A7795AA6C9AE9BE3D7C3B2F4D7C2B3F4C8AD
-          99E2A6795AA48B4D1E2100000000000000000000000000000000000000000000
-          00000000000000000000000000000000000000000000FF000001FF0000010000
-          0000000000000000000000000000000000000000000000000000
-        }
-        ShortCut = 112
-        OnClick = AboutMenuItemClick
-      end
+      OnClick = AboutSubmenuClick
     end
   end
   object OpenDialog: TOpenDialog
     OnClose = OpenDialogClose
     Title = 'Open'
-    left = 408
-    top = 75
+    Left = 408
+    Top = 75
   end
   object SaveDialog: TSaveDialog
     OnClose = SaveDialogClose
     Title = 'Save file'
     Filter = 'All files|*.*'
-    left = 480
-    top = 75
+    Left = 480
+    Top = 75
   end
   object FindDialog1: TFindDialog
     OnFind = FindDialog1Find
-    left = 272
-    top = 75
+    Left = 272
+    Top = 75
   end
   object ColorDialog: TColorDialog
     OnClose = ColorDialogClose
@@ -4122,8 +4080,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    left = 208
-    top = 75
+    Left = 208
+    Top = 75
   end
   object FontDialog: TFontDialog
     OnClose = FontDialogClose
@@ -4131,29 +4089,15 @@ object Form1: TForm1
     MinFontSize = 0
     MaxFontSize = 0
     Options = [fdWysiwyg]
-    left = 136
-    top = 75
-  end
-  object ExitConfirm: TTaskDialog
-    Buttons = <>
-    Caption = ' '
-    CommonButtons = [tcbYes, tcbNo, tcbCancel]
-    Flags = []
-    FooterIcon = tdiWarning
-    FooterText = 'The data will not be recoverable.'
-    MainIcon = tdiQuestion
-    RadioButtons = <>
-    Text = 'Do you want to save your changes to the file? '
-    OnButtonClicked = ExitConfirmButtonClicked
-    left = 80
-    top = 75
+    Left = 136
+    Top = 75
   end
   object ReplaceDialog1: TReplaceDialog
     Options = [frDown, frReplace, frReplaceAll, frHidePromptOnReplace]
     OnFind = ReplaceDialog1Find
     OnReplace = ReplaceDialog1Replace
-    left = 272
-    top = 131
+    Left = 272
+    Top = 131
   end
   object clrPalette: TColorDialog
     Title = 'Color palette'
@@ -4180,12 +4124,12 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    left = 208
-    top = 131
+    Left = 208
+    Top = 131
   end
   object PopupMenu1: TPopupMenu
-    left = 456
-    top = 131
+    Left = 456
+    Top = 131
     object MenuItem29: TMenuItem
       Caption = 'Undo'
       Bitmap.Data = {
@@ -4537,8 +4481,8 @@ object Form1: TForm1
   object HTMSyn: TSynHTMLSyn
     DefaultFilter = 'Документ HTML (*.htm,*.html)|*.htm;*.html'
     Enabled = False
-    left = 288
-    top = 296
+    Left = 288
+    Top = 296
   end
   object FPCSyn: TSynFreePascalSyn
     Enabled = False
@@ -4554,8 +4498,8 @@ object Form1: TForm1
     ProcedureHeaderName.Style = [fsBold]
     CompilerMode = pcmObjFPC
     NestedComments = True
-    left = 216
-    top = 240
+    Left = 216
+    Top = 240
   end
   object BATSyn: TSynBatSyn
     DefaultFilter = 'Пакетные файлы MS-DOS (*.bat;*.cmd)|*.bat;*.cmd'
@@ -4564,14 +4508,14 @@ object Form1: TForm1
     CommentAttri.Style = [fsBold, fsItalic]
     NumberAttri.Foreground = 16730698
     VariableAttri.Style = [fsUnderline]
-    left = 320
-    top = 224
+    Left = 320
+    Top = 224
   end
   object UNIXSyn: TSynUNIXShellScriptSyn
     DefaultFilter = 'Сценарии UNIX Shell (*.sh)|*.sh'
     Enabled = False
-    left = 416
-    top = 224
+    Left = 416
+    Top = 224
   end
   object JSSyn: TSynJScriptSyn
     Enabled = False
@@ -4584,22 +4528,22 @@ object Form1: TForm1
     NumberAttri.Foreground = clRed
     StringAttri.Foreground = clBlue
     SymbolAttri.Foreground = clRed
-    left = 184
-    top = 296
+    Left = 184
+    Top = 296
   end
   object SaveAsDialog: TSaveDialog
     OnClose = SaveAsDialogClose
     Title = 'Save file'
     Filter = 'All files|*.*'
-    left = 544
-    top = 75
+    Left = 544
+    Top = 75
   end
   object XMLSyn: TSynXMLSyn
     DefaultFilter = 'Документ XML (*.xml,*.xsd,*.xsl,*.xslt,*.dtd)|*.xml;*.xsd;*.xsl;*.xslt;*.dtd'
     Enabled = False
     WantBracesParsed = False
-    left = 400
-    top = 296
+    Left = 400
+    Top = 296
   end
   object NoSyn: TSynAnySyn
     Enabled = False
@@ -4622,12 +4566,12 @@ object Form1: TForm1
     Entity = False
     DollarVariables = False
     ActiveDot = False
-    left = 512
-    top = 272
+    Left = 512
+    Top = 272
   end
   object ToolbarIcons: TImageList
-    left = 544
-    top = 131
+    Left = 544
+    Top = 131
     Bitmap = {
       4C69150000001000000010000000000000000000000000000000000000000000
       00000000000000000000FF000001FF0000010000000000000000000000000000
@@ -5312,8 +5256,8 @@ object Form1: TForm1
     NumberAttri.Foreground = 4227327
     SymbolAttri.Foreground = clBlue
     ErrorAttri.Style = [fsBold]
-    left = 136
-    top = 240
+    Left = 136
+    Top = 240
   end
   object gutterColor: TColorDialog
     OnClose = gutterColorClose
@@ -5341,8 +5285,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    left = 208
-    top = 184
+    Left = 208
+    Top = 184
   end
   object fontColor: TColorDialog
     OnClose = fontColorClose
@@ -5370,8 +5314,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    left = 144
-    top = 184
+    Left = 144
+    Top = 184
   end
   object toolbarColor: TColorDialog
     OnClose = toolbarColorClose
@@ -5399,7 +5343,7 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    left = 80
-    top = 131
+    Left = 80
+    Top = 131
   end
 end

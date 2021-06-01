@@ -2510,9 +2510,8 @@ object Form2: TForm2
   KeyPreview = True
   OnKeyDown = FormKeyDown
   Position = poMainFormCenter
-  LCLVersion = '2.0.6.0'
   object form1caption: TEdit
-    Left = 8
+    Left = 14
     Height = 33
     Top = 8
     Width = 283
