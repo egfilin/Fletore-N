@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 578
+  Left = 301
   Height = 430
-  Top = 346
+  Top = 228
   Width = 628
   AllowDropFiles = True
   BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
@@ -2963,6 +2963,7 @@ object Form1: TForm1
     MouseTextActions = <>
     MouseSelActions = <>
     Options = [eoAutoIndent, eoBracketHighlight, eoGroupUndo, eoHideRightMargin, eoSmartTabs, eoTabsToSpaces, eoTrimTrailingSpaces, eoShowCtrlMouseLinks]
+    Options2 = [eoCaretSkipsSelection, eoFoldedCopyPaste, eoOverwriteBlock, eoAutoHideCursor]
     MouseOptions = [emAltSetsColumnMode, emShowCtrlMouseLinks]
     VisibleSpecialChars = []
     RightEdgeColor = clNone
@@ -3416,13 +3417,7 @@ object Form1: TForm1
     object MenuItem43: TMenuItem
       Caption = 'Edit'
       OnClick = MenuItem43Click
-      object MenuItem44: TMenuItem
-        Caption = 'Selection and buffer'
-      end
-    end
-    object SettingsSubmenu: TMenuItem
-      Caption = 'Tools'
-      object UndoMenu: TMenuItem
+      object MenuItem45: TMenuItem
         Caption = 'Undo'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
@@ -3461,9 +3456,9 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000
         }
         ShortCut = 16474
-        OnClick = UndoMenuClick
+        OnClick = MenuItem45Click
       end
-      object RedoMenu: TMenuItem
+      object MenuItem50: TMenuItem
         Caption = 'Redo'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
@@ -3502,12 +3497,12 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000
         }
         ShortCut = 16473
-        OnClick = RedoMenuClick
+        OnClick = MenuItem50Click
       end
-      object MenuItem15: TMenuItem
+      object MenuItem44: TMenuItem
         Caption = '-'
       end
-      object SelectAll: TMenuItem
+      object MenuItem46: TMenuItem
         Caption = 'Select all'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
@@ -3546,9 +3541,9 @@ object Form1: TForm1
           E5E9E5E5E5E9E5E5E5E9E5E5E5E9E7E7E7EACCCFCCA200000000
         }
         ShortCut = 16449
-        OnClick = SelectAllClick
+        OnClick = MenuItem46Click
       end
-      object CutMenu: TMenuItem
+      object MenuItem47: TMenuItem
         Caption = 'Cut'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
@@ -3587,9 +3582,9 @@ object Form1: TForm1
           0000AAAAAA03A4ABAB6B00000000000000000000000000000000
         }
         ShortCut = 16472
-        OnClick = CutMenuClick
+        OnClick = MenuItem47Click
       end
-      object CopyMenu: TMenuItem
+      object MenuItem48: TMenuItem
         Caption = 'Copy'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
@@ -3628,9 +3623,9 @@ object Form1: TForm1
           D762C8CACA5D0000000000000000000000000000000000000000
         }
         ShortCut = 16451
-        OnClick = CopyMenuClick
+        OnClick = MenuItem48Click
       end
-      object PasteMenu: TMenuItem
+      object MenuItem49: TMenuItem
         Caption = 'Paste'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
@@ -3669,18 +3664,13 @@ object Form1: TForm1
           77FC6262621F0000000000000000000000000000000000000000
         }
         ShortCut = 16470
-        OnClick = PasteMenuClick
+        OnClick = MenuItem49Click
       end
-      object MenuItem19: TMenuItem
-        Caption = 'Go to...'
-        ShortCut = 24647
-        OnClick = MenuItem19Click
-      end
-      object MenuItem10: TMenuItem
+      object MenuItem51: TMenuItem
         Caption = '-'
       end
-      object FindMenu: TMenuItem
-        Caption = 'Find...'
+      object MenuItem52: TMenuItem
+        Caption = 'Find'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
           2000000000000004000064000000640000000000000000000000000000000000
@@ -3718,10 +3708,10 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000
         }
         ShortCut = 16454
-        OnClick = FindMenuClick
+        OnClick = MenuItem52Click
       end
-      object MenuItem2: TMenuItem
-        Caption = 'Replace...'
+      object MenuItem53: TMenuItem
+        Caption = 'Replace'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
           2000000000000004000064000000640000000000000000000000000000000000
@@ -3759,11 +3749,52 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000
         }
         ShortCut = 16466
-        OnClick = MenuItem2Click
+        OnClick = MenuItem53Click
       end
-      object MenuItem13: TMenuItem
-        Caption = '-'
+      object MenuItem54: TMenuItem
+        Caption = 'Go to'
+        Bitmap.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000001000000040000000600000007000000060000
+          0003000000000000000000000000000000000000000000000000000000000000
+          0000000000030000000C000000130000001900251229067439740000001C0000
+          0017000000110000000900753A0D0989479E108B4DAE00784335000000000000
+          00040000000F00000019000000230000002B0030184936B778E91F8F53A20000
+          00280000001F0000001600572826269C5FE427A464FF05824156000000000000
+          000900150A1800371B37002F17410029144A003D1D6835BB7AEE2AC779FE2193
+          5BBE001A0F300000001C004E242A219B5CE41FA15EFF05824156000000000000
+          0007056D365D2F9D64E72EA76CE531AA6CE632AF6FE733C47BFB11C268FF22BF
+          6FFF289D60CC004C233200522628219D5DE31FA15EFF05824156000000000000
+          0000057A3D601FA15FFF0BA556FF0EAF5CFF10B761FF10BA64FF0FB963FF0DB3
+          5FFF18B062FF2AA064D803723A4E219D5DE31FA15EFF05824156000000000000
+          00000582415A1EA15EFF079F51FF0AA757FF0CAD5BFF0CB15DFF0CB05CFF0BAB
+          59FF09A455FF0E9E55FF2DA066E8219C5DEF1FA15EFF05824156000000000000
+          00000582415A49B37DFF39AF72FF3CB376FF3EB87AFF3EBA7BFF32B572FF22AD
+          66FF18A45CFF109E55FF27A464FF259F60FB27A463FF05824156000000000000
+          00000582415A54B785FF46B47CFF48B57DFF49B67FFF49B77FFF46B67DFF41B2
+          78FF3BAF73FF45AF7AFA2B95609F35A468E531A86BFF05824156000000000000
+          00000583415D66BC91FF60BC8DFF63BE8FFF63BE90FF5EBD8DFF52B984FF4CB7
+          80FF57B483F22D95606F0076361C39A76EE638AC70FF05824156000000000000
+          0000007F3F18238F58652B935E642B935E64279058736FBE96F162C08FFF62BA
+          8CE6218E544B000000000076361C3DA671E73CAE73FF05824156000000000000
+          00000000000000000000000000000000000000723D1D75C49DEE60B48CD8067F
+          482A00000000000000000076361C40A772E73FAF74FF05824156000000000000
+          000000000000000000000000000000000000006E3717409F6CB3007146120000
+          00000000000000000000007435182E9E64D53BA46BE90681404F000000000000
+          00000000000000000000000000000000000000000000007F0002000000000000
+          0000000000000000000000000000007435180076361C007F3F04000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000
+        }
+        ShortCut = 16455
+        OnClick = MenuItem54Click
       end
+    end
+    object SettingsSubmenu: TMenuItem
+      Caption = 'Tools'
       object clrplMenu: TMenuItem
         Caption = 'Color pallete'
         Bitmap.Data = {

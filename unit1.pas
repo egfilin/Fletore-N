@@ -20,9 +20,18 @@ type
   TForm1 = class(TForm)
     ColorDialog: TColorDialog;
     clrPalette: TColorDialog;
-    MenuItem19: TMenuItem;
     MenuItem43: TMenuItem;
     MenuItem44: TMenuItem;
+    MenuItem45: TMenuItem;
+    MenuItem46: TMenuItem;
+    MenuItem47: TMenuItem;
+    MenuItem48: TMenuItem;
+    MenuItem49: TMenuItem;
+    MenuItem50: TMenuItem;
+    MenuItem51: TMenuItem;
+    MenuItem52: TMenuItem;
+    MenuItem53: TMenuItem;
+    MenuItem54: TMenuItem;
     toolbarColor: TColorDialog;
     fontColor: TColorDialog;
     gutterColor: TColorDialog;
@@ -49,13 +58,8 @@ type
     FileSubmenu: TMenuItem;
     AboutSubmenu: TMenuItem;
     MenuItem1: TMenuItem;
-    MenuItem10: TMenuItem;
-    CutMenu: TMenuItem;
-    CopyMenu: TMenuItem;
     MenuItem11: TMenuItem;
-    MenuItem13: TMenuItem;
     MenuItem18: TMenuItem;
-    MenuItem2: TMenuItem;
     clrplMenu: TMenuItem;
     MenuItem20: TMenuItem;
     MenuItem21: TMenuItem;
@@ -75,11 +79,6 @@ type
     MenuItem9: TMenuItem;
     PopupMenu1: TPopupMenu;
     SaveAsDialog: TSaveDialog;
-    SelectAll: TMenuItem;
-    PasteMenu: TMenuItem;
-    RedoMenu: TMenuItem;
-    MenuItem15: TMenuItem;
-    FindMenu: TMenuItem;
     MenuItem5: TMenuItem;
     Editor: TSynEdit;
     ReplaceDialog1: TReplaceDialog;
@@ -109,7 +108,6 @@ type
     ToolButton3: TToolButton;
     ToolButton4: TToolButton;
     ToolButton5: TToolButton;
-    UndoMenu: TMenuItem;
     ToolBar1: TToolBar;
     PascalSC: TMenuItem;
     CPPSc: TMenuItem;
@@ -202,7 +200,16 @@ type
     procedure MenuItem41Click(Sender: TObject);
     procedure MenuItem43Click(Sender: TObject);
     procedure MenuItem44Click(Sender: TObject);
+    procedure MenuItem45Click(Sender: TObject);
+    procedure MenuItem46Click(Sender: TObject);
+    procedure MenuItem47Click(Sender: TObject);
+    procedure MenuItem48Click(Sender: TObject);
+    procedure MenuItem49Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem50Click(Sender: TObject);
+    procedure MenuItem52Click(Sender: TObject);
+    procedure MenuItem53Click(Sender: TObject);
+    procedure MenuItem54Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
     procedure MenuItem9Click(Sender: TObject);
     procedure SaveAsDialogClose(Sender: TObject);
@@ -763,9 +770,54 @@ begin
 
 end;
 
+procedure TForm1.MenuItem45Click(Sender: TObject);
+begin
+  Editor.Undo;
+end;
+
+procedure TForm1.MenuItem46Click(Sender: TObject);
+begin
+  Editor.SelectAll;
+end;
+
+procedure TForm1.MenuItem47Click(Sender: TObject);
+begin
+  Editor.CutToClipboard;
+end;
+
+procedure TForm1.MenuItem48Click(Sender: TObject);
+begin
+  Editor.CopyToClipboard;
+end;
+
+procedure TForm1.MenuItem49Click(Sender: TObject);
+begin
+  Editor.PasteFromClipboard;
+end;
+
 procedure TForm1.MenuItem4Click(Sender: TObject);
 begin
   CutMenuClick(Sender);
+end;
+
+procedure TForm1.MenuItem50Click(Sender: TObject);
+begin
+  Editor.Redo;
+end;
+
+procedure TForm1.MenuItem52Click(Sender: TObject);
+begin
+  FindDialog1.Execute;
+end;
+
+procedure TForm1.MenuItem53Click(Sender: TObject);
+begin
+  ReplaceDialog1.Execute;
+end;
+
+procedure TForm1.MenuItem54Click(Sender: TObject);
+begin
+  Form5.ShowModal;
 end;
 
 procedure TForm1.MenuItem7Click(Sender: TObject);

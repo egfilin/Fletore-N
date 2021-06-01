@@ -2553,15 +2553,16 @@ object Form3: TForm3
     Height = 288
     Top = 0
     Width = 384
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 1
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'About'
       ClientHeight = 257
       ClientWidth = 374
+      OnContextPopup = TabSheet1ContextPopup
       object Image1: TImage
         Left = -10
         Height = 176
@@ -2839,12 +2840,12 @@ object Form3: TForm3
       object Label1: TLabel
         Left = 0
         Height = 184
-        Top = 192
+        Top = 188
         Width = 368
         Alignment = taCenter
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = False
-        Caption = 'Version 1.1.1'#13#10#13#10'This program is licensed under GNU GPL v2.'
+        Caption = 'Version 1.1-b1:34'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 1/6/2021'
         ParentColor = False
         ParentFont = False
         OnClick = Label1Click
@@ -2854,6 +2855,7 @@ object Form3: TForm3
       Caption = 'Credits'
       ClientHeight = 257
       ClientWidth = 374
+      OnContextPopup = TabSheet2ContextPopup
       object Label4: TLabel
         Left = 0
         Height = 23
@@ -2942,18 +2944,6 @@ object Form3: TForm3
         ParentFont = False
         OnClick = Label4Click
       end
-      object Label11: TLabel
-        Left = 1
-        Height = 23
-        Top = 162
-        Width = 235
-        Caption = 'Using           Icon Pack'
-        Font.Height = -21
-        Font.Name = 'System-ui'
-        ParentColor = False
-        ParentFont = False
-        OnClick = Label4Click
-      end
       object Label12: TLabel
         Left = -1
         Height = 27
@@ -2961,6 +2951,18 @@ object Form3: TForm3
         Width = 334
         Caption = '© egfilin and KATAR7, 2021'
         Font.Height = -24
+        Font.Name = 'System-ui'
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label4Click
+      end
+      object Label11: TLabel
+        Left = 1
+        Height = 23
+        Top = 162
+        Width = 235
+        Caption = 'Using           Icon Pack'
+        Font.Height = -21
         Font.Name = 'System-ui'
         ParentColor = False
         ParentFont = False
@@ -2977,14 +2979,12 @@ object Form3: TForm3
         Top = 0
         Width = 384
         Lines.Strings = (
-          'Changelog for 1.1.1:'
-          '[IMPROVED] App design as a whole. Some changes there, some there, and we have a better look.'
-          '[FIXED] bugs.'
-          '[MODIFIED] config behavior'
-          '[ADDED] First-run screen.'
-          '[ADDED] Standard mode. Fletore-N will try to save the configuration file in default config directory and not in the working folder'
-          '[MODIFIED] Syntax recognision. The system will be completly reworked soon, but for now I just modified some items.'
-          '[REDONE] About screen. The banner is now with text in the form itself (hi dark theme users), and now there are tabs to include way more content.'
+          'Changelog for 1.1:'
+          '[IMPROVED] App design as a whole. Some changes there, some there, and we have a better look. (beta progress: 75%)'
+          '[FIXED] bugs. (beta progress: 87%)'
+          '[MODIFIED] config behavior (beta progress: 75%)'
+          '[MODIFIED] Syntax recognision. The system will be completly reworked soon, but for now I just modified some items. (beta: not started)'
+          '[REDONE] About screen. The banner is now with text in the form itself (hi dark theme users), and now there are tabs to include way more content. (beta: done)'
         )
         OnChange = Memo1Change
         ReadOnly = True

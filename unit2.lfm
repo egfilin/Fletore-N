@@ -1,9 +1,10 @@
 object Form2: TForm2
-  Left = 72
+  Left = 284
   Height = 81
-  Top = 71
+  Top = 363
   Width = 297
   BorderIcons = [biSystemMenu]
+  Caption = 'Change title'
   ClientHeight = 81
   ClientWidth = 297
   Constraints.MinHeight = 73
@@ -2510,6 +2511,7 @@ object Form2: TForm2
   KeyPreview = True
   OnKeyDown = FormKeyDown
   Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
   object form1caption: TEdit
     Left = 14
     Height = 33

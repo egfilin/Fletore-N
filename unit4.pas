@@ -53,6 +53,7 @@ type
     procedure editorsBorderChange(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure PageControl1Change(Sender: TObject);
     procedure rstSettingsButtonClicked(Sender: TObject;
       AModalResult: TModalResult; var ACanClose: Boolean);
     procedure tbcheckChange(Sender: TObject);
@@ -173,6 +174,11 @@ begin
     ssNone: ComboBox1.Caption := 'None';
     ssVertical: ComboBox1.Caption := 'Vertical';
   end;
+end;
+
+procedure TForm4.PageControl1Change(Sender: TObject);
+begin
+
 end;
 
 procedure TForm4.rstSettingsButtonClicked(Sender: TObject;

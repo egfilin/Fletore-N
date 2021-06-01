@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Buttons, ComCtrls, lclintf;
+  Buttons, ComCtrls, lclintf, Types;
 
 type
 
@@ -43,6 +43,10 @@ type
     procedure Label8Click(Sender: TObject);
     procedure Memo1Change(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
+    procedure TabSheet1ContextPopup(Sender: TObject; MousePos: TPoint;
+      var Handled: Boolean);
+    procedure TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
+      var Handled: Boolean);
   private
 
   public
@@ -109,6 +113,18 @@ begin
 end;
 
 procedure TForm3.PageControl1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm3.TabSheet1ContextPopup(Sender: TObject; MousePos: TPoint;
+  var Handled: Boolean);
+begin
+
+end;
+
+procedure TForm3.TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
+  var Handled: Boolean);
 begin
 
 end;

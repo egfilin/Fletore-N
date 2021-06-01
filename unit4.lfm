@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 244
+  Left = 679
   Height = 297
-  Top = 359
+  Top = 495
   Width = 422
   BorderIcons = [biSystemMenu]
   Caption = 'Settings'
@@ -2513,7 +2513,7 @@ object Form4: TForm4
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.12.0'
   object BitBtn2: TBitBtn
     Left = 8
     Height = 30
@@ -2581,12 +2581,13 @@ object Form4: TForm4
     Height = 240
     Top = 8
     Width = 408
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Anchors = [akTop, akLeft, akRight]
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 2
+    OnChange = PageControl1Change
     object TabSheet1: TTabSheet
-      Caption = 'Page 1'
+      Caption = 'Theme'
       ClientHeight = 209
       ClientWidth = 398
       object BitBtn11: TBitBtn
@@ -2784,7 +2785,7 @@ object Form4: TForm4
         Top = 168
         Width = 379
         Anchors = [akTop, akLeft, akRight]
-        Caption = 'Font color'
+        Caption = 'Gutter font color'
         Glyph.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
           2000000000000004000064000000640000000000000000000000000000000000
@@ -2827,7 +2828,7 @@ object Form4: TForm4
       end
     end
     object TabSheet2: TTabSheet
-      Caption = 'Page 2'
+      Caption = 'Interface'
       ClientHeight = 209
       ClientWidth = 398
       object ComboBox1: TComboBox
@@ -2918,7 +2919,7 @@ object Form4: TForm4
       end
     end
     object TabSheet3: TTabSheet
-      Caption = 'Page 3'
+      Caption = 'Editor'
       ClientHeight = 209
       ClientWidth = 398
       object tbcheck: TCheckBox
@@ -3033,7 +3034,7 @@ object Form4: TForm4
     RadioButtons = <>
     Text = 'Do you really want to reset the settings?'
     OnButtonClicked = rstSettingsButtonClicked
-    left = 168
-    top = 256
+    Left = 168
+    Top = 256
   end
 end
