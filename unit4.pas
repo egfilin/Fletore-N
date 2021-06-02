@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls,
-  ComCtrls, UITypes;
+  ComCtrls, UITypes, Unit2;
 
 type
 
@@ -18,18 +18,17 @@ type
     BitBtn15: TBitBtn;
     BitBtn16: TBitBtn;
     BitBtn18: TBitBtn;
+    BitBtn19: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
-    ComboBox1: TComboBox;
     ComboBox3: TComboBox;
     ComboBox2: TComboBox;
     diln: TCheckBox;
     editorsBorder: TCheckBox;
     enlargeGutter: TCheckBox;
     gutterSeparator: TCheckBox;
-    Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     PageControl1: TPageControl;
@@ -51,7 +50,6 @@ type
     procedure enlargeGutterChange(Sender: TObject);
     procedure gutterSeparatorChange(Sender: TObject);
     procedure editorsBorderChange(Sender: TObject);
-    procedure ComboBox1Change(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
     procedure rstSettingsButtonClicked(Sender: TObject;
@@ -149,31 +147,10 @@ begin
   end;
 end;
 
-procedure TForm4.ComboBox1Change(Sender: TObject);
-begin
-  case ComboBox1.Caption of
-    'Auto both': Form1.Editor.ScrollBars := ssAutoBoth;
-    'Auto horizontal': Form1.Editor.ScrollBars := ssAutoHorizontal;
-    'Auto vertical': Form1.Editor.ScrollBars := ssAutoVertical;
-    'Both': Form1.Editor.ScrollBars := ssBoth;
-    'Horizontal': Form1.Editor.ScrollBars := ssHorizontal;
-    'None': Form1.Editor.ScrollBars := ssNone;
-    'Vertical': Form1.Editor.ScrollBars := ssVertical;
-  end;
-end;
 
 procedure TForm4.FormShow(Sender: TObject);
 begin
   Form1.Sync();
-  case Form1.Editor.ScrollBars of
-    ssAutoBoth: ComboBox1.Caption := 'Auto both';
-    ssAutoHorizontal: ComboBox1.Caption := 'Auto horizontal';
-    ssAutoVertical: ComboBox1.Caption := 'Auto vertical';
-    ssBoth: ComboBox1.Caption := 'Both';
-    ssHorizontal: ComboBox1.Caption := 'Horizontal';
-    ssNone: ComboBox1.Caption := 'None';
-    ssVertical: ComboBox1.Caption := 'Vertical';
-  end;
 end;
 
 procedure TForm4.PageControl1Change(Sender: TObject);
@@ -210,7 +187,8 @@ end;
 
 procedure TForm4.BitBtn18Click(Sender: TObject);
 begin
-  form1.toolbarColor.Execute;
+  Form2.form1caption.Caption := Form1.Caption;
+  Form2.ShowModal;
 end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);

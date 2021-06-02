@@ -1,4 +1,4 @@
-program Fletore;
+program FletoreN;
 
 {$mode objfpc}{$H+}
 

@@ -1,19 +1,22 @@
 object Form6: TForm6
-  Left = 649
+  Left = 572
   Height = 104
-  Top = 445
+  Top = 438
   Width = 364
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Confirmation'
   ClientHeight = 104
   ClientWidth = 364
-  LCLVersion = '2.0.6.0'
+  Position = poMainFormCenter
+  LCLVersion = '2.0.10.0'
   object Label1: TLabel
-    Left = 9
-    Height = 16
-    Top = 2
-    Width = 342
+    Left = 8
+    Height = 30
+    Top = 8
+    Width = 349
+    Alignment = taCenter
+    AutoSize = False
     Caption = 'Do you want to save changes to the file?'
     Font.Height = -15
     Font.Name = 'System-ui'
@@ -23,10 +26,12 @@ object Form6: TForm6
     OnClick = Label1Click
   end
   object Label2: TLabel
-    Left = 73
+    Left = 8
     Height = 15
-    Top = 31
-    Width = 216
+    Top = 40
+    Width = 352
+    Alignment = taCenter
+    AutoSize = False
     Caption = 'The data will not be recoverable!'
     ParentColor = False
     OnClick = Label2Click

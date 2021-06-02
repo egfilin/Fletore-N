@@ -1,0 +1,29 @@
+Fletore-N configuration file reference
+This is a file if you want to change/remove Fletore-N's config entries
+1st string = Font color (Help - https://wiki.freepascal.org/Colors)
+2nd string = Font height
+3rd string = Font name (Monospace fonts recommended only)
+4th string = Font orientation
+5th string = Font size
+6th string = Is font bold?
+7th string = Is font italic?
+8th string = Is font strikeout?
+9th string = Is font underline?
+10th string = Background color (Help - https://wiki.freepascal.org/Colors)
+11th string = Master form X position
+12th string = Master form Y position
+13th string = Master form width
+14th string = Master form height
+15th string = Show toolbar?
+16th string = Display line numbers
+17th string = Window state
+18th string = Form1 caption (none = do not use custom window title)
+19th string = Status bar visibility
+20th string = Menu visibility
+21st string = Gutter color
+22nd string = Editor's border
+23rd string = Is Gutter enlarged?
+24th string = Gutter border
+25th string = Toolbar align
+26th string = Statusbar align
+27th string = Toolbar color

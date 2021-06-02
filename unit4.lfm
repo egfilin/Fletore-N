@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 679
+  Left = 1009
   Height = 297
-  Top = 495
+  Top = 415
   Width = 422
   BorderIcons = [biSystemMenu]
   Caption = 'Settings'
@@ -2581,9 +2581,9 @@ object Form4: TForm4
     Height = 240
     Top = 8
     Width = 408
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Anchors = [akTop, akLeft, akRight]
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 2
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
@@ -2831,38 +2831,6 @@ object Form4: TForm4
       Caption = 'Interface'
       ClientHeight = 209
       ClientWidth = 398
-      object ComboBox1: TComboBox
-        Left = 8
-        Height = 29
-        Top = 24
-        Width = 378
-        Anchors = [akTop, akLeft, akRight]
-        ItemHeight = 0
-        ItemIndex = 3
-        Items.Strings = (
-          'Auto both'
-          'Auto horizontal'
-          'Auto vertical'
-          'Both'
-          'Horizontal'
-          'None'
-          'Vertical'
-        )
-        OnChange = ComboBox1Change
-        ParentFont = False
-        Style = csDropDownList
-        TabOrder = 0
-        Text = 'Both'
-      end
-      object Label4: TLabel
-        Left = 8
-        Height = 15
-        Top = 8
-        Width = 115
-        Caption = 'Editor scroll bars'
-        ParentColor = False
-        ParentFont = False
-      end
       object ComboBox3: TComboBox
         Left = 8
         Height = 29
@@ -2878,7 +2846,7 @@ object Form4: TForm4
         OnChange = ComboBox3Change
         ParentFont = False
         Style = csDropDownList
-        TabOrder = 1
+        TabOrder = 0
         Text = 'Top'
       end
       object Label5: TLabel
@@ -2905,7 +2873,7 @@ object Form4: TForm4
         OnChange = ComboBox2Change
         ParentFont = False
         Style = csDropDownList
-        TabOrder = 2
+        TabOrder = 1
         Text = 'Bottom'
       end
       object Label6: TLabel
@@ -2917,6 +2885,53 @@ object Form4: TForm4
         ParentColor = False
         ParentFont = False
       end
+      object BitBtn19: TBitBtn
+        Left = 8
+        Height = 30
+        Top = 24
+        Width = 379
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Editor title'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000AAAAAA038E8E
+          8E1B8E8E8E1B8E8E8E1B8E8E8E1B8E8E8E1B8E8E8E1B8E8E8E1B8E8E8E1B8E8E
+          8E1B8E8E8E1B8E8E8E1B8E8E8E1B8E8E8E1B8E8E8E1BAAAAAA037E7E7E96CDCD
+          CDEACDCDCDE9CCCCCCE2CCCCCCE2CCCCCCE2CCCCCCE2CCCCCCE2CCCCCCE2CCCC
+          CCE2CCCCCCE2CCCCCCE2CCCCCCE2CCCCCCE2CECECEEC7B7B7B9D989898B3FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF999999B4999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B2FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF979797B3999999B28D53
+          2BFF874A20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A
+          20FF874A20FF874A20FF874A20FF874A20FF8D532BFF979797B39A9A9AB38D53
+          2BFF874A20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A
+          20FF874A20FF874A20FF874A20FF874A20FF8D532BFF989898B48383838EBDAD
+          A2ECBBABA0ECBBABA0ECBBABA0ECBBABA0ECBBABA0ECBBABA0ECBBABA0ECBBAB
+          A0ECBBABA0ECBBABA0ECBBABA0ECBBABA0ECBDADA2EC8181818CAAAAAA038989
+          891C8989891C8989891C8989891C8989891C8989891C8989891C8989891C8989
+          891C8989891C8989891C8989891C8989891C8989891CAAAAAA03
+        }
+        OnClick = BitBtn18Click
+        ParentFont = False
+        TabOrder = 2
+      end
     end
     object TabSheet3: TTabSheet
       Caption = 'Editor'
@@ -2926,7 +2941,7 @@ object Form4: TForm4
         Left = 8
         Height = 23
         Top = 8
-        Width = 259
+        Width = 382
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Show toolbar'
@@ -2940,7 +2955,7 @@ object Form4: TForm4
         Left = 8
         Height = 23
         Top = 56
-        Width = 259
+        Width = 382
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Display gutter'
@@ -2954,7 +2969,7 @@ object Form4: TForm4
         Left = 8
         Height = 23
         Top = 152
-        Width = 259
+        Width = 382
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Show status bar'
@@ -2968,7 +2983,7 @@ object Form4: TForm4
         Left = 8
         Height = 23
         Top = 32
-        Width = 259
+        Width = 382
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Show menu'
@@ -2982,7 +2997,7 @@ object Form4: TForm4
         Left = 8
         Height = 23
         Top = 128
-        Width = 259
+        Width = 382
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Enlarge gutter'
@@ -2996,7 +3011,7 @@ object Form4: TForm4
         Left = 8
         Height = 23
         Top = 104
-        Width = 259
+        Width = 382
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Show gutter separator'
@@ -3010,7 +3025,7 @@ object Form4: TForm4
         Left = 8
         Height = 23
         Top = 80
-        Width = 259
+        Width = 382
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Show editor''s border'

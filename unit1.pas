@@ -68,7 +68,6 @@ type
     MenuItem24: TMenuItem;
     MenuItem25: TMenuItem;
     MenuItem26: TMenuItem;
-    MenuItem27: TMenuItem;
     MenuItem28: TMenuItem;
     MenuItem29: TMenuItem;
     MenuItem30: TMenuItem;
@@ -303,19 +302,7 @@ begin
   form4.enlargeGutter.Checked := editor.Gutter.Parts[0].Visible;
   if (editor.BorderStyle = bsNone) then
     form4.editorsBorder.Checked := False;
-  if (FileExists('fletore.cfg')) then
-  begin
-    case configFile.Strings[18] of
-      'ssAutoBoth': Form4.ComboBox1.Caption := 'Auto both';
-      'ssAutoHorizontal': Form4.ComboBox1.Caption := 'Auto horizontal';
-      'ssAutoVertical': Form4.ComboBox1.Caption := 'Auto vertical';
-      'ssBoth': Form4.ComboBox1.Caption := 'Both';
-      'ssHorizontal': Form4.ComboBox1.Caption := 'Horizontal';
-      'ssNone': Form4.ComboBox1.Caption := 'None';
-      'ssVertical': Form4.ComboBox1.Caption := 'Vertical';
-    end;
-  end;
-
+  if (FileExists('fletore-n.conf')) then
   Form4.CheckBox1.Checked := StatusBar1.Visible;
   Form4.CheckBox2.Checked := Form1.FileSubmenu.Visible;
 
@@ -353,15 +340,6 @@ begin
     Writeln(config, Form2.form1caption.Text)
   else
     Writeln(config, 'none');
-  case Editor.ScrollBars of
-    ssAutoBoth: WriteLn(config, 'ssAutoBoth');
-    ssAutoHorizontal: WriteLn(config, 'ssAutoHorizontal');
-    ssAutoVertical: WriteLn(config, 'ssAutoVertical');
-    ssBoth: WriteLn(config, 'ssBoth');
-    ssHorizontal: WriteLn(config, 'ssHorizontal');
-    ssNone: WriteLn(config, 'ssNone');
-    ssVertical: WriteLn(config, 'ssVertical');
-  end;
   writeln(config, BoolToStr(StatusBar1.Visible));
   Writeln(config, BoolToStr(Form1.FileSubmenu.Visible));
   Writeln(config, ColorToString(Editor.Gutter.Color));
@@ -386,11 +364,6 @@ begin
   if (StatusBar1.Align = alTop) then
     writeln(config, 'top');
   writeln(config, ColorToString(ToolBar1.color));
-  WriteLn(config, '');
-  WriteLn(config, '-------');
-  WriteLn(config, '');
-  WriteLn(config, 'Fletore configuration file.');
-  WriteLn(config, 'Everything found in here can be changed within the editor. I''m not a cop to stop you, but why would you ever need to change THAT?');
   CloseFile(config);
 end;
 
@@ -434,34 +407,23 @@ begin
       Form2.keepCh.Checked := True;
     end;
 
-    case configFile.Strings[18] of
-      'ssAutoBoth': Editor.ScrollBars := ssAutoBoth;
-      'ssAutoHorizontal': Editor.ScrollBars := ssAutoHorizontal;
-      'ssAutoVertical': Editor.ScrollBars := ssAutoVertical;
-      'ssBoth': Editor.ScrollBars := ssBoth;
-      'ssHorizontal': Editor.ScrollBars := ssHorizontal;
-      'ssNone': Editor.ScrollBars := ssNone;
-      'ssVertical': Editor.ScrollBars := ssVertical;
-    end;
+    StatusBar1.Visible := StrToBool(configFile.Strings[18]);
 
+    Form1.FileSubmenu.Visible := StrToBool(configFile.Strings[19]);
+    Form1.SettingsSubmenu.Visible := StrToBool(configFile.Strings[19]);
+    Form1.MenuItem11.Visible := StrToBool(configFile.Strings[19]);
+    Form1.AboutSubmenu.Visible := StrToBool(configFile.Strings[19]);
+    Form1.MenuItem43.Visible := StrToBool(configFile.Strings[19]);
 
-
-    StatusBar1.Visible := StrToBool(configFile.Strings[19]);
-
-    Form1.FileSubmenu.Visible := StrToBool(configFile.Strings[20]);
-    Form1.SettingsSubmenu.Visible := StrToBool(configFile.Strings[20]);
-    Form1.MenuItem11.Visible := StrToBool(configFile.Strings[20]);
-    Form1.AboutSubmenu.Visible := StrToBool(configFile.Strings[20]);
-
-    Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[21]);
+    Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[20]);
     Form1.Editor.Gutter.Parts[1].MarkupInfo.Background :=
-      StringToColor(configFile.Strings[21]);
+      StringToColor(configFile.Strings[20]);
 
-    if (configFile.Strings[22] = 'no_bs') then
+    if (configFile.Strings[21] = 'no_bs') then
       Form1.Editor.BorderStyle := bsNone;
-    Form1.Editor.Gutter.Parts[0].Visible := StrToBool(configFile.Strings[23]);
-    Form1.Editor.Gutter.Parts[3].Visible := StrToBool(configFile.Strings[24]);
-    case configFile.Strings[25] of
+    Form1.Editor.Gutter.Parts[0].Visible := StrToBool(configFile.Strings[22]);
+    Form1.Editor.Gutter.Parts[3].Visible := StrToBool(configFile.Strings[23]);
+    case configFile.Strings[24] of
       'bottom':
       begin
         Form1.ToolBar1.Align := alBottom;
@@ -470,7 +432,7 @@ begin
       end;
     end;
 
-    case configFile.Strings[26] of
+    case configFile.Strings[25] of
       'top':
       begin
         Form1.StatusBar1.Align := alTop;
@@ -479,7 +441,7 @@ begin
       end;
     end;
 
-    toolbar1.Color := StringToColor(configFile.Strings[27]);
+    toolbar1.Color := StringToColor(configFile.Strings[26]);
   end; //Config file reading ends
 end;
 
@@ -1178,7 +1140,7 @@ end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  Editor.Lines.Add(ExtractFilePath('fletore.cfg'));
+  Editor.Lines.Add(ExtractFilePath('fletore-n.conf'));
 end;
 
 procedure TForm1.ClrBtnClick(Sender: TObject);
@@ -1557,7 +1519,7 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-  configFileLocation := ExtractFilePath(Application.ExeName) + 'fletore.cfg';
+  configFileLocation := ExtractFilePath(Application.ExeName) + 'fletore-n.conf';
   if paramcount = 1 then
   begin
     editableFile := ParamStr(1);
