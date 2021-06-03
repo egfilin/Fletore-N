@@ -86,6 +86,7 @@ begin
   Form1.SettingsSubmenu.Visible := CheckBox2.Checked;
   Form1.MenuItem11.Visible := CheckBox2.Checked;
   Form1.AboutSubmenu.Visible := CheckBox2.Checked;
+  Form1.MenuItem43.Visible := CheckBox2.Checked;
 end;
 
 

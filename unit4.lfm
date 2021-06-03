@@ -2785,7 +2785,7 @@ object Form4: TForm4
         Top = 168
         Width = 379
         Anchors = [akTop, akLeft, akRight]
-        Caption = 'Gutter font color'
+        Caption = 'Font color (in some places)'
         Glyph.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
           2000000000000004000064000000640000000000000000000000000000000000

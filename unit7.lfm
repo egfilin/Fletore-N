@@ -1,0 +1,43 @@
+object Form7: TForm7
+  Left = 808
+  Height = 122
+  Top = 386
+  Width = 508
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Hey, Windows user!'
+  ClientHeight = 122
+  ClientWidth = 508
+  LCLVersion = '2.0.12.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 88
+    Top = 0
+    Width = 510
+    Lines.Strings = (
+      'Fletore-N was built on Linux and was NOT tested on Windows. Please, report any issuse you found to Issues in the Github repo (linked in the About window) and I''ll try to fix it.'
+      'The exception is formatting in Credits, yes, I''m fully aware of that, and I have absolutely no idea how to fix it.'
+    )
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 397
+    Height = 25
+    Top = 93
+    Width = 107
+    Caption = 'Start Fletore-N'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object CheckBox1: TCheckBox
+    Left = 8
+    Height = 23
+    Top = 94
+    Width = 220
+    Caption = 'Do not show this dialog again'
+    OnChange = CheckBox1Change
+    TabOrder = 2
+  end
+end

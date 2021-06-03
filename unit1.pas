@@ -11,7 +11,7 @@ uses
   synhighlighterunixshellscript, SynHighlighterJScript,
   Controls, Graphics, Dialogs, StdCtrls,
   Menus, ComCtrls, Buttons, Clipbrd, ExtCtrls, EditBtn, ActnList,
-  Unit2, Unit3, Unit4, Unit5, Unit6, Types;
+  Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Types;
 
 type
 
@@ -37,7 +37,6 @@ type
     gutterColor: TColorDialog;
     FindDialog1: TFindDialog;
     FontDialog: TFontDialog;
-    MenuItem12: TMenuItem;
     MenuItem14: TMenuItem;
     MenuItem16: TMenuItem;
     MenuItem17: TMenuItem;
@@ -292,6 +291,12 @@ end;
 
 procedure TForm1.Sync();
 begin
+{$IFDEF WIN32}
+if doNotShowWinDialog = False then
+begin
+ Form7.ShowModal;
+ end;
+{$ENDIF}
   FontDialog.Font := Editor.font;
   fontColor.Color := Editor.Font.Color;
   ColorDialog.Color := Editor.Color;
@@ -364,6 +369,7 @@ begin
   if (StatusBar1.Align = alTop) then
     writeln(config, 'top');
   writeln(config, ColorToString(ToolBar1.color));
+  writeln(config, doNotShowWinDialog);
   CloseFile(config);
 end;
 
@@ -442,6 +448,7 @@ begin
     end;
 
     toolbar1.Color := StringToColor(configFile.Strings[26]);
+    doNotShowWinDialog :=  StrToBool(configFile.Strings[27])
   end; //Config file reading ends
 end;
 
@@ -560,7 +567,7 @@ begin
     end
     else
     begin
-      Form1.Caption := 'Editing' + editableFile + '*';
+      Form1.Caption := 'Editing ' + editableFile + '*';
     end;
     isFileEditing := True;
   end;

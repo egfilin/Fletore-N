@@ -2554,9 +2554,9 @@ object Form3: TForm3
     Height = 288
     Top = 0
     Width = 384
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 1
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
@@ -2846,7 +2846,7 @@ object Form3: TForm3
         Alignment = taCenter
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = False
-        Caption = 'Version 1.1-b2:37'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 2/6/2021'
+        Caption = 'Version 1.1-b2:55'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 3/6/2021'
         ParentColor = False
         ParentFont = False
         OnClick = Label1Click
@@ -2990,9 +2990,11 @@ object Form3: TForm3
           '[MODIFIED] config behavior (beta: done)'
           '[MODIFIED] Syntax recognision. The system will be completly reworked soon, but for now I just modified some items. (beta: scrapped, changelog entry will be removed in final release)'
           '[REDONE] About screen. The banner is now with text in the form itself (hi dark theme users), and now there are tabs to include way more content. (beta: done)'
+          '[MODIFIED] Brand. Obviously, a rebrand is needed. (beta: done)'
         )
         OnChange = Memo1Change
         ReadOnly = True
+        ScrollBars = ssAutoBoth
         TabOrder = 0
       end
     end

@@ -27,3 +27,4 @@ This is a file if you want to change/remove Fletore-N's config entries
 25th string = Toolbar align
 26th string = Statusbar align
 27th string = Toolbar color
+28th string = (Windows only) Is the Windows warning showing up on next boot
