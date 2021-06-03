@@ -1,8 +1,8 @@
 #Backup folder
 backup/
 #Build files
-Fletore
-Fletore.exe
-fletore.cfg
+Fletore-N
+Fletore-N.exe
+fletore-n.conf
 #Folder with compiled libs
 lib/
