@@ -2990,7 +2990,7 @@ object Form3: TForm3
           '[MODIFIED] config behavior (beta: done)'
           '[MODIFIED] Syntax recognision. The system will be completly reworked soon, but for now I just modified some items. (beta: scrapped, changelog entry will be removed in final release)'
           '[REDONE] About screen. The banner is now with text in the form itself (hi dark theme users), and now there are tabs to include way more content. (beta: done)'
-          '[MODIFIED] Brand. Obviously, a rebrand is needed. (beta: done)'
+          '[ADDED] Warning about Fletore-N not being fully tested on Windows. (beta: done)'
         )
         OnChange = Memo1Change
         ReadOnly = True
