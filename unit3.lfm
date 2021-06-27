@@ -2561,7 +2561,7 @@ object Form3: TForm3
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'About'
-      ClientHeight = 257
+      ClientHeight = 253
       ClientWidth = 374
       OnContextPopup = TabSheet1ContextPopup
       object Image1: TImage
@@ -2829,7 +2829,7 @@ object Form3: TForm3
         Left = 156
         Height = 48
         Top = 72
-        Width = 214
+        Width = 209
         Caption = 'Fletore-N'
         Font.Height = -48
         Font.Name = 'Sawasdee'
@@ -2839,14 +2839,14 @@ object Form3: TForm3
         OnClick = Label3Click
       end
       object Label1: TLabel
-        Left = 0
-        Height = 184
-        Top = 188
-        Width = 368
+        Left = -5
+        Height = 179
+        Top = 176
+        Width = 370
         Alignment = taCenter
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = False
-        Caption = 'Version 1.1-b2:55'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 3/6/2021'
+        Caption = 'Version 1.1:56'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 28/6/2021'
         ParentColor = False
         ParentFont = False
         OnClick = Label1Click
@@ -2854,7 +2854,7 @@ object Form3: TForm3
     end
     object TabSheet2: TTabSheet
       Caption = 'Credits'
-      ClientHeight = 257
+      ClientHeight = 253
       ClientWidth = 374
       OnContextPopup = TabSheet2ContextPopup
       object Label4: TLabel
@@ -2976,7 +2976,7 @@ object Form3: TForm3
     end
     object TabSheet3: TTabSheet
       Caption = 'Changelog'
-      ClientHeight = 257
+      ClientHeight = 253
       ClientWidth = 374
       object Memo1: TMemo
         Left = 0

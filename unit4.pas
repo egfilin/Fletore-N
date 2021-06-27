@@ -23,19 +23,22 @@ type
     BitBtn3: TBitBtn;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
     ComboBox3: TComboBox;
     ComboBox2: TComboBox;
     diln: TCheckBox;
     editorsBorder: TCheckBox;
     enlargeGutter: TCheckBox;
     gutterSeparator: TCheckBox;
+    Label1: TLabel;
+    Label2: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     PageControl1: TPageControl;
-    rstSettings: TTaskDialog;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
     tbcheck: TCheckBox;
     procedure BitBtn18Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -45,12 +48,14 @@ type
     procedure BitBtn6Click(Sender: TObject);
     procedure CheckBox1Change(Sender: TObject);
     procedure CheckBox2Change(Sender: TObject);
+    procedure CheckBox3Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
     procedure ComboBox3Change(Sender: TObject);
     procedure enlargeGutterChange(Sender: TObject);
     procedure gutterSeparatorChange(Sender: TObject);
     procedure editorsBorderChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
     procedure rstSettingsButtonClicked(Sender: TObject;
       AModalResult: TModalResult; var ACanClose: Boolean);
@@ -65,6 +70,8 @@ type
 
 var
   Form4: TForm4;
+  confirmReset: boolean;
+  attemptCounter: integer;
 
 implementation
 
@@ -87,6 +94,11 @@ begin
   Form1.MenuItem11.Visible := CheckBox2.Checked;
   Form1.AboutSubmenu.Visible := CheckBox2.Checked;
   Form1.MenuItem43.Visible := CheckBox2.Checked;
+end;
+
+procedure TForm4.CheckBox3Change(Sender: TObject);
+begin
+  confirmReset := CheckBox3.Checked;
 end;
 
 
@@ -154,6 +166,11 @@ begin
   Form1.Sync();
 end;
 
+procedure TForm4.Label1Click(Sender: TObject);
+begin
+
+end;
+
 procedure TForm4.PageControl1Change(Sender: TObject);
 begin
 
@@ -194,12 +211,17 @@ end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);
 begin
-  rstSettings.Execute();
-  if rstSettings.ModalResult = mrYes then
+  if (confirmReset = True) then
   begin
     Form1.Close();
     DeleteFile(configFileLocation);
-  end;
+  end
+  else
+    begin
+
+    BitBtn2.Caption := 'Click the checkmark!';
+    CheckBox3.Caption := 'Click me!';
+    end;
 end;
 
 procedure TForm4.BitBtn4Click(Sender: TObject);
