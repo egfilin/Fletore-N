@@ -1,7 +1,8 @@
-#Backup folder
+#Folders - backup folder, lib folder
 backup/
-#Build files
-Fletore
-fletore.cfg
-#Folder with compiled libs
 lib/
+#Files - build files, config file, Lazarus last session file
+Fletore-N
+Fletore-N.exe
+fletore-n.conf
+Fletore-N.lps

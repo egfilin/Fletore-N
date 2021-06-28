@@ -11,7 +11,7 @@ uses
   synhighlighterunixshellscript, SynHighlighterJScript,
   Controls, Graphics, Dialogs, StdCtrls,
   Menus, ComCtrls, Buttons, Clipbrd, ExtCtrls, EditBtn, ActnList,
-  Unit2, Unit3, Unit4, Unit5, Types;
+  Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Types;
 
 type
 
@@ -20,13 +20,23 @@ type
   TForm1 = class(TForm)
     ColorDialog: TColorDialog;
     clrPalette: TColorDialog;
-    MenuItem19: TMenuItem;
+    MenuItem43: TMenuItem;
+    MenuItem44: TMenuItem;
+    MenuItem45: TMenuItem;
+    MenuItem46: TMenuItem;
+    MenuItem47: TMenuItem;
+    MenuItem48: TMenuItem;
+    MenuItem49: TMenuItem;
+    MenuItem50: TMenuItem;
+    MenuItem51: TMenuItem;
+    MenuItem52: TMenuItem;
+    MenuItem53: TMenuItem;
+    MenuItem54: TMenuItem;
     toolbarColor: TColorDialog;
     fontColor: TColorDialog;
     gutterColor: TColorDialog;
     FindDialog1: TFindDialog;
     FontDialog: TFontDialog;
-    MenuItem12: TMenuItem;
     MenuItem14: TMenuItem;
     MenuItem16: TMenuItem;
     MenuItem17: TMenuItem;
@@ -36,7 +46,6 @@ type
     MenuItem35: TMenuItem;
     MenuItem36: TMenuItem;
     MenuItem37: TMenuItem;
-    MenuItem38: TMenuItem;
     MenuItem39: TMenuItem;
     MenuItem40: TMenuItem;
     MenuItem41: TMenuItem;
@@ -46,15 +55,9 @@ type
     MainMenu: TMainMenu;
     FileSubmenu: TMenuItem;
     AboutSubmenu: TMenuItem;
-    AboutMenuItem: TMenuItem;
     MenuItem1: TMenuItem;
-    MenuItem10: TMenuItem;
-    CutMenu: TMenuItem;
-    CopyMenu: TMenuItem;
     MenuItem11: TMenuItem;
-    MenuItem13: TMenuItem;
     MenuItem18: TMenuItem;
-    MenuItem2: TMenuItem;
     clrplMenu: TMenuItem;
     MenuItem20: TMenuItem;
     MenuItem21: TMenuItem;
@@ -63,7 +66,6 @@ type
     MenuItem24: TMenuItem;
     MenuItem25: TMenuItem;
     MenuItem26: TMenuItem;
-    MenuItem27: TMenuItem;
     MenuItem28: TMenuItem;
     MenuItem29: TMenuItem;
     MenuItem30: TMenuItem;
@@ -74,13 +76,7 @@ type
     MenuItem9: TMenuItem;
     PopupMenu1: TPopupMenu;
     SaveAsDialog: TSaveDialog;
-    SelectAll: TMenuItem;
-    PasteMenu: TMenuItem;
-    RedoMenu: TMenuItem;
-    MenuItem15: TMenuItem;
-    FindMenu: TMenuItem;
     MenuItem5: TMenuItem;
-    ExitConfirm: TTaskDialog;
     Editor: TSynEdit;
     ReplaceDialog1: TReplaceDialog;
     BATSyn: TSynBatSyn;
@@ -100,7 +96,6 @@ type
     ToolButton19: TToolButton;
     ToolButton20: TToolButton;
     ToolButton21: TToolButton;
-    ToolButton6: TToolButton;
     ToolButton7: TToolButton;
     ToolButton8: TToolButton;
     ToolButton9: TToolButton;
@@ -110,7 +105,6 @@ type
     ToolButton3: TToolButton;
     ToolButton4: TToolButton;
     ToolButton5: TToolButton;
-    UndoMenu: TMenuItem;
     ToolBar1: TToolBar;
     PascalSC: TMenuItem;
     CPPSc: TMenuItem;
@@ -133,7 +127,7 @@ type
     ExitMenuItem: TMenuItem;
     SettingsSubmenu: TMenuItem;
     StatusBar1: TStatusBar;
-    procedure AboutMenuItemClick(Sender: TObject);
+    procedure AboutSubmenuClick(Sender: TObject);
     procedure AuScClick(Sender: TObject);
     procedure BatScClick(Sender: TObject);
     procedure BitBtn10Click(Sender: TObject);
@@ -148,7 +142,6 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
-    procedure BitBtn8Click(Sender: TObject);
     procedure BitBtn9Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure ClrBtnClick(Sender: TObject);
@@ -202,7 +195,18 @@ type
     procedure MenuItem39Click(Sender: TObject);
     procedure MenuItem40Click(Sender: TObject);
     procedure MenuItem41Click(Sender: TObject);
+    procedure MenuItem43Click(Sender: TObject);
+    procedure MenuItem44Click(Sender: TObject);
+    procedure MenuItem45Click(Sender: TObject);
+    procedure MenuItem46Click(Sender: TObject);
+    procedure MenuItem47Click(Sender: TObject);
+    procedure MenuItem48Click(Sender: TObject);
+    procedure MenuItem49Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem50Click(Sender: TObject);
+    procedure MenuItem52Click(Sender: TObject);
+    procedure MenuItem53Click(Sender: TObject);
+    procedure MenuItem54Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
     procedure MenuItem9Click(Sender: TObject);
     procedure SaveAsDialogClose(Sender: TObject);
@@ -216,8 +220,6 @@ type
     procedure FindMenuClick(Sender: TObject);
     procedure chFontClick(Sender: TObject);
     procedure MenuItem5Click(Sender: TObject);
-    procedure ExitConfirmButtonClicked(Sender: TObject;
-      AModalResult: TModalResult; var ACanClose: boolean);
     procedure ReplaceDialog1Find(Sender: TObject);
     procedure ReplaceDialog1Replace(Sender: TObject);
     procedure toolbarColorClose(Sender: TObject);
@@ -246,7 +248,7 @@ type
 
 var
   Form1: TForm1;
-  appName, editableFile, configFileLocation, curSyn, tmpSyn: string;
+  editableFile, configFileLocation, curSyn, tmpSyn: string;
   config: Text;
   configFile: TStringList;
   isFileEditing: boolean;
@@ -271,7 +273,7 @@ begin
 
     end
     else
-      Form1.Caption := editableFile + ' - ' + appName;
+      Form1.Caption := 'Editing ' + editableFile;
 
     isFileEditing := False;
   end;
@@ -298,19 +300,7 @@ begin
   form4.enlargeGutter.Checked := editor.Gutter.Parts[0].Visible;
   if (editor.BorderStyle = bsNone) then
     form4.editorsBorder.Checked := False;
-  if (FileExists('fletore.cfg')) then
-  begin
-    case configFile.Strings[18] of
-      'ssAutoBoth': Form4.ComboBox1.Caption := 'Auto both';
-      'ssAutoHorizontal': Form4.ComboBox1.Caption := 'Auto horizontal';
-      'ssAutoVertical': Form4.ComboBox1.Caption := 'Auto vertical';
-      'ssBoth': Form4.ComboBox1.Caption := 'Both';
-      'ssHorizontal': Form4.ComboBox1.Caption := 'Horizontal';
-      'ssNone': Form4.ComboBox1.Caption := 'None';
-      'ssVertical': Form4.ComboBox1.Caption := 'Vertical';
-    end;
-  end;
-
+  if (FileExists('fletore-n.conf')) then
   Form4.CheckBox1.Checked := StatusBar1.Visible;
   Form4.CheckBox2.Checked := Form1.FileSubmenu.Visible;
 
@@ -348,15 +338,6 @@ begin
     Writeln(config, Form2.form1caption.Text)
   else
     Writeln(config, 'none');
-  case Editor.ScrollBars of
-    ssAutoBoth: WriteLn(config, 'ssAutoBoth');
-    ssAutoHorizontal: WriteLn(config, 'ssAutoHorizontal');
-    ssAutoVertical: WriteLn(config, 'ssAutoVertical');
-    ssBoth: WriteLn(config, 'ssBoth');
-    ssHorizontal: WriteLn(config, 'ssHorizontal');
-    ssNone: WriteLn(config, 'ssNone');
-    ssVertical: WriteLn(config, 'ssVertical');
-  end;
   writeln(config, BoolToStr(StatusBar1.Visible));
   Writeln(config, BoolToStr(Form1.FileSubmenu.Visible));
   Writeln(config, ColorToString(Editor.Gutter.Color));
@@ -381,42 +362,7 @@ begin
   if (StatusBar1.Align = alTop) then
     writeln(config, 'top');
   writeln(config, ColorToString(ToolBar1.color));
-  WriteLn(config, '');
-  WriteLn(config, '-------');
-  WriteLn(config, '');
-  WriteLn(config, 'Fletore configuration file.');
-  WriteLn(config, '');
-  WriteLn(config, 'If you are not an experienced user, PLEASE DON''T EDIT THIS FILE. ');
-  WriteLn(config, '');
-  WriteLn(config,
-    '1st string = Font color (Help - https://wiki.freepascal.org/Colors)');
-  WriteLn(config, '2nd string = Font height');
-  WriteLn(config, '3nd string = Font name (Monospace fonts recommended only)');
-  WriteLn(config, '4nd string = Font orientation');
-  WriteLn(config, '5nd string = Font size');
-  WriteLn(config, '6nd string = Is font bold?');
-  WriteLn(config, '7nd string = Is font italic?');
-  WriteLn(config, '8nd string = Is font strikeout?');
-  WriteLn(config, '9nd string = Is font underline?');
-  WriteLn(config, '10th string = Background color (Help - https://wiki.freepascal.org/Colors)');
-  WriteLn(config, '11th string = Master form X position');
-  WriteLn(config, '12th string = Master form Y position');
-  WriteLn(config, '13th string = Master form width');
-  WriteLn(config, '14th string = Master form height');
-  WriteLn(config, '15th string = Show toolbar?');
-  WriteLn(config, '16th string = Display line numbers');
-  WriteLn(config, '17th string = Window state');
-  writeln(config, '18th string = Form1 caption (none = do not use custom window title)');
-  WriteLn(config, '19th string = Editor scroll bars');
-  Writeln(config, '20th string = Status bar visibility');
-  Writeln(config, '21st string = Menu visibility');
-  Writeln(config, '22nd string = Gutter color');
-  writeln(config, '23th string = Editor''s border');
-  writeln(config, '24th string = Is Gutter enlarged?');
-  Writeln(config, '25th string = Gutter border');
-  Writeln(config, '26th string = Toolbar align');
-  Writeln(config, '27th string = Statusbar align');
-  writeln(config, '28th string = Toolbar color');
+  writeln(config, ShowWinDialog);
   CloseFile(config);
 end;
 
@@ -460,34 +406,23 @@ begin
       Form2.keepCh.Checked := True;
     end;
 
-    case configFile.Strings[18] of
-      'ssAutoBoth': Editor.ScrollBars := ssAutoBoth;
-      'ssAutoHorizontal': Editor.ScrollBars := ssAutoHorizontal;
-      'ssAutoVertical': Editor.ScrollBars := ssAutoVertical;
-      'ssBoth': Editor.ScrollBars := ssBoth;
-      'ssHorizontal': Editor.ScrollBars := ssHorizontal;
-      'ssNone': Editor.ScrollBars := ssNone;
-      'ssVertical': Editor.ScrollBars := ssVertical;
-    end;
+    StatusBar1.Visible := StrToBool(configFile.Strings[18]);
 
+    Form1.FileSubmenu.Visible := StrToBool(configFile.Strings[19]);
+    Form1.SettingsSubmenu.Visible := StrToBool(configFile.Strings[19]);
+    Form1.MenuItem11.Visible := StrToBool(configFile.Strings[19]);
+    Form1.AboutSubmenu.Visible := StrToBool(configFile.Strings[19]);
+    Form1.MenuItem43.Visible := StrToBool(configFile.Strings[19]);
 
-
-    StatusBar1.Visible := StrToBool(configFile.Strings[19]);
-
-    Form1.FileSubmenu.Visible := StrToBool(configFile.Strings[20]);
-    Form1.SettingsSubmenu.Visible := StrToBool(configFile.Strings[20]);
-    Form1.MenuItem11.Visible := StrToBool(configFile.Strings[20]);
-    Form1.AboutSubmenu.Visible := StrToBool(configFile.Strings[20]);
-
-    Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[21]);
+    Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[20]);
     Form1.Editor.Gutter.Parts[1].MarkupInfo.Background :=
-      StringToColor(configFile.Strings[21]);
+      StringToColor(configFile.Strings[20]);
 
-    if (configFile.Strings[22] = 'no_bs') then
+    if (configFile.Strings[21] = 'no_bs') then
       Form1.Editor.BorderStyle := bsNone;
-    Form1.Editor.Gutter.Parts[0].Visible := StrToBool(configFile.Strings[23]);
-    Form1.Editor.Gutter.Parts[3].Visible := StrToBool(configFile.Strings[24]);
-    case configFile.Strings[25] of
+    Form1.Editor.Gutter.Parts[0].Visible := StrToBool(configFile.Strings[22]);
+    Form1.Editor.Gutter.Parts[3].Visible := StrToBool(configFile.Strings[23]);
+    case configFile.Strings[24] of
       'bottom':
       begin
         Form1.ToolBar1.Align := alBottom;
@@ -496,7 +431,7 @@ begin
       end;
     end;
 
-    case configFile.Strings[26] of
+    case configFile.Strings[25] of
       'top':
       begin
         Form1.StatusBar1.Align := alTop;
@@ -505,7 +440,8 @@ begin
       end;
     end;
 
-    toolbar1.Color := StringToColor(configFile.Strings[27]);
+    toolbar1.Color := StringToColor(configFile.Strings[26]);
+    ShowWinDialog :=  StrToBool(configFile.Strings[27])
   end; //Config file reading ends
 end;
 
@@ -578,14 +514,14 @@ end;
 procedure TForm1.resetSyn();
 begin
   case curSyn of
-    'none': StatusBar1.Panels.Items[3].Text := 'Syntax: Normal text';
-    'bat': StatusBar1.Panels.Items[3].Text := 'Syntax: Bat';
-    'fpc': StatusBar1.Panels.Items[3].Text := 'Syntax: Free Pascal';
-    'html': StatusBar1.Panels.Items[3].Text := 'Syntax: HTML';
-    'js': StatusBar1.Panels.Items[3].Text := 'Syntax: JavaScript';
-    'sh': StatusBar1.Panels.Items[3].Text := 'Syntax: UNIX Sh';
-    'xml': StatusBar1.Panels.Items[3].Text := 'Syntax: XML';
-    'py': StatusBar1.Panels.Items[3].Text := 'Syntax: Python';
+    'none': StatusBar1.Panels.Items[3].Text := 'Plain text';
+    'bat': StatusBar1.Panels.Items[3].Text := 'BAT script';
+    'fpc': StatusBar1.Panels.Items[3].Text := 'Free Pascal source file';
+    'html': StatusBar1.Panels.Items[3].Text := 'HTML file';
+    'js': StatusBar1.Panels.Items[3].Text := 'JS source file';
+    'sh': StatusBar1.Panels.Items[3].Text := 'Shell script';
+    'xml': StatusBar1.Panels.Items[3].Text := 'XML file';
+    'py': StatusBar1.Panels.Items[3].Text := 'Python Script';
   end;
 end;
 
@@ -612,7 +548,7 @@ begin
     end
     else
     begin
-      Form1.Caption := '*New file - ' + appName;
+      Form1.Caption := 'New file*';
     end;
     isFileEditing := True;
   end
@@ -624,7 +560,7 @@ begin
     end
     else
     begin
-      Form1.Caption := '*' + editableFile + ' - ' + appName;
+      Form1.Caption := 'Editing ' + editableFile + '*';
     end;
     isFileEditing := True;
   end;
@@ -786,9 +722,64 @@ begin
   MenuItem37Click(Sender);
 end;
 
+procedure TForm1.MenuItem43Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.MenuItem44Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.MenuItem45Click(Sender: TObject);
+begin
+  Editor.Undo;
+end;
+
+procedure TForm1.MenuItem46Click(Sender: TObject);
+begin
+  Editor.SelectAll;
+end;
+
+procedure TForm1.MenuItem47Click(Sender: TObject);
+begin
+  Editor.CutToClipboard;
+end;
+
+procedure TForm1.MenuItem48Click(Sender: TObject);
+begin
+  Editor.CopyToClipboard;
+end;
+
+procedure TForm1.MenuItem49Click(Sender: TObject);
+begin
+  Editor.PasteFromClipboard;
+end;
+
 procedure TForm1.MenuItem4Click(Sender: TObject);
 begin
   CutMenuClick(Sender);
+end;
+
+procedure TForm1.MenuItem50Click(Sender: TObject);
+begin
+  Editor.Redo;
+end;
+
+procedure TForm1.MenuItem52Click(Sender: TObject);
+begin
+  FindDialog1.Execute;
+end;
+
+procedure TForm1.MenuItem53Click(Sender: TObject);
+begin
+  ReplaceDialog1.Execute;
+end;
+
+procedure TForm1.MenuItem54Click(Sender: TObject);
+begin
+  Form5.ShowModal;
 end;
 
 procedure TForm1.MenuItem7Click(Sender: TObject);
@@ -814,7 +805,7 @@ begin
 
     end
     else
-      Form1.Caption := editableFile + ' - ' + appName;
+      Form1.Caption := editableFile;
 
   end;
 end;
@@ -898,12 +889,6 @@ begin
   EditorChange(Sender);
 end;
 
-procedure TForm1.ExitConfirmButtonClicked(Sender: TObject;
-  AModalResult: TModalResult; var ACanClose: boolean);
-begin
-  if ExitConfirm.ModalResult = mrNo then
-    Close();
-end;
 
 procedure TForm1.ReplaceDialog1Find(Sender: TObject);
 var
@@ -1014,16 +999,8 @@ var
 begin
   if isFileEditing = True then
   begin
-    ExitConfirm.Execute();
-    if ExitConfirm.ModalResult = mrNo then
-    begin
-      canNew := True;
-    end;
-    if ExitConfirm.ModalResult = mrCancel then
-    begin
-      canNew := False;
-    end;
-    if ExitConfirm.ModalResult = mrYes then
+    Form6.ShowModal;
+    if (exitType = 0) and (exitWithBtn = True) then
     begin
       if (editableFile = '') then
       begin
@@ -1032,24 +1009,24 @@ begin
       else
       begin
         Editor.Lines.SaveToFile(editableFile);
-        if (form2.keepCh.Checked = True) then
-        begin
-
-        end
-        else
-        begin
-          if (editableFile <> '') then
-          begin
-            Form1.Caption := editableFile + ' - ' + appName;
-          end
-          else
-          begin
-            Form1.Caption := 'New file - ' + appName;
-          end;
-        end;
-        resetEtx();
+        Form1.Caption := 'Editing ' + editableFile;
       end;
       canNew := True;
+    end
+    else if (exitType = 0) and (exitWithBtn = False) then
+    begin
+      canNew := False;
+      Form6.Close();
+    end
+    else if exitType = 1 then
+    begin
+      Form6.Close();
+      canNew := True;
+    end
+    else if exitType = 2 then
+    begin
+      canNew := False;
+      Form6.Close();
     end;
   end
   else
@@ -1067,11 +1044,11 @@ begin
     begin
       if (editableFile <> '') then
       begin
-        Form1.Caption := editableFile + ' - ' + appName;
+        Form1.Caption := editableFile;
       end
       else
       begin
-        Form1.Caption := 'New file - ' + appName;
+        Form1.Caption := 'New file';
       end;
     end;
     resetEtx();
@@ -1080,6 +1057,7 @@ begin
     StatusBar1.Panels.Items[1].Text := 'Lines: ' + IntToStr(editor.Lines.Count);
     StatusBar1.Panels.Items[1].Width := Length(StatusBar1.Panels.Items[1].Text) * 8;
   end;
+  exitType := 3;
 end;
 
 procedure TForm1.OpenDialogClose(Sender: TObject);
@@ -1102,7 +1080,7 @@ begin
 
       end
       else
-        Form1.Caption := editableFile + ' - ' + appName;
+        Form1.Caption := 'Editing ' + editableFile;
       resetEtx();
 
     end
@@ -1155,14 +1133,14 @@ begin
 
     end
     else
-      Form1.Caption := editableFile + ' - ' + appName;
+      Form1.Caption := 'Editing ' + editableFile;
 
   end;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  Editor.Lines.Add(ExtractFilePath('fletore.cfg'));
+  Editor.Lines.Add(ExtractFilePath('fletore-n.conf'));
 end;
 
 procedure TForm1.ClrBtnClick(Sender: TObject);
@@ -1343,16 +1321,8 @@ procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
   if (isFileEditing = True) then
   begin
-    ExitConfirm.Execute();
-    if ExitConfirm.ModalResult = mrNo then
-    begin
-
-    end;
-    if ExitConfirm.ModalResult = mrCancel then
-    begin
-      CanClose := False;
-    end;
-    if ExitConfirm.ModalResult = mrYes then
+    Form6.ShowModal;
+    if (exitType = 0) and (exitWithBtn = True) then
     begin
       if (editableFile = '') then
       begin
@@ -1361,15 +1331,34 @@ begin
       else
       begin
         Editor.Lines.SaveToFile(editableFile);
-        Form1.Caption := editableFile + ' - ' + appName;
+        Form1.Caption := 'Editing ' + editableFile;
       end;
+    end
+    else if (exitType = 0) and (exitWithBtn = False) then
+    begin
+      CanClose := False;
+      Form6.Close();
+    end
+    else if exitType = 1 then
+    begin
+      Form6.Close();
+    end
+    else if exitType = 2 then
+    begin
+      CanClose := False;
+      Form6.Close();
     end;
   end;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  appName := 'Fletore';
+  {$IFDEF WIN32}
+if ShowWinDialog = True then
+begin
+ Form7.ShowModal;
+ end;
+  {$ENDIF}
 
   editableFile := '';
   curSyn := 'none';
@@ -1398,7 +1387,7 @@ begin
 
   end
   else
-    Form1.Caption := editableFile + ' - ' + appName;
+    Form1.Caption := 'Editing ' + editableFile;
   StatusBar1.Panels.Items[0].Text := 'Length: ' + IntToStr(Length(Editor.Text));
   StatusBar1.Panels.Items[0].Width := Length(StatusBar1.Panels.Items[0].Text) * 8;
 
@@ -1435,9 +1424,11 @@ begin
 
 end;
 
-procedure TForm1.AboutMenuItemClick(Sender: TObject);
+
+
+procedure TForm1.AboutSubmenuClick(Sender: TObject);
 begin
-  Form3.ShowModal;
+   Form3.ShowModal;
 end;
 
 
@@ -1526,11 +1517,6 @@ begin
   chFontClick(Sender);
 end;
 
-procedure TForm1.BitBtn8Click(Sender: TObject);
-begin
-  AboutMenuItemClick(Sender);
-end;
-
 procedure TForm1.BitBtn9Click(Sender: TObject);
 begin
   MenuItem2Click(Sender);
@@ -1538,12 +1524,12 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-  configFileLocation := ExtractFilePath(Application.ExeName) + 'fletore.cfg';
+  configFileLocation := ExtractFilePath(Application.ExeName) + 'fletore-n.conf';
   if paramcount = 1 then
   begin
     editableFile := ParamStr(1);
     Editor.Lines.LoadFromFile(ParamStr(1));
-    Form1.Caption := editableFile + ' - ' + appName;
+    Form1.Caption := 'Editing ' + editableFile;
     isFileEditing := False;
     StatusBar1.Panels.Items[0].Text := 'Length: ' + IntToStr(Length(Editor.Text));
     StatusBar1.Panels.Items[0].Width := Length(StatusBar1.Panels.Items[0].Text) * 10;

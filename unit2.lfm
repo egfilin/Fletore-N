@@ -1,9 +1,10 @@
 object Form2: TForm2
-  Left = 70
+  Left = 284
   Height = 81
-  Top = 71
+  Top = 363
   Width = 297
   BorderIcons = [biSystemMenu]
+  Caption = 'Change title'
   ClientHeight = 81
   ClientWidth = 297
   Constraints.MinHeight = 73

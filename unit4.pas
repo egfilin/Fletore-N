@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls,
-  ComCtrls, UITypes;
+  ComCtrls, UITypes, Unit2;
 
 type
 
@@ -18,25 +18,27 @@ type
     BitBtn15: TBitBtn;
     BitBtn16: TBitBtn;
     BitBtn18: TBitBtn;
+    BitBtn19: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
-    ComboBox1: TComboBox;
+    CheckBox3: TCheckBox;
     ComboBox3: TComboBox;
     ComboBox2: TComboBox;
     diln: TCheckBox;
     editorsBorder: TCheckBox;
     enlargeGutter: TCheckBox;
     gutterSeparator: TCheckBox;
-    Label4: TLabel;
+    Label1: TLabel;
+    Label2: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     PageControl1: TPageControl;
-    rstSettings: TTaskDialog;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
     tbcheck: TCheckBox;
     procedure BitBtn18Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -46,13 +48,17 @@ type
     procedure BitBtn6Click(Sender: TObject);
     procedure CheckBox1Change(Sender: TObject);
     procedure CheckBox2Change(Sender: TObject);
+    procedure CheckBox3Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
     procedure ComboBox3Change(Sender: TObject);
     procedure enlargeGutterChange(Sender: TObject);
     procedure gutterSeparatorChange(Sender: TObject);
     procedure editorsBorderChange(Sender: TObject);
-    procedure ComboBox1Change(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
+    procedure PageControl1Change(Sender: TObject);
+    procedure rstSettingsButtonClicked(Sender: TObject;
+      AModalResult: TModalResult; var ACanClose: Boolean);
     procedure tbcheckChange(Sender: TObject);
     procedure dilnChange(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
@@ -85,6 +91,28 @@ begin
   Form1.SettingsSubmenu.Visible := CheckBox2.Checked;
   Form1.MenuItem11.Visible := CheckBox2.Checked;
   Form1.AboutSubmenu.Visible := CheckBox2.Checked;
+  Form1.MenuItem43.Visible := CheckBox2.Checked;
+end;
+
+procedure TForm4.CheckBox3Change(Sender: TObject);
+begin
+  BitBtn2.Visible := CheckBox3.Checked;
+  case CheckBox3.Checked of
+    True:
+    begin
+      BitBtn3.Visible := False;
+      TabSheet1.TabVisible := False;
+      TabSheet2.TabVisible := False;
+      TabSheet3.TabVisible := False;
+    end;
+    False:
+    begin
+      BitBtn3.Visible := True;
+      TabSheet1.TabVisible := True;
+      TabSheet2.TabVisible := True;
+      TabSheet3.TabVisible := True;
+    end;
+  end;
 end;
 
 
@@ -146,31 +174,26 @@ begin
   end;
 end;
 
-procedure TForm4.ComboBox1Change(Sender: TObject);
-begin
-  case ComboBox1.Caption of
-    'Auto both': Form1.Editor.ScrollBars := ssAutoBoth;
-    'Auto horizontal': Form1.Editor.ScrollBars := ssAutoHorizontal;
-    'Auto vertical': Form1.Editor.ScrollBars := ssAutoVertical;
-    'Both': Form1.Editor.ScrollBars := ssBoth;
-    'Horizontal': Form1.Editor.ScrollBars := ssHorizontal;
-    'None': Form1.Editor.ScrollBars := ssNone;
-    'Vertical': Form1.Editor.ScrollBars := ssVertical;
-  end;
-end;
 
 procedure TForm4.FormShow(Sender: TObject);
 begin
   Form1.Sync();
-  case Form1.Editor.ScrollBars of
-    ssAutoBoth: ComboBox1.Caption := 'Auto both';
-    ssAutoHorizontal: ComboBox1.Caption := 'Auto horizontal';
-    ssAutoVertical: ComboBox1.Caption := 'Auto vertical';
-    ssBoth: ComboBox1.Caption := 'Both';
-    ssHorizontal: ComboBox1.Caption := 'Horizontal';
-    ssNone: ComboBox1.Caption := 'None';
-    ssVertical: ComboBox1.Caption := 'Vertical';
-  end;
+end;
+
+procedure TForm4.Label1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.PageControl1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.rstSettingsButtonClicked(Sender: TObject;
+  AModalResult: TModalResult; var ACanClose: Boolean);
+begin
+
 end;
 
 procedure TForm4.tbcheckChange(Sender: TObject);
@@ -196,17 +219,14 @@ end;
 
 procedure TForm4.BitBtn18Click(Sender: TObject);
 begin
-  form1.toolbarColor.Execute;
+  Form2.form1caption.Caption := Form1.Caption;
+  Form2.ShowModal;
 end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);
 begin
-  rstSettings.Execute();
-  if rstSettings.ModalResult = mrYes then
-  begin
     Form1.Close();
     DeleteFile(configFileLocation);
-  end;
 end;
 
 procedure TForm4.BitBtn4Click(Sender: TObject);
