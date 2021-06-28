@@ -104,7 +104,6 @@ begin
       TabSheet1.TabVisible := False;
       TabSheet2.TabVisible := False;
       TabSheet3.TabVisible := False;
-      //TabSheet4.TabVisible := False;
     end;
     False:
     begin
@@ -112,7 +111,6 @@ begin
       TabSheet1.TabVisible := True;
       TabSheet2.TabVisible := True;
       TabSheet3.TabVisible := True;
-      //TabSheet4.TabVisible := True;
     end;
   end;
 end;
