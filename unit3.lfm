@@ -2847,7 +2847,7 @@ object Form3: TForm3
         Alignment = taCenter
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = False
-        Caption = 'Version 1.1:69'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 28/6/2021'
+        Caption = 'Version 1.1:99'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 28/6/2021'
         ParentColor = False
         ParentFont = False
         OnClick = Label1Click

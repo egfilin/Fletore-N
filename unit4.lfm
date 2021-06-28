@@ -2993,12 +2993,12 @@ object Form4: TForm4
       ClientHeight = 205
       ClientWidth = 398
       object Label1: TLabel
-        Left = 74
-        Height = 38
+        Left = 118
+        Height = 19
         Top = 8
-        Width = 250
+        Width = 150
         Alignment = taCenter
-        Caption = 'This page contains advanced settings.'#10'Please use with caution.'
+        Caption = 'Nothin'' to see here yet!'
         ParentColor = False
         OnClick = Label1Click
       end

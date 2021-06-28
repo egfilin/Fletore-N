@@ -2519,6 +2519,7 @@ object Form1: TForm1
   OnKeyPress = FormKeyPress
   OnKeyUp = FormKeyUp
   OnShow = FormShow
+  Position = poDefaultPosOnly
   LCLVersion = '2.0.12.0'
   inline Editor: TSynEdit
     Left = 0
