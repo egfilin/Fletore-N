@@ -257,12 +257,6 @@ var
 implementation
 
 {$R *.lfm}
-{$IFDEF WIN32}
-if ShowWinDialog = True then
-begin
- Form7.ShowModal;
- end;
-{$ENDIF}
 
 { TForm1 }
 
@@ -1360,7 +1354,12 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-
+  {$IFDEF WIN32}
+if ShowWinDialog = True then
+begin
+ Form7.ShowModal;
+ end;
+  {$ENDIF}
 
   editableFile := '';
   curSyn := 'none';
