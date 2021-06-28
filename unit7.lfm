@@ -36,8 +36,8 @@ object Form7: TForm7
     Left = 8
     Height = 25
     Top = 94
-    Width = 221
-    Caption = 'Do not show this dialog again'
+    Width = 175
+    Caption = 'Show this dialog again'
     OnChange = CheckBox1Change
     TabOrder = 2
   end

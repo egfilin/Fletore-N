@@ -2551,7 +2551,7 @@ object Form3: TForm3
     AnchorSideTop.Control = Owner
     AnchorSideRight.Side = asrCenter
     Left = 0
-    Height = 288
+    Height = 296
     Top = 0
     Width = 384
     ActivePage = TabSheet1
@@ -2561,7 +2561,7 @@ object Form3: TForm3
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'About'
-      ClientHeight = 253
+      ClientHeight = 261
       ClientWidth = 374
       OnContextPopup = TabSheet1ContextPopup
       object Image1: TImage
@@ -2840,7 +2840,7 @@ object Form3: TForm3
       end
       object Label1: TLabel
         Left = -5
-        Height = 179
+        Height = 187
         Top = 176
         Width = 370
         Alignment = taCenter
@@ -2854,7 +2854,7 @@ object Form3: TForm3
     end
     object TabSheet2: TTabSheet
       Caption = 'Credits'
-      ClientHeight = 253
+      ClientHeight = 261
       ClientWidth = 374
       OnContextPopup = TabSheet2ContextPopup
       object Label4: TLabel
@@ -2972,29 +2972,6 @@ object Form3: TForm3
         ParentColor = False
         ParentFont = False
         OnClick = Label4Click
-      end
-    end
-    object TabSheet3: TTabSheet
-      Caption = 'Changelog'
-      ClientHeight = 253
-      ClientWidth = 374
-      object Memo1: TMemo
-        Left = 0
-        Height = 264
-        Top = 0
-        Width = 384
-        Lines.Strings = (
-          'Changelog for 1.1:'
-          '[IMPROVED] App design as a whole. Some changes there, some there, and we have a better look, but nothing too special yet!'
-          '[FIXED] minor bugs.'
-          '[MODIFIED] config behavior'
-          '[REDONE] About screen. The banner is now with text in the form itself (hi dark theme users), and now there are tabs to include way more content.'
-          ''
-        )
-        OnChange = Memo1Change
-        ReadOnly = True
-        ScrollBars = ssAutoBoth
-        TabOrder = 0
       end
     end
   end

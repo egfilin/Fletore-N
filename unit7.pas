@@ -25,7 +25,7 @@ type
 
 var
   Form7: TForm7;
-  doNotShowWinDialog: boolean;
+  ShowWinDialog: boolean;
 
 implementation
 
@@ -36,14 +36,7 @@ implementation
 
 procedure TForm7.CheckBox1Change(Sender: TObject);
 begin
-  if CheckBox1.Checked =  True  then
-  begin
-    doNotShowWinDialog := True;
-  end
- else if CheckBox1.Checked =  False  then
-  begin
-    doNotShowWinDialog := False;
-  end;
+
 end;
 
 procedure TForm7.Button1Click(Sender: TObject);

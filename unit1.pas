@@ -258,7 +258,7 @@ implementation
 
 {$R *.lfm}
 {$IFDEF WIN32}
-if doNotShowWinDialog = False then
+if ShowWinDialog = True then
 begin
  Form7.ShowModal;
  end;
@@ -369,7 +369,7 @@ begin
   if (StatusBar1.Align = alTop) then
     writeln(config, 'top');
   writeln(config, ColorToString(ToolBar1.color));
-  writeln(config, doNotShowWinDialog);
+  writeln(config, ShowWinDialog);
   CloseFile(config);
 end;
 
@@ -448,7 +448,7 @@ begin
     end;
 
     toolbar1.Color := StringToColor(configFile.Strings[26]);
-    doNotShowWinDialog :=  StrToBool(configFile.Strings[27])
+    ShowWinDialog :=  StrToBool(configFile.Strings[27])
   end; //Config file reading ends
 end;
 

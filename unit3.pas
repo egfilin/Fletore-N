@@ -27,11 +27,9 @@ type
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
-    Memo1: TMemo;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
-    TabSheet3: TTabSheet;
     procedure Button2Click(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure Label1Click(Sender: TObject);

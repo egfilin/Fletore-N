@@ -3006,7 +3006,7 @@ object Form4: TForm4
         Height = 25
         Top = 176
         Width = 318
-        Caption = 'Check this to reset your Fletore configuration'
+        Caption = 'Click here to activate the config reset button!'
         OnChange = CheckBox3Change
         TabOrder = 0
       end
