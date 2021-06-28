@@ -4,6 +4,7 @@ object Form4: TForm4
   Top = 416
   Width = 422
   BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
   Caption = 'Settings'
   ClientHeight = 297
   ClientWidth = 422

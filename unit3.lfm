@@ -2514,6 +2514,7 @@ object Form3: TForm3
   Position = poMainFormCenter
   LCLVersion = '2.0.12.0'
   object Label2: TLabel
+    Cursor = crHandPoint
     Left = 8
     Height = 33
     Hint = 'Hi! :D'
@@ -2538,8 +2539,8 @@ object Form3: TForm3
   end
   object BitBtn1: TBitBtn
     Left = 303
-    Height = 33
-    Top = 292
+    Height = 28
+    Top = 298
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = '&OK'
@@ -2870,6 +2871,7 @@ object Form3: TForm3
         OnClick = Label4Click
       end
       object Label5: TLabel
+        Cursor = crHandPoint
         Left = 275
         Height = 27
         Top = 15
@@ -2884,6 +2886,7 @@ object Form3: TForm3
         OnClick = Label5Click
       end
       object Label6: TLabel
+        Cursor = crHandPoint
         Left = 214
         Height = 27
         Top = 62
@@ -2898,6 +2901,7 @@ object Form3: TForm3
         OnClick = Label6Click
       end
       object Label7: TLabel
+        Cursor = crHandPoint
         Left = 155
         Height = 27
         Top = 112
@@ -2912,6 +2916,7 @@ object Form3: TForm3
         OnClick = Label5Click
       end
       object Label8: TLabel
+        Cursor = crHandPoint
         Left = 70
         Height = 24
         Top = 162

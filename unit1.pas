@@ -46,7 +46,6 @@ type
     MenuItem35: TMenuItem;
     MenuItem36: TMenuItem;
     MenuItem37: TMenuItem;
-    MenuItem38: TMenuItem;
     MenuItem39: TMenuItem;
     MenuItem40: TMenuItem;
     MenuItem41: TMenuItem;
