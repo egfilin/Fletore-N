@@ -36,7 +36,7 @@ implementation
 
 procedure TForm7.CheckBox1Change(Sender: TObject);
 begin
-
+   ShowWinDialog := CheckBox1.Checked;
 end;
 
 procedure TForm7.Button1Click(Sender: TObject);
