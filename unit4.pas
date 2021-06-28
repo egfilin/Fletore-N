@@ -70,8 +70,6 @@ type
 
 var
   Form4: TForm4;
-  confirmReset: boolean;
-  attemptCounter: integer;
 
 implementation
 
@@ -98,7 +96,25 @@ end;
 
 procedure TForm4.CheckBox3Change(Sender: TObject);
 begin
-  confirmReset := CheckBox3.Checked;
+  BitBtn2.Visible := CheckBox3.Checked;
+  case CheckBox3.Checked of
+    True:
+    begin
+      BitBtn3.Visible := False;
+      TabSheet1.TabVisible := False;
+      TabSheet2.TabVisible := False;
+      TabSheet3.TabVisible := False;
+      //TabSheet4.TabVisible := False;
+    end;
+    False:
+    begin
+      BitBtn3.Visible := True;
+      TabSheet1.TabVisible := True;
+      TabSheet2.TabVisible := True;
+      TabSheet3.TabVisible := True;
+      //TabSheet4.TabVisible := True;
+    end;
+  end;
 end;
 
 
@@ -211,17 +227,8 @@ end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);
 begin
-  if (confirmReset = True) then
-  begin
     Form1.Close();
     DeleteFile(configFileLocation);
-  end
-  else
-    begin
-
-    BitBtn2.Caption := 'Click the checkmark!';
-    CheckBox3.Caption := 'Click me!';
-    end;
 end;
 
 procedure TForm4.BitBtn4Click(Sender: TObject);

@@ -257,6 +257,12 @@ var
 implementation
 
 {$R *.lfm}
+{$IFDEF WIN32}
+if doNotShowWinDialog = False then
+begin
+ Form7.ShowModal;
+ end;
+{$ENDIF}
 
 { TForm1 }
 
@@ -291,12 +297,6 @@ end;
 
 procedure TForm1.Sync();
 begin
-{$IFDEF WIN32}
-if doNotShowWinDialog = False then
-begin
- Form7.ShowModal;
- end;
-{$ENDIF}
   FontDialog.Font := Editor.font;
   fontColor.Color := Editor.Font.Color;
   ColorDialog.Color := Editor.Color;

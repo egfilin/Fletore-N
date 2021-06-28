@@ -1,8 +1,9 @@
 object Form7: TForm7
-  Left = 808
+  Left = 637
   Height = 122
-  Top = 386
+  Top = 441
   Width = 508
+  Align = alClient
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Hey, Windows user!'
@@ -15,7 +16,7 @@ object Form7: TForm7
     Top = 0
     Width = 510
     Lines.Strings = (
-      'Fletore-N was built on Linux and was NOT tested on Windows. Please, report any issuse you found to Issues in the Github repo (linked in the About window) and I''ll try to fix it.'
+      'Fletore-N was made on Linux and was NOT fully tested on Windows. Please, report any issues you found to Issues in the Github repo (linked in the About window) and I''ll try to fix it.'
       'The exception is formatting in Credits, yes, I''m fully aware of that, and I have absolutely no idea how to fix it.'
     )
     ReadOnly = True
@@ -33,9 +34,9 @@ object Form7: TForm7
   end
   object CheckBox1: TCheckBox
     Left = 8
-    Height = 23
+    Height = 25
     Top = 94
-    Width = 220
+    Width = 221
     Caption = 'Do not show this dialog again'
     OnChange = CheckBox1Change
     TabOrder = 2

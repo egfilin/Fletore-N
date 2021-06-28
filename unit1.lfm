@@ -6,7 +6,7 @@ object Form1: TForm1
   AllowDropFiles = True
   BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
   Caption = 'New file'
-  ClientHeight = 405
+  ClientHeight = 401
   ClientWidth = 628
   Constraints.MinWidth = 437
   DragMode = dmAutomatic
@@ -2522,7 +2522,7 @@ object Form1: TForm1
   LCLVersion = '2.0.12.0'
   inline Editor: TSynEdit
     Left = 0
-    Height = 360
+    Height = 352
     Top = 27
     Width = 628
     Align = alClient
@@ -3021,8 +3021,8 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 18
-    Top = 387
+    Height = 22
+    Top = 379
     Width = 628
     Panels = <    
       item

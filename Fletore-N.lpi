@@ -10,7 +10,9 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <XPManifest>
-        <DpiAware Value="True"/>
+        <DpiAware Value="True/PM"/>
+        <TextName Value="wDT.CPS.FletoreN"/>
+        <TextDesc Value="lol"/>
       </XPManifest>
       <Icon Value="0"/>
     </General>
@@ -65,7 +67,7 @@
     </RequiredPackages>
     <Units Count="8">
       <Unit0>
-        <Filename Value="Fletore.lpr"/>
+        <Filename Value="Fletore-N.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
@@ -130,7 +132,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="Fletore"/>
+      <Filename Value="Fletore-N"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
