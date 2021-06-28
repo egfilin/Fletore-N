@@ -2847,7 +2847,7 @@ object Form3: TForm3
         Alignment = taCenter
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = False
-        Caption = 'Version 1.1:99'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 28/6/2021'
+        Caption = 'Version 1.1:111'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 29/6/2021'
         ParentColor = False
         ParentFont = False
         OnClick = Label1Click
@@ -2858,23 +2858,11 @@ object Form3: TForm3
       ClientHeight = 261
       ClientWidth = 374
       OnContextPopup = TabSheet2ContextPopup
-      object Label4: TLabel
-        Left = 8
-        Height = 24
-        Top = 16
-        Width = 232
-        Caption = 'Original author (pre-1.1): '
-        Font.Height = -21
-        Font.Name = 'System-ui'
-        ParentColor = False
-        ParentFont = False
-        OnClick = Label4Click
-      end
       object Label5: TLabel
         Cursor = crHandPoint
-        Left = 275
+        Left = 144
         Height = 27
-        Top = 15
+        Top = 40
         Width = 86
         Caption = 'KATAR7'
         Font.Color = clHighlight
@@ -2887,9 +2875,9 @@ object Form3: TForm3
       end
       object Label6: TLabel
         Cursor = crHandPoint
-        Left = 214
+        Left = 152
         Height = 27
-        Top = 62
+        Top = 112
         Width = 64
         Caption = 'egfilin'
         Font.Color = clHighlight
@@ -2900,24 +2888,9 @@ object Form3: TForm3
         ParentFont = False
         OnClick = Label6Click
       end
-      object Label7: TLabel
-        Cursor = crHandPoint
-        Left = 155
-        Height = 27
-        Top = 112
-        Width = 86
-        Caption = 'KATAR7'
-        Font.Color = clHighlight
-        Font.Height = -24
-        Font.Name = 'System-ui'
-        Font.Style = [fsUnderline]
-        ParentColor = False
-        ParentFont = False
-        OnClick = Label5Click
-      end
       object Label8: TLabel
         Cursor = crHandPoint
-        Left = 70
+        Left = 144
         Height = 24
         Top = 162
         Width = 155
@@ -2931,23 +2904,11 @@ object Form3: TForm3
         OnClick = Label8Click
       end
       object Label9: TLabel
-        Left = 8
+        Left = 59
         Height = 24
-        Top = 64
-        Width = 179
-        Caption = 'Current maintainer:'
-        Font.Height = -21
-        Font.Name = 'System-ui'
-        ParentColor = False
-        ParentFont = False
-        OnClick = Label4Click
-      end
-      object Label10: TLabel
-        Left = 8
-        Height = 24
-        Top = 115
-        Width = 130
-        Caption = 'Program icon:'
+        Top = 80
+        Width = 258
+        Caption = 'Maintainer, tester (post-1.1)'
         Font.Height = -21
         Font.Name = 'System-ui'
         ParentColor = False
@@ -2955,7 +2916,7 @@ object Form3: TForm3
         OnClick = Label4Click
       end
       object Label12: TLabel
-        Left = 8
+        Left = 44
         Height = 27
         Top = 208
         Width = 290
@@ -2967,7 +2928,7 @@ object Form3: TForm3
         OnClick = Label4Click
       end
       object Label11: TLabel
-        Left = 8
+        Left = 85
         Height = 24
         Top = 162
         Width = 54
@@ -2977,6 +2938,16 @@ object Form3: TForm3
         ParentColor = False
         ParentFont = False
         OnClick = Label4Click
+      end
+      object Label4: TLabel
+        Left = 48
+        Height = 38
+        Top = 0
+        Width = 275
+        Alignment = taCenter
+        Caption = 'Maintainer, author, icon designer (pre-1.1)'#10'Tester, Design Helper (post-1.1)'
+        ParentColor = False
+        WordWrap = True
       end
     end
   end
