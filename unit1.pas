@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, LCLProc, Forms, strutils, LazUTF8, SynEdit,
   SynHighlighterAny, SynHighlighterPas, SynHighlighterBat, SynHighlighterPython,
   SynHighlighterXML, SynHighlighterHTML, SynHighlighterCpp,
-  synhighlighterunixshellscript, SynHighlighterJScript,
+  synhighlighterunixshellscript, SynHighlighterJScript, PrintersDlgs,
   Controls, Graphics, Dialogs, StdCtrls,
   Menus, ComCtrls, Buttons, Clipbrd, ExtCtrls, EditBtn, ActnList,
   Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Types;
@@ -20,6 +20,8 @@ type
   TForm1 = class(TForm)
     ColorDialog: TColorDialog;
     clrPalette: TColorDialog;
+    MenuItem2: TMenuItem;
+    PrintMenu: TMenuItem;
     MenuItem43: TMenuItem;
     MenuItem44: TMenuItem;
     MenuItem45: TMenuItem;
@@ -32,6 +34,7 @@ type
     MenuItem52: TMenuItem;
     MenuItem53: TMenuItem;
     MenuItem54: TMenuItem;
+    PrintDialog: TPrintDialog;
     toolbarColor: TColorDialog;
     fontColor: TColorDialog;
     gutterColor: TColorDialog;
@@ -93,7 +96,6 @@ type
     ToolButton16: TToolButton;
     ToolButton17: TToolButton;
     ToolButton18: TToolButton;
-    ToolButton19: TToolButton;
     ToolButton20: TToolButton;
     ToolButton21: TToolButton;
     ToolButton7: TToolButton;
@@ -209,6 +211,8 @@ type
     procedure MenuItem54Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
     procedure MenuItem9Click(Sender: TObject);
+    procedure PPSDMClick(Sender: TObject);
+    procedure PrintMenuClick(Sender: TObject);
     procedure SaveAsDialogClose(Sender: TObject);
     procedure SelectAllClick(Sender: TObject);
     procedure PasteMenuClick(Sender: TObject);
@@ -792,6 +796,18 @@ begin
   PasteMenuClick(Sender);
 end;
 
+procedure TForm1.PPSDMClick(Sender: TObject);
+begin
+
+end;
+
+
+
+procedure TForm1.PrintMenuClick(Sender: TObject);
+begin
+  PrintDialog.Execute;
+end;
+
 procedure TForm1.SaveAsDialogClose(Sender: TObject);
 begin
   if (SaveAsDialog.FileName <> '') then
@@ -957,6 +973,8 @@ begin
         Break;
     end;
 end;
+
+
 
 procedure TForm1.toolbarColorClose(Sender: TObject);
 begin
