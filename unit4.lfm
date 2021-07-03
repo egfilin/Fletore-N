@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 1084
+  Left = 788
   Height = 291
-  Top = 393
+  Top = 406
   Width = 413
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
@@ -2712,7 +2712,7 @@ object Form4: TForm4
       object tbcheck: TCheckBox
         Left = 8
         Height = 23
-        Top = 8
+        Top = 2
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2726,7 +2726,7 @@ object Form4: TForm4
       object diln: TCheckBox
         Left = 8
         Height = 23
-        Top = 55
+        Top = 35
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2740,7 +2740,7 @@ object Form4: TForm4
       object CheckBox1: TCheckBox
         Left = 8
         Height = 23
-        Top = 149
+        Top = 176
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2751,24 +2751,10 @@ object Form4: TForm4
         State = cbChecked
         TabOrder = 2
       end
-      object CheckBox2: TCheckBox
-        Left = 8
-        Height = 23
-        Top = 31
-        Width = 373
-        Anchors = [akTop, akLeft, akRight]
-        AutoSize = False
-        Caption = 'Show menu'
-        Checked = True
-        OnChange = CheckBox2Change
-        ParentFont = False
-        State = cbChecked
-        TabOrder = 3
-      end
       object enlargeGutter: TCheckBox
         Left = 8
         Height = 23
-        Top = 125
+        Top = 140
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2777,12 +2763,12 @@ object Form4: TForm4
         OnChange = enlargeGutterChange
         ParentFont = False
         State = cbChecked
-        TabOrder = 4
+        TabOrder = 3
       end
       object gutterSeparator: TCheckBox
         Left = 8
         Height = 23
-        Top = 102
+        Top = 105
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2791,12 +2777,12 @@ object Form4: TForm4
         OnChange = gutterSeparatorChange
         ParentFont = False
         State = cbChecked
-        TabOrder = 5
+        TabOrder = 4
       end
       object editorsBorder: TCheckBox
         Left = 8
         Height = 23
-        Top = 78
+        Top = 70
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2805,7 +2791,7 @@ object Form4: TForm4
         OnChange = editorsBorderChange
         ParentFont = False
         State = cbChecked
-        TabOrder = 6
+        TabOrder = 5
       end
     end
     object TabSheet4: TTabSheet
@@ -2813,22 +2799,11 @@ object Form4: TForm4
       ClientHeight = 200
       ClientWidth = 389
       ParentFont = False
-      object Label1: TLabel
-        Left = 116
-        Height = 19
-        Top = 8
-        Width = 150
-        Alignment = taCenter
-        Caption = 'Nothin'' to see here yet!'
-        ParentColor = False
-        ParentFont = False
-        OnClick = Label1Click
-      end
       object CheckBox3: TCheckBox
         Left = 8
         Height = 25
         Top = 172
-        Width = 318
+        Width = 316
         Caption = 'Click here to activate the config reset button!'
         OnChange = CheckBox3Change
         ParentFont = False
@@ -2838,12 +2813,42 @@ object Form4: TForm4
         Left = 120
         Height = 19
         Top = 149
-        Width = 154
+        Width = 175
         Caption = 'Configuratrion Reset'
         Font.Height = -17
         Font.Name = 'Sans'
         ParentColor = False
         ParentFont = False
+      end
+      object CheckBox4: TCheckBox
+        Left = 8
+        Height = 25
+        Top = 11
+        Width = 234
+        Caption = 'Disable popup borders (scuffed)'
+        TabOrder = 1
+      end
+      object CheckBox2: TCheckBox
+        Left = 8
+        Height = 23
+        Top = 61
+        Width = 373
+        Anchors = [akTop, akLeft, akRight]
+        AutoSize = False
+        Caption = 'Show menu in the editor'
+        Checked = True
+        OnChange = CheckBox2Change
+        ParentFont = False
+        State = cbChecked
+        TabOrder = 2
+      end
+      object CheckBox6: TCheckBox
+        Left = 8
+        Height = 25
+        Top = 113
+        Width = 234
+        Caption = 'Persistent selection in the editor'
+        TabOrder = 3
       end
     end
   end

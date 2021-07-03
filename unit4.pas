@@ -21,13 +21,14 @@ type
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
     CheckBox3: TCheckBox;
+    CheckBox4: TCheckBox;
+    CheckBox6: TCheckBox;
     ComboBox2: TComboBox;
     ComboBox3: TComboBox;
     diln: TCheckBox;
     editorsBorder: TCheckBox;
     enlargeGutter: TCheckBox;
     gutterSeparator: TCheckBox;
-    Label1: TLabel;
     Label2: TLabel;
     Label5: TLabel;
     Label6: TLabel;
