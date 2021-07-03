@@ -11,7 +11,7 @@ uses
   synhighlighterunixshellscript, SynHighlighterJScript, PrintersDlgs,
   Controls, Graphics, Dialogs, StdCtrls,
   Menus, ComCtrls, Buttons, Clipbrd, ExtCtrls, EditBtn, ActnList,
-  Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Types;
+  Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Types;
 
 type
 
@@ -805,6 +805,7 @@ end;
 
 procedure TForm1.PrintMenuClick(Sender: TObject);
 begin
+  ShowMessage('This is a test function and does not work yet');
   PrintDialog.Execute;
 end;
 
@@ -1377,7 +1378,7 @@ begin
  Form7.ShowModal;
  end;
   {$ENDIF}
-
+  ShowMessage('This Fletore-N build is a beta and is not fully tested.');
   editableFile := '';
   curSyn := 'none';
   tmpSyn := 'none';

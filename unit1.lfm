@@ -1,14 +1,15 @@
 object Form1: TForm1
   Left = 773
-  Height = 430
+  Height = 421
   Top = 290
-  Width = 628
+  Width = 615
   AllowDropFiles = True
   BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
   Caption = 'New file'
-  ClientHeight = 401
-  ClientWidth = 628
-  Constraints.MinWidth = 437
+  ClientHeight = 392
+  ClientWidth = 615
+  Constraints.MinWidth = 428
+  DesignTimePPI = 94
   DragMode = dmAutomatic
   Icon.Data = {
     0D38010000000100060000000000010020001656000066000000303000000100
@@ -2523,9 +2524,9 @@ object Form1: TForm1
   LCLVersion = '2.0.12.0'
   inline Editor: TSynEdit
     Left = 0
-    Height = 352
-    Top = 27
-    Width = 628
+    Height = 344
+    Top = 26
+    Width = 615
     Align = alClient
     BlockIndent = 0
     Font.CharSet = 4
@@ -3023,35 +3024,36 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Height = 22
-    Top = 379
-    Width = 628
+    Top = 370
+    Width = 615
     Panels = <    
       item
         Text = 'Length: 0'
-        Width = 80
+        Width = 78
       end    
       item
         Text = 'Lines: 0'
-        Width = 80
+        Width = 78
       end    
       item
         Text = '1, 1'
-        Width = 60
+        Width = 59
       end    
       item
         Text = 'Plain text'
-        Width = 50
+        Width = 49
       end>
+    ParentFont = False
     SimplePanel = False
   end
   object ToolBar1: TToolBar
     Left = 0
-    Height = 27
+    Height = 26
     Top = 0
-    Width = 628
+    Width = 615
     AutoSize = True
-    ButtonHeight = 27
-    ButtonWidth = 27
+    ButtonHeight = 26
+    ButtonWidth = 26
     Color = clForm
     EdgeBorders = []
     EdgeInner = esNone
@@ -3064,8 +3066,8 @@ object Form1: TForm1
     TabOrder = 2
     Wrapable = False
     object ToolButton1: TToolButton
-      Left = 141
-      Height = 27
+      Left = 136
+      Height = 26
       Top = 0
       AutoSize = True
       Caption = 'ToolButton1'
@@ -3074,8 +3076,8 @@ object Form1: TForm1
       Style = tbsDivider
     end
     object ToolButton3: TToolButton
-      Left = 82
-      Height = 27
+      Left = 79
+      Height = 26
       Top = 0
       AutoSize = True
       Caption = 'ToolButton3'
@@ -3084,8 +3086,8 @@ object Form1: TForm1
       Style = tbsDivider
     end
     object ToolButton4: TToolButton
-      Left = 254
-      Height = 27
+      Left = 245
+      Height = 26
       Top = 0
       AutoSize = True
       Caption = 'ToolButton4'
@@ -3094,7 +3096,7 @@ object Form1: TForm1
       Style = tbsDivider
     end
     object ToolButton7: TToolButton
-      Left = 313
+      Left = 302
       Hint = 'Color pallete (F3)'
       Top = 0
       Caption = 'ToolButton7'
@@ -3104,7 +3106,7 @@ object Form1: TForm1
       ShowHint = True
     end
     object ToolButton8: TToolButton
-      Left = 286
+      Left = 276
       Hint = 'Replace (Ctrl+R)'
       Top = 0
       Caption = 'ToolButton8'
@@ -3114,7 +3116,7 @@ object Form1: TForm1
       ShowHint = True
     end
     object ToolButton9: TToolButton
-      Left = 259
+      Left = 250
       Hint = 'Find (Ctrl+F)'
       Top = 0
       Caption = 'ToolButton9'
@@ -3124,7 +3126,7 @@ object Form1: TForm1
       ShowHint = True
     end
     object ToolButton10: TToolButton
-      Left = 227
+      Left = 219
       Hint = 'Paste (Ctrl+V)'
       Top = 0
       Caption = 'ToolButton10'
@@ -3132,7 +3134,7 @@ object Form1: TForm1
       OnClick = BitBtn10Click
     end
     object ToolButton11: TToolButton
-      Left = 200
+      Left = 193
       Hint = 'Copy (Ctrl+C)'
       Top = 0
       Caption = 'ToolButton11'
@@ -3140,7 +3142,7 @@ object Form1: TForm1
       OnClick = BitBtn11Click
     end
     object ToolButton12: TToolButton
-      Left = 173
+      Left = 167
       Hint = 'Cut (Ctrl+X)'
       Top = 0
       Caption = 'ToolButton12'
@@ -3148,7 +3150,7 @@ object Form1: TForm1
       OnClick = BitBtn12Click
     end
     object ToolButton13: TToolButton
-      Left = 146
+      Left = 141
       Hint = 'Select all (Ctrl+A)'
       Top = 0
       Caption = 'ToolButton13'
@@ -3156,7 +3158,7 @@ object Form1: TForm1
       OnClick = BitBtn2Click
     end
     object ToolButton14: TToolButton
-      Left = 114
+      Left = 110
       Hint = 'Redo (Ctrl+Y)'
       Top = 0
       Caption = 'ToolButton14'
@@ -3164,7 +3166,7 @@ object Form1: TForm1
       OnClick = BitBtn14Click
     end
     object ToolButton15: TToolButton
-      Left = 87
+      Left = 84
       Hint = 'Undo (Ctrl+Z)'
       Top = 0
       Caption = 'ToolButton15'
@@ -3172,7 +3174,7 @@ object Form1: TForm1
       OnClick = BitBtn13Click
     end
     object ToolButton16: TToolButton
-      Left = 55
+      Left = 53
       Hint = 'Save file (Ctrl+S)'
       Top = 0
       Caption = 'ToolButton16'
@@ -3180,7 +3182,7 @@ object Form1: TForm1
       OnClick = BitBtn3Click
     end
     object ToolButton17: TToolButton
-      Left = 28
+      Left = 27
       Hint = 'Open (Ctrl+O)'
       Top = 0
       Caption = 'ToolButton17'
@@ -3196,7 +3198,7 @@ object Form1: TForm1
       OnClick = BitBtn4Click
     end
     object ToolButton20: TToolButton
-      Left = 367
+      Left = 354
       Hint = 'Settings... (F2)'
       Top = 0
       Caption = 'ToolButton20'
@@ -3204,7 +3206,7 @@ object Form1: TForm1
       OnClick = ToolButton20Click
     end
     object ToolButton21: TToolButton
-      Left = 340
+      Left = 328
       Hint = 'Change the title of the form (Ctrl+Shift+C)'
       Top = 0
       Caption = 'ToolButton21'
@@ -3215,7 +3217,7 @@ object Form1: TForm1
     end
   end
   object ToolButton5: TToolButton
-    Left = 187
+    Left = 183
     Height = 5
     Top = 2
     Width = 5
@@ -3226,8 +3228,8 @@ object Form1: TForm1
     Style = tbsDivider
   end
   object MainMenu: TMainMenu
-    Left = 336
-    Top = 75
+    Left = 329
+    Top = 73
     object FileSubmenu: TMenuItem
       Caption = 'File'
       object NewMenuItem: TMenuItem
@@ -4066,20 +4068,20 @@ object Form1: TForm1
   object OpenDialog: TOpenDialog
     OnClose = OpenDialogClose
     Title = 'Open'
-    Left = 408
-    Top = 75
+    Left = 400
+    Top = 73
   end
   object SaveDialog: TSaveDialog
     OnClose = SaveDialogClose
     Title = 'Save file'
     Filter = 'All files|*.*'
-    Left = 480
-    Top = 75
+    Left = 470
+    Top = 73
   end
   object FindDialog1: TFindDialog
     OnFind = FindDialog1Find
-    Left = 272
-    Top = 75
+    Left = 266
+    Top = 73
   end
   object ColorDialog: TColorDialog
     OnClose = ColorDialogClose
@@ -4107,8 +4109,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 208
-    Top = 75
+    Left = 204
+    Top = 73
   end
   object FontDialog: TFontDialog
     OnClose = FontDialogClose
@@ -4116,15 +4118,15 @@ object Form1: TForm1
     MinFontSize = 0
     MaxFontSize = 0
     Options = [fdWysiwyg]
-    Left = 136
-    Top = 75
+    Left = 133
+    Top = 73
   end
   object ReplaceDialog1: TReplaceDialog
     Options = [frDown, frReplace, frReplaceAll, frHidePromptOnReplace]
     OnFind = ReplaceDialog1Find
     OnReplace = ReplaceDialog1Replace
-    Left = 272
-    Top = 131
+    Left = 266
+    Top = 128
   end
   object clrPalette: TColorDialog
     Title = 'Color palette'
@@ -4151,12 +4153,12 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 208
-    Top = 131
+    Left = 204
+    Top = 128
   end
   object PopupMenu1: TPopupMenu
-    Left = 456
-    Top = 131
+    Left = 447
+    Top = 128
     object MenuItem29: TMenuItem
       Caption = 'Undo'
       Bitmap.Data = {
@@ -4464,8 +4466,8 @@ object Form1: TForm1
   object HTMSyn: TSynHTMLSyn
     DefaultFilter = 'Документ HTML (*.htm,*.html)|*.htm;*.html'
     Enabled = False
-    Left = 288
-    Top = 296
+    Left = 282
+    Top = 290
   end
   object FPCSyn: TSynFreePascalSyn
     Enabled = False
@@ -4481,8 +4483,8 @@ object Form1: TForm1
     ProcedureHeaderName.Style = [fsBold]
     CompilerMode = pcmObjFPC
     NestedComments = True
-    Left = 216
-    Top = 240
+    Left = 212
+    Top = 235
   end
   object BATSyn: TSynBatSyn
     DefaultFilter = 'Пакетные файлы MS-DOS (*.bat;*.cmd)|*.bat;*.cmd'
@@ -4491,14 +4493,14 @@ object Form1: TForm1
     CommentAttri.Style = [fsBold, fsItalic]
     NumberAttri.Foreground = 16730698
     VariableAttri.Style = [fsUnderline]
-    Left = 320
-    Top = 224
+    Left = 313
+    Top = 219
   end
   object UNIXSyn: TSynUNIXShellScriptSyn
     DefaultFilter = 'Сценарии UNIX Shell (*.sh)|*.sh'
     Enabled = False
-    Left = 416
-    Top = 224
+    Left = 407
+    Top = 219
   end
   object JSSyn: TSynJScriptSyn
     Enabled = False
@@ -4511,22 +4513,22 @@ object Form1: TForm1
     NumberAttri.Foreground = clRed
     StringAttri.Foreground = clBlue
     SymbolAttri.Foreground = clRed
-    Left = 184
-    Top = 296
+    Left = 180
+    Top = 290
   end
   object SaveAsDialog: TSaveDialog
     OnClose = SaveAsDialogClose
     Title = 'Save file'
     Filter = 'All files|*.*'
-    Left = 544
-    Top = 75
+    Left = 533
+    Top = 73
   end
   object XMLSyn: TSynXMLSyn
     DefaultFilter = 'Документ XML (*.xml,*.xsd,*.xsl,*.xslt,*.dtd)|*.xml;*.xsd;*.xsl;*.xslt;*.dtd'
     Enabled = False
     WantBracesParsed = False
-    Left = 400
-    Top = 296
+    Left = 392
+    Top = 290
   end
   object NoSyn: TSynAnySyn
     Enabled = False
@@ -4549,12 +4551,12 @@ object Form1: TForm1
     Entity = False
     DollarVariables = False
     ActiveDot = False
-    Left = 512
-    Top = 272
+    Left = 501
+    Top = 266
   end
   object ToolbarIcons: TImageList
-    Left = 544
-    Top = 131
+    Left = 533
+    Top = 128
     Bitmap = {
       4C69150000001000000010000000000000000000000000000000000000000000
       00000000000000000000FF000001FF0000010000000000000000000000000000
@@ -5239,8 +5241,8 @@ object Form1: TForm1
     NumberAttri.Foreground = 4227327
     SymbolAttri.Foreground = clBlue
     ErrorAttri.Style = [fsBold]
-    Left = 136
-    Top = 240
+    Left = 133
+    Top = 235
   end
   object gutterColor: TColorDialog
     OnClose = gutterColorClose
@@ -5268,8 +5270,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 208
-    Top = 184
+    Left = 204
+    Top = 180
   end
   object fontColor: TColorDialog
     OnClose = fontColorClose
@@ -5297,8 +5299,8 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 144
-    Top = 184
+    Left = 141
+    Top = 180
   end
   object toolbarColor: TColorDialog
     OnClose = toolbarColorClose
@@ -5326,14 +5328,14 @@ object Form1: TForm1
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 80
-    Top = 131
+    Left = 78
+    Top = 128
   end
   object PrintDialog: TPrintDialog
     Title = 'Print'
     FromPage = 1
     ToPage = 1
-    Left = 360
-    Top = 136
+    Left = 353
+    Top = 133
   end
 end

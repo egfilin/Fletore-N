@@ -65,7 +65,7 @@
         <PackageName Value="LCL"/>
       </Item9>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="Fletore-N.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -126,6 +126,13 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit7"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="res/unit8.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form8"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit8"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -136,6 +143,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="res"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <CodeGeneration>

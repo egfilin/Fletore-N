@@ -6,26 +6,23 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls,
-  ComCtrls, UITypes, Unit2;
+  ComCtrls, UITypes, Unit2, Unit8;
 
 type
 
   { TForm4 }
 
   TForm4 = class(TForm)
-    BitBtn11: TBitBtn;
-    BitBtn12: TBitBtn;
+    BitBtn1: TBitBtn;
     BitBtn15: TBitBtn;
-    BitBtn16: TBitBtn;
-    BitBtn18: TBitBtn;
     BitBtn19: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
     CheckBox3: TCheckBox;
-    ComboBox3: TComboBox;
     ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
     diln: TCheckBox;
     editorsBorder: TCheckBox;
     enlargeGutter: TCheckBox;
@@ -36,10 +33,10 @@ type
     Label6: TLabel;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
     tbcheck: TCheckBox;
+    procedure BitBtn15Click(Sender: TObject);
     procedure BitBtn18Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
@@ -102,14 +99,12 @@ begin
     begin
       BitBtn3.Visible := False;
       TabSheet1.TabVisible := False;
-      TabSheet2.TabVisible := False;
       TabSheet3.TabVisible := False;
     end;
     False:
     begin
       BitBtn3.Visible := True;
       TabSheet1.TabVisible := True;
-      TabSheet2.TabVisible := True;
       TabSheet3.TabVisible := True;
     end;
   end;
@@ -221,6 +216,11 @@ procedure TForm4.BitBtn18Click(Sender: TObject);
 begin
   Form2.form1caption.Caption := Form1.Caption;
   Form2.ShowModal;
+end;
+
+procedure TForm4.BitBtn15Click(Sender: TObject);
+begin
+  Form8.ShowModal();
 end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);
