@@ -4475,7 +4475,6 @@ object Form1: TForm1
     AsmAttri.Style = [fsBold]
     CommentAttri.Foreground = 16711808
     CommentAttri.Style = [fsBold, fsItalic]
-    IdentifierAttri.Foreground = clDefault
     NumberAttri.Foreground = 4227327
     StringAttri.Foreground = clBlue
     SymbolAttri.Foreground = clBlue

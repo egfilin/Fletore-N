@@ -11,7 +11,7 @@ uses
   synhighlighterunixshellscript, SynHighlighterJScript, PrintersDlgs,
   Controls, Graphics, Dialogs, StdCtrls,
   Menus, ComCtrls, Buttons, Clipbrd, ExtCtrls, EditBtn, ActnList,
-  Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Types;
+  Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8 ,Types;
 
 type
 
@@ -252,7 +252,7 @@ type
 
 var
   Form1: TForm1;
-  editableFile, configFileLocation, curSyn, tmpSyn: string;
+  editableFile, configFileLocation, curSyn, tmpSyn, theme: string;
   config: Text;
   configFile: TStringList;
   isFileEditing: boolean;

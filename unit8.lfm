@@ -1,7 +1,7 @@
 object Form8: TForm8
-  Left = 560
+  Left = 956
   Height = 293
-  Top = 363
+  Top = 413
   Width = 425
   BorderStyle = bsDialog
   Caption = 'Theme Settings'
@@ -17,6 +17,7 @@ object Form8: TForm8
     Width = 408
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Background color'
+    Enabled = False
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000064000000640000000000000000000000AAAAAA038E8E
@@ -53,6 +54,7 @@ object Form8: TForm8
       891C8989891C8989891C8989891C8989891C8989891C8989891C8989891C8989
       891C8989891C8989891C8989891C8989891C8989891CAAAAAA03
     }
+    OnClick = BitBtn11Click
     ParentFont = False
     TabOrder = 0
   end
@@ -63,6 +65,7 @@ object Form8: TForm8
     Width = 408
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Gutter color'
+    Enabled = False
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000064000000640000000000000000000000AAAAAA038E8E
@@ -99,6 +102,7 @@ object Form8: TForm8
       891C8989891C8989891C8989891C8989891C8989891C8989891C8989891C8989
       891C8989891C8989891C8989891C8989891C8989891CAAAAAA03
     }
+    OnClick = BitBtn12Click
     ParentFont = False
     TabOrder = 1
   end
@@ -109,6 +113,7 @@ object Form8: TForm8
     Width = 408
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Toolbar color'
+    Enabled = False
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000064000000640000000000000000000000AAAAAA038E8E
@@ -145,6 +150,7 @@ object Form8: TForm8
       891C8989891C8989891C8989891C8989891C8989891C8989891C8989891C8989
       891C8989891C8989891C8989891C8989891C8989891CAAAAAA03
     }
+    OnClick = BitBtn18Click
     ParentFont = False
     TabOrder = 2
   end
@@ -155,6 +161,7 @@ object Form8: TForm8
     Width = 408
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Font color (in some places)'
+    Enabled = False
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000064000000640000000000000000000000000000000000
@@ -191,6 +198,7 @@ object Form8: TForm8
       000000000000A0A0A01B9797971B9797971B9797971B9797971B9797971B9797
       971B9797971B9797971B9797971B8D8D8D090000000000000000
     }
+    OnClick = BitBtn16Click
     ParentFont = False
     TabOrder = 3
   end
@@ -217,6 +225,7 @@ object Form8: TForm8
     Top = 71
     Width = 121
     Caption = 'Custom theme'
+    OnChange = CustomChange
     TabOrder = 6
   end
   object Label1: TLabel
