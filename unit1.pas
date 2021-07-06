@@ -96,8 +96,8 @@ type
     ToolButton16: TToolButton;
     ToolButton17: TToolButton;
     ToolButton18: TToolButton;
+    ToolButton2: TToolButton;
     ToolButton20: TToolButton;
-    ToolButton21: TToolButton;
     ToolButton7: TToolButton;
     ToolButton8: TToolButton;
     ToolButton9: TToolButton;
@@ -367,6 +367,7 @@ begin
     writeln(config, 'top');
   writeln(config, ColorToString(ToolBar1.color));
   writeln(config, ShowWinDialog);
+  writeln(config, theme);
   CloseFile(config);
 end;
 
@@ -378,7 +379,7 @@ begin
 
     configFile := TStringList.Create;
     configFile.LoadFromFile(configFileLocation);
-    Editor.Font.Color := StringToColor(configFile.Strings[0]);
+    //Editor.Font.Color := StringToColor(configFile.Strings[0]);
     Editor.Font.Height := StrToInt(configFile.Strings[1]);
     Editor.Font.Name := configFile.Strings[2];
     Editor.Font.Orientation := StrToInt(configFile.Strings[3]);
@@ -387,7 +388,7 @@ begin
     Editor.Font.Italic := StrToBool(configFile.Strings[6]);
     Editor.Font.StrikeThrough := StrToBool(configFile.Strings[7]);
     Editor.Font.Underline := StrToBool(configFile.Strings[8]);
-    Editor.Color := StringToColor(configFile.Strings[9]);
+    //Editor.Color := StringToColor(configFile.Strings[9]);
 
     Form1.Left := StrToInt(configFile.Strings[10]);
     Form1.Top := StrToInt(configFile.Strings[11]);
@@ -395,7 +396,11 @@ begin
     Form1.Height := StrToInt(configFile.Strings[13]);
 
     ToolBar1.Visible := StrToBool(configFile.Strings[14]);
+    Form4.ComboBox3.Enabled := StrToBool(configFile.Strings[14]);
+    Form4.CheckBox2.Enabled := StrToBool(configFile.Strings[14]);
     Editor.Gutter.Visible := StrToBool(configFile.Strings[15]);
+    Form4.enlargeGutter.Enabled := StrToBool(configFile.Strings[15]);
+    Form4.gutterSeparator.Enabled := StrToBool(configFile.Strings[15]);
     if (configFile.Strings[16] <> 'wsMinimized') then
       Form1.WindowState := StrToWindowState(configFile.Strings[16]);
 
@@ -411,16 +416,18 @@ begin
     end;
 
     StatusBar1.Visible := StrToBool(configFile.Strings[18]);
+    Form4.ComboBox2.Enabled := StrToBool(configFile.Strings[18]);
 
     Form1.FileSubmenu.Visible := StrToBool(configFile.Strings[19]);
     Form1.SettingsSubmenu.Visible := StrToBool(configFile.Strings[19]);
     Form1.MenuItem11.Visible := StrToBool(configFile.Strings[19]);
     Form1.AboutSubmenu.Visible := StrToBool(configFile.Strings[19]);
     Form1.MenuItem43.Visible := StrToBool(configFile.Strings[19]);
+    Form4.tbcheck.Enabled := StrToBool(configFile.Strings[19]);
 
-    Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[20]);
-    Form1.Editor.Gutter.Parts[1].MarkupInfo.Background :=
-      StringToColor(configFile.Strings[20]);
+    //Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[20]);
+    //Form1.Editor.Gutter.Parts[1].MarkupInfo.Background :=
+      //StringToColor(configFile.Strings[20]);
 
     if (configFile.Strings[21] = 'no_bs') then
       Form1.Editor.BorderStyle := bsNone;
@@ -444,7 +451,7 @@ begin
       end;
     end;
 
-    toolbar1.Color := StringToColor(configFile.Strings[26]);
+    //toolbar1.Color := StringToColor(configFile.Strings[26]);
     ShowWinDialog :=  StrToBool(configFile.Strings[27])
   end; //Config file reading ends
 end;

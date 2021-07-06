@@ -10,14 +10,14 @@ This is a file if you want to change/remove Fletore-N's config entries
 8th string = Is font strikeout?
 9th string = Is font underline?
 10th string = Background color (Help - https://wiki.freepascal.org/Colors)
-11th string = Master form X position
-12th string = Master form Y position
-13th string = Master form width
-14th string = Master form height
+11th string = Editor window X position
+12th string = Editor window Y position
+13th string = Editor window width
+14th string = Editor window height
 15th string = Show toolbar?
-16th string = Display line numbers
+16th string = Gutter visibility
 17th string = Window state
-18th string = Form1 caption (none = do not use custom window title)
+18th string = Editor window caption (none = do not use custom window title)
 19th string = Status bar visibility
 20th string = Menu visibility
 21st string = Gutter color

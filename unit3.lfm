@@ -1,15 +1,16 @@
 object Form3: TForm3
   Left = 693
-  Height = 329
+  Height = 322
   Top = 314
-  Width = 383
+  Width = 375
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'About'
-  ClientHeight = 329
-  ClientWidth = 383
-  Constraints.MinHeight = 329
-  Constraints.MinWidth = 383
+  ClientHeight = 322
+  ClientWidth = 375
+  Constraints.MinHeight = 322
+  Constraints.MinWidth = 375
+  DesignTimePPI = 94
   Icon.Data = {
     0D38010000000100060000000000010020001656000066000000303000000100
     2000A82500007C5600002020000001002000A8100000247C0000181800000100
@@ -2516,10 +2517,10 @@ object Form3: TForm3
   object Label2: TLabel
     Cursor = crHandPoint
     Left = 8
-    Height = 33
+    Height = 32
     Hint = 'Hi! :D'
-    Top = 291
-    Width = 288
+    Top = 285
+    Width = 282
     Alignment = taCenter
     Anchors = [akLeft, akRight, akBottom]
     AutoSize = False
@@ -2538,38 +2539,41 @@ object Form3: TForm3
     OnClick = Label2Click
   end
   object BitBtn1: TBitBtn
-    Left = 303
-    Height = 28
-    Top = 298
-    Width = 75
+    Left = 297
+    Height = 27
+    Top = 292
+    Width = 73
     Anchors = [akRight, akBottom]
     Caption = '&OK'
     Kind = bkOK
     ModalResult = 1
+    ParentFont = False
     TabOrder = 0
   end
   object PageControl1: TPageControl
     AnchorSideTop.Control = Owner
     AnchorSideRight.Side = asrCenter
     Left = 0
-    Height = 296
+    Height = 290
     Top = 0
-    Width = 384
+    Width = 376
     ActivePage = TabSheet1
     Anchors = [akTop, akLeft, akRight, akBottom]
+    ParentFont = False
     TabIndex = 0
     TabOrder = 1
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'About'
-      ClientHeight = 261
-      ClientWidth = 374
+      ClientHeight = 255
+      ClientWidth = 366
       OnContextPopup = TabSheet1ContextPopup
+      ParentFont = False
       object Image1: TImage
         Left = -10
-        Height = 176
+        Height = 172
         Top = 8
-        Width = 168
+        Width = 164
         Picture.Data = {
           1754506F727461626C654E6574776F726B47726170686963741F000089504E47
           0D0A1A0A0000000D49484452000000A70000009C08060000001AABBB82000000
@@ -2827,12 +2831,12 @@ object Form3: TForm3
         }
       end
       object Label3: TLabel
-        Left = 156
-        Height = 48
-        Top = 72
-        Width = 209
+        Left = 153
+        Height = 46
+        Top = 70
+        Width = 205
         Caption = 'Fletore-N'
-        Font.Height = -48
+        Font.Height = -47
         Font.Name = 'Sawasdee'
         Font.Style = [fsBold]
         ParentColor = False
@@ -2841,13 +2845,13 @@ object Form3: TForm3
       end
       object Label1: TLabel
         Left = -5
-        Height = 187
-        Top = 176
-        Width = 370
+        Height = 183
+        Top = 172
+        Width = 362
         Alignment = taCenter
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = False
-        Caption = 'Version 1.1:111'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 29/6/2021'
+        Caption = 'Version 1.2-trunk'#13#10'This program is licensed under GNU GPL v2.'#10#10'Build date: 29/6/2021'
         ParentColor = False
         ParentFont = False
         OnClick = Label1Click
@@ -2855,14 +2859,15 @@ object Form3: TForm3
     end
     object TabSheet2: TTabSheet
       Caption = 'Credits'
-      ClientHeight = 261
-      ClientWidth = 374
+      ClientHeight = 255
+      ClientWidth = 366
       OnContextPopup = TabSheet2ContextPopup
+      ParentFont = False
       object Label5: TLabel
         Cursor = crHandPoint
-        Left = 144
+        Left = 141
         Height = 27
-        Top = 40
+        Top = 39
         Width = 86
         Caption = 'KATAR7'
         Font.Color = clHighlight
@@ -2875,9 +2880,9 @@ object Form3: TForm3
       end
       object Label6: TLabel
         Cursor = crHandPoint
-        Left = 152
+        Left = 149
         Height = 27
-        Top = 112
+        Top = 110
         Width = 64
         Caption = 'egfilin'
         Font.Color = clHighlight
@@ -2890,9 +2895,9 @@ object Form3: TForm3
       end
       object Label8: TLabel
         Cursor = crHandPoint
-        Left = 144
+        Left = 141
         Height = 24
-        Top = 162
+        Top = 159
         Width = 155
         Caption = 'Tango Icon Pack'
         Font.Color = clHighlight
@@ -2904,9 +2909,9 @@ object Form3: TForm3
         OnClick = Label8Click
       end
       object Label9: TLabel
-        Left = 59
+        Left = 58
         Height = 24
-        Top = 80
+        Top = 78
         Width = 258
         Caption = 'Maintainer, tester (post-1.1)'
         Font.Height = -21
@@ -2916,9 +2921,9 @@ object Form3: TForm3
         OnClick = Label4Click
       end
       object Label12: TLabel
-        Left = 44
+        Left = 43
         Height = 27
-        Top = 208
+        Top = 204
         Width = 290
         Caption = '© egfilin and KATAR7, 2021'
         Font.Height = -24
@@ -2928,9 +2933,9 @@ object Form3: TForm3
         OnClick = Label4Click
       end
       object Label11: TLabel
-        Left = 85
+        Left = 83
         Height = 24
-        Top = 162
+        Top = 159
         Width = 54
         Caption = 'Using'
         Font.Height = -21
@@ -2940,13 +2945,14 @@ object Form3: TForm3
         OnClick = Label4Click
       end
       object Label4: TLabel
-        Left = 48
+        Left = 47
         Height = 38
         Top = 0
         Width = 275
         Alignment = taCenter
         Caption = 'Maintainer, author, icon designer (pre-1.1)'#10'Tester, Design Helper (post-1.1)'
         ParentColor = False
+        ParentFont = False
         WordWrap = True
       end
     end

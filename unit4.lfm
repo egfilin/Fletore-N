@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 788
+  Left = 1016
   Height = 291
-  Top = 406
+  Top = 398
   Width = 413
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
@@ -2548,7 +2548,7 @@ object Form4: TForm4
       object BitBtn15: TBitBtn
         AnchorSideRight.Side = asrCenter
         Left = 10
-        Height = 31
+        Height = 30
         Top = 33
         Width = 361
         Anchors = [akTop, akLeft, akRight]
@@ -2605,7 +2605,7 @@ object Form4: TForm4
       object ComboBox2: TComboBox
         Left = 11
         Height = 31
-        Top = 165
+        Top = 168
         Width = 360
         Anchors = [akTop, akLeft, akRight]
         ItemHeight = 0
@@ -2632,7 +2632,7 @@ object Form4: TForm4
       object BitBtn19: TBitBtn
         Left = 10
         Height = 29
-        Top = 67
+        Top = 66
         Width = 361
         Anchors = [akTop, akLeft, akRight]
         Caption = 'Change title'
@@ -2726,7 +2726,7 @@ object Form4: TForm4
       object diln: TCheckBox
         Left = 8
         Height = 23
-        Top = 35
+        Top = 102
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2740,7 +2740,7 @@ object Form4: TForm4
       object CheckBox1: TCheckBox
         Left = 8
         Height = 23
-        Top = 176
+        Top = 35
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2754,7 +2754,7 @@ object Form4: TForm4
       object enlargeGutter: TCheckBox
         Left = 8
         Height = 23
-        Top = 140
+        Top = 136
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2768,7 +2768,7 @@ object Form4: TForm4
       object gutterSeparator: TCheckBox
         Left = 8
         Height = 23
-        Top = 105
+        Top = 171
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
@@ -2782,7 +2782,7 @@ object Form4: TForm4
       object editorsBorder: TCheckBox
         Left = 8
         Height = 23
-        Top = 70
+        Top = 69
         Width = 373
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False

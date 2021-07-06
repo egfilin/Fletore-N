@@ -5,7 +5,8 @@ unit Unit8;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls,
+  ExtCtrls;
 
 type
 
@@ -20,11 +21,15 @@ type
     Light: TRadioButton;
     Dark: TRadioButton;
     Custom: TRadioButton;
+    Def: TRadioButton;
     procedure BitBtn11Click(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
     procedure BitBtn16Click(Sender: TObject);
     procedure BitBtn18Click(Sender: TObject);
     procedure CustomChange(Sender: TObject);
+    procedure DarkChange(Sender: TObject);
+    procedure DefChange(Sender: TObject);
+    procedure LightChange(Sender: TObject);
   private
 
   public
@@ -69,6 +74,21 @@ begin
    BitBtn16.Enabled := Custom.Checked;
    BitBtn18.Enabled := Custom.Checked;
    theme := 'custom';
+end;
+
+procedure TForm8.DarkChange(Sender: TObject);
+begin
+  theme := 'dark';
+end;
+
+procedure TForm8.DefChange(Sender: TObject);
+begin
+  theme := '';
+end;
+
+procedure TForm8.LightChange(Sender: TObject);
+begin
+  theme := 'light';
 end;
 
 end.

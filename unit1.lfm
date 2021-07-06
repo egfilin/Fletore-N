@@ -3198,22 +3198,18 @@ object Form1: TForm1
       OnClick = BitBtn4Click
     end
     object ToolButton20: TToolButton
-      Left = 354
+      Left = 328
       Hint = 'Settings... (F2)'
       Top = 0
       Caption = 'ToolButton20'
       ImageIndex = 16
       OnClick = ToolButton20Click
     end
-    object ToolButton21: TToolButton
-      Left = 328
-      Hint = 'Change the title of the form (Ctrl+Shift+C)'
+    object ToolButton2: TToolButton
+      Left = 354
       Top = 0
-      Caption = 'ToolButton21'
-      ImageIndex = 20
-      OnClick = ToolButton21Click
-      ParentShowHint = False
-      ShowHint = True
+      Caption = 'ToolButton2'
+      Style = tbsCheck
     end
   end
   object ToolButton5: TToolButton

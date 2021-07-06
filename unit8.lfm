@@ -1,7 +1,7 @@
 object Form8: TForm8
-  Left = 956
+  Left = 590
   Height = 293
-  Top = 413
+  Top = 399
   Width = 425
   BorderStyle = bsDialog
   Caption = 'Theme Settings'
@@ -205,24 +205,25 @@ object Form8: TForm8
   object Light: TRadioButton
     Left = 8
     Height = 25
-    Top = 10
+    Top = 31
     Width = 103
     Caption = 'Light theme'
-    Checked = True
+    OnChange = LightChange
     TabOrder = 4
   end
   object Dark: TRadioButton
     Left = 8
     Height = 25
-    Top = 41
+    Top = 58
     Width = 102
     Caption = 'Dark theme'
+    OnChange = DarkChange
     TabOrder = 5
   end
   object Custom: TRadioButton
     Left = 8
     Height = 25
-    Top = 71
+    Top = 84
     Width = 121
     Caption = 'Custom theme'
     OnChange = CustomChange
@@ -235,5 +236,18 @@ object Form8: TForm8
     Width = 183
     Caption = 'Custom theme configuration'
     ParentColor = False
+  end
+  object Def: TRadioButton
+    Left = 8
+    Height = 25
+    Top = 5
+    Width = 120
+    Caption = 'Default theme'
+    Checked = True
+    DoubleBuffered = False
+    OnChange = DefChange
+    ParentDoubleBuffered = False
+    TabOrder = 7
+    TabStop = True
   end
 end

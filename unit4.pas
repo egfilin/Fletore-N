@@ -81,6 +81,7 @@ uses Unit1;
 procedure TForm4.CheckBox1Change(Sender: TObject);
 begin
   Form1.StatusBar1.Visible := CheckBox1.Checked;
+  Form4.ComboBox2.Enabled := CheckBox1.Checked;
 end;
 
 procedure TForm4.CheckBox2Change(Sender: TObject);
@@ -90,6 +91,7 @@ begin
   Form1.MenuItem11.Visible := CheckBox2.Checked;
   Form1.AboutSubmenu.Visible := CheckBox2.Checked;
   Form1.MenuItem43.Visible := CheckBox2.Checked;
+  Form4.tbcheck.Enabled := CheckBox2.Checked;
 end;
 
 procedure TForm4.CheckBox3Change(Sender: TObject);
@@ -195,11 +197,15 @@ end;
 procedure TForm4.tbcheckChange(Sender: TObject);
 begin
   Form1.ToolBar1.Visible := tbcheck.Checked;
+  Form4.CheckBox2.Enabled := tbcheck.Checked;
+  Form4.ComboBox3.Enabled := tbcheck.Checked;
 end;
 
 procedure TForm4.dilnChange(Sender: TObject);
 begin
   Form1.Editor.Gutter.Visible := diln.Checked;
+  enlargeGutter.Enabled := diln.Checked;
+  gutterSeparator.Enabled := diln.Checked;
 end;
 
 procedure TForm4.FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
