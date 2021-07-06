@@ -452,7 +452,25 @@ begin
     end;
 
     //toolbar1.Color := StringToColor(configFile.Strings[26]);
-    ShowWinDialog :=  StrToBool(configFile.Strings[27])
+    ShowWinDialog :=  StrToBool(configFile.Strings[27]);
+    theme := configFile.Strings[28];
+    case theme of
+     'light':
+      begin
+        //theme engine goes here
+        Form8.Light.Checked := True;
+      end;
+      'dark':
+      begin
+        //theme engine goes here
+        Form8.Dark.Checked := True;
+      end;
+      'custom':
+      begin
+        //theme engine goes here
+        Form8.Custom.Checked := True;
+      end;
+    end;
   end; //Config file reading ends
 end;
 
