@@ -40,7 +40,6 @@ uses unit1;
 procedure TForm2.ApplyClick(Sender: TObject);
 begin
   Form1.Caption := form1caption.Text;
-  Close();
 end;
 
 procedure TForm2.FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);

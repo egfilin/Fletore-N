@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls,
-  ComCtrls, UITypes, Unit2, Unit8, Unit3, Unit5, Unit6;
+  ComCtrls, UITypes, Unit2, Unit8;
 
 type
 
@@ -47,7 +47,6 @@ type
     procedure CheckBox1Change(Sender: TObject);
     procedure CheckBox2Change(Sender: TObject);
     procedure CheckBox3Change(Sender: TObject);
-    procedure CheckBox4Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
     procedure ComboBox3Change(Sender: TObject);
     procedure enlargeGutterChange(Sender: TObject);
@@ -111,26 +110,6 @@ begin
       TabSheet1.TabVisible := True;
       TabSheet3.TabVisible := True;
     end;
-  end;
-end;
-
-procedure TForm4.CheckBox4Change(Sender: TObject);
-begin
-  if (CheckBox4.Checked = True) then
-  begin
-   Form2.BorderStyle:= bsNone;
-   Form4.BorderStyle:= bsNone;
-   Form3.BorderStyle:= bsNone;
-   Form5.BorderStyle:= bsNone;
-   Form6.BorderStyle:= bsNone;
-  end
-  else
-  begin
-   Form2.BorderStyle:= bsDialog;
-   Form4.BorderStyle:= bsDialog;
-   Form3.BorderStyle:= bsDialog;
-   Form5.BorderStyle:= bsDialog;
-   Form6.BorderStyle:= bsDialog;
   end;
 end;
 

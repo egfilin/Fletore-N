@@ -367,7 +367,6 @@ begin
   writeln(config, ColorToString(ToolBar1.color));
   writeln(config, ShowWinDialog);
   writeln(config, theme);
-  writeln(config, Form4.CheckBox4.Checked);
   CloseFile(config);
 end;
 
@@ -449,14 +448,6 @@ begin
     ShowWinDialog :=  StrToBool(configFile.Strings[27]);
     theme := configFile.Strings[28];
     case theme of
-     '':
-     begin
-        Editor.Font.Color := clDefault;
-        Editor.Color := clDefault;
-        Form1.Editor.Gutter.Color := clDefault;
-        Form1.Editor.Gutter.Parts[1].MarkupInfo.Background := clDefault;
-        toolbar1.Color := clDefault;
-     end;
      'light':
       begin
         Editor.Font.Color := clBlack;
@@ -485,24 +476,6 @@ begin
         Form8.Custom.Checked := True;
       end;
     end;
-  if (StrToBool(configFile.Strings[29])) then
-  begin
-   Form2.BorderStyle:= bsNone;
-   Form4.BorderStyle:= bsNone;
-   Form3.BorderStyle:= bsNone;
-   Form5.BorderStyle:= bsNone;
-   Form6.BorderStyle:= bsNone;
-   Form4.CheckBox4.Checked := True;
-  end
-  else
-  begin
-   Form2.BorderStyle:= bsDialog;
-   Form4.BorderStyle:= bsDialog;
-   Form3.BorderStyle:= bsDialog;
-   Form5.BorderStyle:= bsDialog;
-   Form6.BorderStyle:= bsDialog;
-   Form4.CheckBox4.Checked := False;
-  end;
   end;
 end;
 
