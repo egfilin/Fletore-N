@@ -1,14 +1,16 @@
 object Form2: TForm2
   Left = 284
-  Height = 81
+  Height = 79
   Top = 363
-  Width = 297
+  Width = 291
   BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
   Caption = 'Change title'
-  ClientHeight = 81
-  ClientWidth = 297
-  Constraints.MinHeight = 73
-  Constraints.MinWidth = 249
+  ClientHeight = 79
+  ClientWidth = 291
+  Constraints.MinHeight = 71
+  Constraints.MinWidth = 244
+  DesignTimePPI = 94
   Icon.Data = {
     0D38010000000100060000000000010020001656000066000000303000000100
     2000A82500007C5600002020000001002000A8100000247C0000181800000100
@@ -2511,44 +2513,48 @@ object Form2: TForm2
   KeyPreview = True
   OnKeyDown = FormKeyDown
   Position = poMainFormCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.12.0'
   object form1caption: TEdit
     Left = 8
-    Height = 23
+    Height = 32
     Top = 8
-    Width = 283
+    Width = 277
     Anchors = [akTop, akLeft, akRight]
+    ParentFont = False
     TabOrder = 0
     Text = 'none'
   end
   object Apply: TButton
-    Left = 214
-    Height = 26
-    Top = 48
-    Width = 77
+    Left = 210
+    Height = 25
+    Top = 47
+    Width = 75
     Anchors = [akRight, akBottom]
     Caption = '&Apply'
     OnClick = ApplyClick
+    ParentFont = False
     TabOrder = 1
   end
   object keepCh: TCheckBox
     Left = 16
-    Height = 26
-    Top = 48
-    Width = 104
+    Height = 25
+    Top = 47
+    Width = 102
     Anchors = [akLeft, akRight, akBottom]
     AutoSize = False
     Caption = 'Keep'
+    ParentFont = False
     TabOrder = 2
   end
   object Reset: TButton
-    Left = 128
-    Height = 26
-    Top = 48
-    Width = 75
+    Left = 126
+    Height = 25
+    Top = 47
+    Width = 73
     Anchors = [akRight, akBottom]
     Caption = '&Reset'
     OnClick = ResetClick
+    ParentFont = False
     TabOrder = 3
   end
 end
