@@ -1,5 +1,5 @@
 object Form4: TForm4
-  Left = 1016
+  Left = 1019
   Height = 291
   Top = 398
   Width = 413
@@ -2826,6 +2826,7 @@ object Form4: TForm4
         Top = 11
         Width = 234
         Caption = 'Disable popup borders (scuffed)'
+        OnChange = CheckBox4Change
         TabOrder = 1
       end
       object CheckBox2: TCheckBox

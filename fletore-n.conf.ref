@@ -1,6 +1,7 @@
 Fletore-N configuration file reference
+WARNING: THIS FILE IS UNDERGOING A REWORK. PLEASE DO NOT REPORT ISSUES WITH IT.
 This is a file if you want to change/remove Fletore-N's config entries
-1st string = Font color (Help - https://wiki.freepascal.org/Colors)
+1st (dead) string = Font color (Help - https://wiki.freepascal.org/Colors) Moved in fntheme.
 2nd string = Font height
 3rd string = Font name (Monospace fonts recommended only)
 4th string = Font orientation
@@ -9,7 +10,7 @@ This is a file if you want to change/remove Fletore-N's config entries
 7th string = Is font italic?
 8th string = Is font strikeout?
 9th string = Is font underline?
-10th string = Background color (Help - https://wiki.freepascal.org/Colors)
+10th string (ded) = Background color (Help - https://wiki.freepascal.org/Colors) Moved in fntheme.
 11th string = Editor window X position
 12th string = Editor window Y position
 13th string = Editor window width
@@ -20,12 +21,14 @@ This is a file if you want to change/remove Fletore-N's config entries
 18th string = Editor window caption (none = do not use custom window title)
 19th string = Status bar visibility
 20th string = Menu visibility
-21st string = Gutter color
+21st string (dd)  = Gutter color. Moved in fntheme.
 22nd string = Editor's border
 23rd string = Is Gutter enlarged?
 24th string = Gutter border
 25th string = Toolbar align
 26th string = Statusbar align
-27th string = Toolbar color
+27th string (d) = Toolbar color. Moved in fntheme.
 28th string = (Windows only) Is the Windows warning showing up on next boot
-29th string = Theme setting (light, dark, or custom)
+29th string () = Theme setting (light, dark, or custom)
+30th string = Window border setting
+We have a total of 26 strings.
