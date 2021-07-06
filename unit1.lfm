@@ -2529,6 +2529,7 @@ object Form1: TForm1
     Width = 615
     Align = alClient
     BlockIndent = 0
+    Color = clDefault
     Font.CharSet = 4
     Font.Height = -13
     Font.Name = 'Courier New'
@@ -3204,12 +3205,6 @@ object Form1: TForm1
       Caption = 'ToolButton20'
       ImageIndex = 16
       OnClick = ToolButton20Click
-    end
-    object ToolButton2: TToolButton
-      Left = 354
-      Top = 0
-      Caption = 'ToolButton2'
-      Style = tbsCheck
     end
   end
   object ToolButton5: TToolButton

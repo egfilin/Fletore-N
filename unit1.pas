@@ -96,7 +96,6 @@ type
     ToolButton16: TToolButton;
     ToolButton17: TToolButton;
     ToolButton18: TToolButton;
-    ToolButton2: TToolButton;
     ToolButton20: TToolButton;
     ToolButton7: TToolButton;
     ToolButton8: TToolButton;
@@ -379,7 +378,6 @@ begin
 
     configFile := TStringList.Create;
     configFile.LoadFromFile(configFileLocation);
-    //Editor.Font.Color := StringToColor(configFile.Strings[0]);
     Editor.Font.Height := StrToInt(configFile.Strings[1]);
     Editor.Font.Name := configFile.Strings[2];
     Editor.Font.Orientation := StrToInt(configFile.Strings[3]);
@@ -388,7 +386,6 @@ begin
     Editor.Font.Italic := StrToBool(configFile.Strings[6]);
     Editor.Font.StrikeThrough := StrToBool(configFile.Strings[7]);
     Editor.Font.Underline := StrToBool(configFile.Strings[8]);
-    //Editor.Color := StringToColor(configFile.Strings[9]);
 
     Form1.Left := StrToInt(configFile.Strings[10]);
     Form1.Top := StrToInt(configFile.Strings[11]);
@@ -425,9 +422,6 @@ begin
     Form1.MenuItem43.Visible := StrToBool(configFile.Strings[19]);
     Form4.tbcheck.Enabled := StrToBool(configFile.Strings[19]);
 
-    //Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[20]);
-    //Form1.Editor.Gutter.Parts[1].MarkupInfo.Background :=
-      //StringToColor(configFile.Strings[20]);
 
     if (configFile.Strings[21] = 'no_bs') then
       Form1.Editor.BorderStyle := bsNone;
@@ -451,27 +445,38 @@ begin
       end;
     end;
 
-    //toolbar1.Color := StringToColor(configFile.Strings[26]);
     ShowWinDialog :=  StrToBool(configFile.Strings[27]);
     theme := configFile.Strings[28];
     case theme of
      'light':
       begin
-        //theme engine goes here
+        Editor.Font.Color := clBlack;
+        Editor.Color := clWhite;
+        Form1.Editor.Gutter.Color := $00D4D4D4;
+        Form1.Editor.Gutter.Parts[1].MarkupInfo.Background := $00D4D4D4;
+        toolbar1.Color := clWhite;
         Form8.Light.Checked := True;
       end;
       'dark':
       begin
-        //theme engine goes here
+        Editor.Font.Color := clWhite;
+        Editor.Color := clBlack;
+        Form1.Editor.Gutter.Color := $002B2B2B;
+        Form1.Editor.Gutter.Parts[1].MarkupInfo.Background := $002B2B2B;
+        toolbar1.Color := clBlack;
         Form8.Dark.Checked := True;
       end;
       'custom':
       begin
-        //theme engine goes here
+        Editor.Font.Color := StringToColor(configFile.Strings[0]);
+        Editor.Color := StringToColor(configFile.Strings[9]);
+        Form1.Editor.Gutter.Color := StringToColor(configFile.Strings[20]);
+        Form1.Editor.Gutter.Parts[1].MarkupInfo.Background := StringToColor(configFile.Strings[20]);
+        toolbar1.Color := StringToColor(configFile.Strings[26]);
         Form8.Custom.Checked := True;
       end;
     end;
-  end; //Config file reading ends
+  end;
 end;
 
 procedure TForm1.resetEtx();
