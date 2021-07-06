@@ -1,4 +1,4 @@
-#FileFAQ
+# FileFAQ
 ### fletore-n.conf.ref 
 Config file reference. Might be useful if you create your fork or make a pull request.
 ### Fletore-N.lp*
